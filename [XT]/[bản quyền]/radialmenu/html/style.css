@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@font-face {
+	font-family: Axis;
+	src: url(ChaletComprimeCologneSixty.ttf);
+}
+body{
+    user-select: none;
+    font-family:Axis
+}
+@keyframes hexShow {
+    0%    {transform: scale(0);}
+    100%   {transform: scale(1.2);}
+}
+.menu{
+    display: none;
+    position:absolute; 
+    top:30%;
+    left:35%;
+    color:white;
+    transform: scale(1.2);
+    animation: hexShow .2s;
+}
+.hexagon {
+	width: 9.26vh;
+	height: 5.09vh;
+	background: rgba(25, 36, 46, 0.8);
+	position: absolute;
+	text-align: center;
+}
+.hexagon:before {
+	content: "";
+	position: absolute;
+	top: -2.31vh;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 4.63vh solid transparent;
+	border-right: 4.63vh solid transparent;
+	border-bottom: 2.31vh solid rgba(25, 36, 46, 0.8);
+}
+.hexagon:after {
+	content: "";
+	position: absolute;
+	bottom: -2.31vh;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 4.63vh solid transparent;
+	border-right: 4.63vh solid transparent;
+	border-top: 2.31vh solid rgba(25, 36, 46, 0.8);
+}
+.hexagon:hover::before{
+    border-bottom: 2.31vh solid rgba(0, 121, 168, 0.8);
+}
+.hexagon:hover::after{
+    border-top: 2.31vh solid rgba(0, 121, 168, 0.8);
+}
+.hexagon:hover{
+    background-color: rgba(0, 121, 168, 0.8);
+}
+.hex-1 {
+	top: 1.85vh;
+	left: 0vh;
+	font-size: 1.5vh;
+}
+.hex-2 {
+	top: 1.85vh;
+	left: 10.19vh;
+	font-size: 1.5vh;
+}
+.hex-3 {
+	top: 1.85vh;
+	left: 20.37vh;
+	font-size: 1.5vh;
+}
+.hex-4 {
+	top: 10.19vh;
+	left: 5.09vh;
+	font-size: 1.5vh;
+}
+.hex-5 {
+	top: 10.19vh;
+	left: 15.28vh;
+	font-size: 1.5vh;
+}
+.hex-6 {
+	top: 10.19vh;
+	left: 25.46vh;
+	font-size: 1.5vh;
+}
+.hex-7{
+	font-size: 1.5vh;
+    top: 18.2vh;
+    left: 10.1vh;
+}
+.hex-8{
+	font-size: 1.5vh;
+    top: 18.2vh;
+    left: 20.25vh;
+}
+.hex-9{
+	top: 26.4vh;
+    left: 15.15vh;
+    font-size: 1.5vh;
+}
+.close {
+	top: 1.85vh;
+	left: 30.56vh;
+	font-size: 1.5vh;
+}
+.hexagon div{
+    font-size: 2vh;
+}

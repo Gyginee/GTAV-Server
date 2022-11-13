@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+* {padding: 0; margin: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif;}
+
+.stat1 {
+	display: flex;
+	color: #fff;
+	background: rgb(255, 43, 237);
+	width: 700px;
+	height: 400px;
+	position: absolute;
+	left: 32.5%;
+	top: 25%;
+	right: 3.0%;
+	border-radius: 20px;
+
+    margin: 0 0.5rem;
+    animation: backInDown;
+    animation-duration: 2s;
+	animation: doimau2 ease 5s infinite;
+}
+
+#title {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  color: rgb(255, 255, 255);
+  font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+  font-size: 20px;
+  font-weight: 500;
+  animation: doimau ease 5s infinite;
+
+}
+
+@keyframes doimau {
+	0% {
+		color: white;
+	}
+
+	25% {
+		color: gold;
+	}
+
+	50% {
+		color: lime;
+	}
+
+	75% {
+		color: green;
+	}
+
+	75% {
+		color: red;
+	}
+}
+
+@keyframes doimau2 {
+	0% {
+		background: rgb(105, 7, 97);
+	}
+
+	25% {
+		background: rgb(66, 6, 14);
+	}
+
+	50% {
+		background: rgb(53, 41, 1);
+	}
+
+	75% {
+		background: rgb(30, 2, 34);
+	}
+
+	75% {
+		background: rgb(3, 0, 2);
+	}
+}
+
+
+#nhanqua1 span {
+	position: absolute;
+	display: inline-block;
+	width: 200px;
+	height: 20px;
+	left: 5%;
+	top: 20%;
+	font-size: 100%;
+	font-style: initial;
+	color: #F0FFFF;
+}
+
+#nhanqua2 span {
+	position: absolute;
+	display: inline-block;
+	width: 200px;
+	height: 20px;
+	left: 5%;
+	top: 40%;
+	font-size: 100%;
+	font-style: initial;
+	color: #F0FFFF;
+}
+
+#nhanqua3 span {
+	position: absolute;
+	display: inline-block;
+	width: 200px;
+	height: 20px;
+	left: 5%;
+	top: 60%;
+	font-size: 100%;
+	font-style: initial;
+	color: #F0FFFF;
+}
+
+#nhanqua4 span {
+	position: absolute;
+	display: inline-block;
+	width: 200px;
+	height: 20px;
+	left: 5%;
+	top: 80%;
+	font-size: 100%;
+	font-style: initial;
+	color: #F0FFFF;
+}
+
+
+
+
+#nhanqua5 span {
+	position: absolute;
+	display: inline-block;
+	width: 200px;
+	height: 20px;
+	left: 59%;
+	top: 20%;
+	font-size: 100%;
+	font-style: initial;
+	color: #F0FFFF;
+}
+
+#nhanqua6 span {
+	position: absolute;
+	display: inline-block;
+	width: 200px;
+	height: 20px;
+	left: 59%;
+	top: 40%;
+	font-size: 100%;
+	font-style: initial;
+	color: #F0FFFF;
+}
+
+#nhanqua7 span {
+	position: absolute;
+	display: inline-block;
+	width: 200px;
+	height: 20px;
+	left: 59%;
+	top: 60%;
+	font-size: 100%;
+	font-style: initial;
+	color: #F0FFFF;
+}
+
+#nhanqua8 span {
+	position: absolute;
+	display: inline-block;
+	width: 200px;
+	height: 20px;
+	left: 59%;
+	top: 80%;
+	font-size: 100%;
+	font-style: initial;
+	color: #F0FFFF;
+}
+
+
+.stat1 .icon1 i, .stat1 .icon1 img{
+	position: absolute;
+	left: 38%;
+	top: 20%;
+	transform: translate(-50%, -50%);
+}
+
+.stat1 .icon1 img {
+	height: 50px;
+	width: 50px;
+}
+
+
+
+
+.stat1 .icon2 i, .stat1 .icon2 img{
+	position: absolute;
+	left: 38%;
+	top: 40%;
+	transform: translate(-50%, -50%);
+}
+
+.stat1 .icon2 img {
+	height: 50px;
+	width: 50px;
+}
+
+
+
+
+.stat1 .icon3 i, .stat1 .icon3 img{
+	position: absolute;
+	left: 38%;
+	top: 60%;
+	transform: translate(-50%, -50%);
+}
+
+.stat1 .icon3 img {
+	height: 50px;
+	width: 50px;
+}
+
+
+
+
+.stat1 .icon4 i, .stat1 .icon4 img{
+	position: absolute;
+	left: 38%;
+	top: 80%;
+	transform: translate(-50%, -50%);
+}
+
+.stat1 .icon4 img {
+	height: 50px;
+	width: 50px;
+}
+
+
+
+
+.stat1 .icon5 i, .stat1 .icon5 img{
+	position: absolute;
+	left: 92.5%;
+	top: 20%;
+	transform: translate(-50%, -50%);
+}
+
+.stat1 .icon5 img {
+	height: 50px;
+	width: 50px;
+}
+
+
+
+
+.stat1 .icon6 i, .stat1 .icon6 img{
+	position: absolute;
+	left: 92.5%;
+	top: 40%;
+	transform: translate(-50%, -50%);
+}
+
+.stat1 .icon6 img {
+	height: 50px;
+	width: 50px;
+}
+
+
+
+
+.stat1 .icon7 i, .stat1 .icon7 img{
+	position: absolute;
+	left: 92.5%;
+	top: 60%;
+	transform: translate(-50%, -50%);
+}
+
+.stat1 .icon7 img {
+	height: 50px;
+	width: 50px;
+}
+
+
+
+
+.stat1 .icon8 i, .stat1 .icon8 img{
+	position: absolute;
+	left: 92.5%;
+	top: 80%;
+	transform: translate(-50%, -50%);
+}
+
+.stat1 .icon8 img {
+	height: 50px;
+	width: 50px;
+}

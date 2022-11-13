@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+body {
+	font-family: 'Cabin', sans-serif;
+	background: none;
+	user-select: none;
+}
+
+.card {
+	border: none;
+	width: 300px;
+	box-shadow: 0px 0px 5px 0px #0a0a0a;
+	border-radius: 20px;
+	background-color: transparent;
+}
+
+.request {
+	display: none;
+	position: fixed;
+	top: 35%;
+	left: 65%;
+	transform: translate(-50%, -50%);
+}
+
+.blockrequest {
+	display: none;
+	position: fixed;
+	top: 35%;
+	left: 65%;
+	transform: translate(-50%, -50%);
+}
+
+.card-body {
+	background-color: #e6e6e6;
+	color: rgba(110, 113, 121, 1);
+	font-size: 15px;
+	font-weight: 600;
+	border-radius: 20px;
+}
+
+#title {
+	color: #2f3037;
+	font-weight: 600;
+}
+
+#titleblock {
+	color: #2f3037;
+	font-weight: 600;
+}
+
+.fa-question-circle {
+	font-size: 28px;
+}
+
+/* Buttons */
+.btn {
+	font-weight: 600;
+	font-size: 16px;
+	padding: 13px 17px;
+	border: none;
+	-webkit-border-radius: 2px;
+	-webkit-background-clip: padding-box;
+	-moz-border-radius: 2px;
+	-moz-background-clip: padding;
+	border-radius: 2px;
+	background-clip: padding-box;
+	transition: color 0.2s linear, background-color 0.2s linear;
+	letter-spacing: 0.2px;
+}
+
+.btn.btn-grey {
+	background-color: #2f3037;
+	color: #e6e6e6;
+}
+
+.btn.btn-grey.btn-border {
+	border-color: #2f3037;
+	color: #2f3037;
+}
+
+.btn.btn-grey.btn-3d {
+	box-shadow: inset 0 -2px 0 #292a2e;
+}
+
+.btn.btn-grey:hover {
+	background-color: #26272b;
+	color: #e6e6e6;
+}
+
+.btn.btn-green {
+	background-color: #16b55d;
+	color: #e6e6e6;
+}
+
+.btn.btn-green.btn-border {
+	border-color: #16b55d;
+	color: #16b55d;
+}
+
+.btn.btn-green.btn-3d {
+	box-shadow: inset 0 -2px 0 #049444;
+}
+
+.btn.btn-green:hover {
+	background-color: #049444;
+	color: #e6e6e6;
+}
+
+.btn.btn-blue {
+	background-color: #1f5eff;
+	color: #e6e6e6;
+}
+
+.btn.btn-blue.btn-border {
+	border-color: #1f5eff;
+	color: #1f5eff;
+}
+
+.btn.btn-blue.btn-3d {
+	box-shadow: inset 0 -2px 0 #0a4df9;
+}
+
+.btn.btn-blue:hover {
+	background-color: #0a4df9;
+	color: #e6e6e6;
+}
+
+.btn:focus {
+	box-shadow: none;
+}
+
+
+/* Switch Button */
+.switchbtn {
+	padding: 3px;
+	position: relative;
+}
+
+@-webkit-keyframes moveCircle1 {
+	50% {
+		padding: 0 12%;
+	}
+}
+
+@keyframes moveCircle1 {
+	50% {
+		padding: 0 12%;
+	}
+}
+
+@-webkit-keyframes moveCircle2 {
+	50% {
+		padding: 0 12%;
+	}
+}
+
+@keyframes moveCircle2 {
+	50% {
+		padding: 0 12%;
+	}
+}
+
+.switchbtn_label {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 20px;
+}
+
+.switchbtn_label span {
+	margin-right: 1em;
+	margin-left: 1em;
+}
+
+.switchbtn_label input:checked ~ .switchbtn::before {
+	transform: translateX(-100%);
+	left: 100%;
+	-webkit-animation: moveCircle2 0.2s ease 1;
+	animation: moveCircle2 0.2s ease 1;
+}
+
+.switchbtn::before {
+	content: "";
+	display: block;
+	background-color: #e6e6e6;
+	position: relative;
+	left: 0;
+	-webkit-animation: moveCircle1 0.2s ease 1;
+	animation: moveCircle1 0.2s ease 1;
+}
+
+.switchbtn {
+	background-color: #c6c6c6;
+	border-radius: 66px;
+	width: 82.5px;
+	transition: 0.2s cubic-bezier(0.7, 0.15, 0.36, 1);
+}
+
+.switchbtn_label input:checked ~ .switchbtn {
+	background-color: #1f5eff;
+}
+
+.switchbtn::before {
+	border-radius: 33px;
+	width: 33px;
+	height: 33px;
+	transition: 0.2s cubic-bezier(0.7, 0.15, 0.36, 1);
+}
+
+/* Light Mode */
+.switchbtn_labelc1 input:checked ~ span:nth-of-type(2) {
+	color: #2f3037;
+}
+
+.switchbtn_labelc1 input~ span:nth-of-type(1) {
+	color: #2f3037;
+}
+
+.switchbtn_labelc1 input~ span:nth-of-type(2) {
+	color: rgba(110, 113, 121, 0.5);
+}
+
+.switchbtn_labelc1 input:checked ~ span:nth-of-type(1) {
+	color: rgba(110, 113, 121, 0.5);
+}
+
+/* Dark Mode */
+.switchbtn_labelc2 input:checked ~ span:nth-of-type(2) {
+	color: #e6e6e6;
+}
+
+.switchbtn_labelc2 input~ span:nth-of-type(1) {
+	color: #e6e6e6;
+}
+
+.switchbtn_labelc2 input~ span:nth-of-type(2) {
+	color: rgba(110, 113, 121, 0.5);
+}
+
+.switchbtn_labelc2 input:checked ~ span:nth-of-type(1) {
+	color: rgba(110, 113, 121, 0.5);
+}
