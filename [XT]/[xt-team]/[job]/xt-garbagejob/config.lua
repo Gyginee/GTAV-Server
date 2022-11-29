@@ -26,8 +26,8 @@ Config.Tien = 50 -- tiền 1 túi rác
 
 Config.TrashAmt = 15 -- Số túi rác mỗi điểm
 -- số lượng đồ vật
-Config.Min = 2
-Config.Max = 5
+Config.Min = 1
+Config.Max = 3
 
 Config.Bins = {
   218085040,

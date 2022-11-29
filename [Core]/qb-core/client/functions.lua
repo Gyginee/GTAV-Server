@@ -372,7 +372,7 @@ function QBCore.Functions.SpawnVehicle(model, cb, coords, isnetworked, teleportI
     SetVehicleNeedsToBeHotwired(veh, false)
     SetVehRadioStation(veh, 'OFF')
     SetModelAsNoLongerNeeded(model)
-    exports['lj-fuel']:SetFuel(veh, 100)
+    exports['ps-fuel']:SetFuel(veh, 100)
     if teleportInto then TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1) end
     if cb then
         cb(veh)
@@ -560,7 +560,7 @@ function QBCore.Functions.SetVehicleProperties(vehicle, props)
         end
         if props.fuelLevel then
             SetVehicleFuelLevel(vehicle, props.fuelLevel + 0.0)
-            exports['lj-fuel']:SetFuel(vehicle, props.fuelLevel + 0.0)
+            exports['ps-fuel']:SetFuel(vehicle, props.fuelLevel + 0.0)
         end
         if props.oilLevel then
             SetVehicleOilLevel(vehicle, props.oilLevel)

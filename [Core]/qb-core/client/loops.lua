@@ -16,7 +16,7 @@ CreateThread(function()
             local currentHealth = GetEntityHealth(ped)
             if QBCore.Functions.GetPlayerData().metadata['hunger'] <= 0 or QBCore.Functions.GetPlayerData().metadata['thirst'] <= 0 then
                 SetEntityHealth(ped, currentHealth - math.random(5, 8))
-            elseif QBCore.Functions.GetPlayerData().metadata['pee'] <= 0 or QBCore.Functions.GetPlayerData().metadata['poo'] <= 0 then
+            elseif QBCore.Functions.GetPlayerData().metadata['pee'] >= 100 or QBCore.Functions.GetPlayerData().metadata['poo'] >= 100 then
                 SetEntityHealth(ped, currentHealth - math.random(3, 6))
             end
         end
@@ -31,9 +31,9 @@ CreateThread(function()
                 exports['xt-notify']:Alert("THÔNG BÁO", "Bạn đang bị <span style='color:#ffd700'>đói</span>", 5000, "warning")
             elseif QBCore.Functions.GetPlayerData().metadata['thirst'] <= 10 then
                 exports['xt-notify']:Alert("THÔNG BÁO", "Bạn đang bị <span style='color:#ffd700'>khát</span>", 5000, "warning")
-            elseif QBCore.Functions.GetPlayerData().metadata['poo'] <= 10 then
+            elseif QBCore.Functions.GetPlayerData().metadata['poo'] >= 90 then
                 exports['xt-notify']:Alert("THÔNG BÁO", "Bạn đang bị <span style='color:#ffd700'>đầy bàng quang</span>", 5000, "warning")
-            elseif QBCore.Functions.GetPlayerData().metadata['pee'] <= 10 then
+            elseif QBCore.Functions.GetPlayerData().metadata['pee'] >= 90 then
                 exports['xt-notify']:Alert("THÔNG BÁO", "Bạn đang bị <span style='color:#ffd700'>đau bụng</span>", 5000, "warning")
             end
         end

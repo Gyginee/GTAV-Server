@@ -269,7 +269,7 @@ function SpawnVehicle()
 			SetEntityHeading(vehicle, Config.Courier['Carspawn'].Heading)
 			TaskWarpPedIntoVehicle(PlayerPedId(), vehicle, -1)
 			SetEntityAsMissionEntity(vehicle, true, true)
-			exports['lj-fuel']:SetFuel(vehicle, 100.0)
+			exports['ps-fuel']:SetFuel(vehicle, 100.0)
 			exports['xt-vehiclekeys']:SetVehicleKey(GetVehicleNumberPlateText(vehicle), true)
 			SetVehicleEngineOn(vehicle, true, true)
 			Vehicle = vehicle

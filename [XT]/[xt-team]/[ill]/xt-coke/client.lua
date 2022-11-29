@@ -273,7 +273,7 @@ function PlaneSpawn(location)
  	SetEntityHeading(airplane, location.parking.h)
 	Plate = GetVehicleNumberPlateText(airplane)
     exports['xt-vehiclekeys']:SetVehicleKey(GetVehicleNumberPlateText(airplane), true)
-    exports['lj-fuel']:SetFuel(airplane, 100.0)
+    exports['ps-fuel']:SetFuel(airplane, 100.0)
     ganmaybay = true
  	CreateThread(function()
 		while ganmaybay do

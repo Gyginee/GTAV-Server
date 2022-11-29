@@ -36,18 +36,28 @@ local function skyCam(bool)
 end
 
 local function openCharMenu(bool)
-    QBCore.Functions.TriggerCallback("qb-multicharacter:server:GetNumberOfCharacters", function(result)
-        SetNuiFocus(bool, bool)
-        SendNUIMessage({
-            action = "ui",
-            toggle = bool,
-            nChar = result,
-        })
-        skyCam(bool)
+        QBCore.Functions.TriggerCallback("qb-multicharacter:server:GetNumberOfCharacters", function(result)
+            QBCore.Functions.TriggerCallback("qb-multi:server:GetCurrentPlayers", function(Players)
+            SetNuiFocus(bool, bool)
+            SendNUIMessage({
+                action = "ui",
+                toggle = bool,
+                nChar = result,
+                enableDeleteButton = Config.EnableDeleteButton,
+                players = Players,
+            })
+            skyCam(bool)
+        end)
     end)
 end
 
 -- Events
+
+AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
+    SendNUIMessage({
+        action = "stopMusic"
+    })
+end)
 
 RegisterNetEvent('qb-multicharacter:client:closeNUIdefault', function() -- This event is only for no starting apartments
     DeleteEntity(charPed)
@@ -92,26 +102,29 @@ end)
 
 -- NUI Callbacks
 
-RegisterNUICallback('closeUI', function()
+RegisterNUICallback('closeUI', function(_, cb)
     openCharMenu(false)
+    cb("ok")
 end)
 
-RegisterNUICallback('disconnectButton', function()
+RegisterNUICallback('disconnectButton', function(_, cb)
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
     TriggerServerEvent('qb-multicharacter:server:disconnect')
+    cb("ok")
 end)
 
-RegisterNUICallback('selectCharacter', function(data)
+RegisterNUICallback('selectCharacter', function(data, cb)
     local cData = data.cData
     DoScreenFadeOut(10)
     TriggerServerEvent('qb-multicharacter:server:loadUserData', cData)
     openCharMenu(false)
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
+    cb("ok")
 end)
 
-RegisterNUICallback('cDataPed', function(data)
+RegisterNUICallback('cDataPed', function(data, cb)
     local cData = data.cData  
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
@@ -125,6 +138,30 @@ RegisterNUICallback('cDataPed', function(data)
                         Wait(0)
                     end
                     charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
+
+                    local RandomAnims = {
+                        "WORLD_HUMAN_HANG_OUT_STREET", 
+                        "WORLD HUMAN STAND IMPATIENT", 
+                        "WORLD_HUMAN_STAND_MOBILE", 
+                        "WORLD_HUMAN_SMOKING_POT", 
+                        "WORLD_HUMAN_LEANING", 
+                        "WORLD_HUMAN_DRUG DEALER_HARD", 
+                        "WORLD_HUMAN_SUPERHERO", 
+                        "WORLD_HUMAN_TOURIST_MAP", 
+                        "WORLD_HUMAN YOGA", 
+                        "WORLD_HUMAN_BINOCULARS", 
+                        "WORLD HUMAN BUM WASH", 
+                        "WORLD_HUMAN_CONST_DRILL", 
+                        "WORLD_HUMAN_MOBILE_FILM_SHOCKING", 
+                        "WORLD HUMAN MUSCLE FLEX", 
+                        "WORLD_HUMAN_MUSICIAN", 
+                        "WORLD_HUMAN_PAPARAZZI", 
+                        "WORLD_HUMAN_PARTYING",
+                    }
+                    local PlayAnim = RandomAnims[math.random(#RandomAnims)] 
+                    SetPedCanPlayAmbientAnims(charPed, true) 
+                    TaskStartScenarioInPlace(charPed, PlayAnim, 0, true)
+
                     SetPedComponentVariation(charPed, 0, 0, 0, 2)
                     FreezeEntityPosition(charPed, false)
                     SetEntityInvincible(charPed, true)
@@ -152,6 +189,7 @@ RegisterNUICallback('cDataPed', function(data)
                     SetBlockingOfNonTemporaryEvents(charPed, true)
                 end)
             end
+            cb("ok")
         end, cData.citizenid)
     else
         CreateThread(function()
@@ -171,23 +209,26 @@ RegisterNUICallback('cDataPed', function(data)
             PlaceObjectOnGroundProperly(charPed)
             SetBlockingOfNonTemporaryEvents(charPed, true)
         end)
+        cb("ok")
     end
 end)
 
-RegisterNUICallback('setupCharacters', function()
+RegisterNUICallback('setupCharacters', function(data, cb)
     QBCore.Functions.TriggerCallback("qb-multicharacter:server:setupCharacters", function(result)
         SendNUIMessage({
             action = "setupCharacters",
             characters = result
         })
+        cb("ok")
     end)
 end)
 
-RegisterNUICallback('removeBlur', function()
+RegisterNUICallback('removeBlur', function(data, cb)
     SetTimecycleModifier('default')
+    cb("ok")
 end)
 
-RegisterNUICallback('createNewCharacter', function(data)
+RegisterNUICallback('createNewCharacter', function(data, cb)
     local cData = data
     DoScreenFadeOut(150)
     if cData.gender == "Male" then
@@ -197,9 +238,11 @@ RegisterNUICallback('createNewCharacter', function(data)
     end
     TriggerServerEvent('qb-multicharacter:server:createCharacter', cData)
     Wait(500)
+    cb("ok")
 end)
 
-RegisterNUICallback('removeCharacter', function(data)
+RegisterNUICallback('removeCharacter', function(data, cb)
     TriggerServerEvent('qb-multicharacter:server:deleteCharacter', data.citizenid)
     TriggerEvent('qb-multicharacter:client:chooseChar')
+    cb("ok")
 end)

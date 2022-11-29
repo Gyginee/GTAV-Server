@@ -9,38 +9,52 @@
     <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <title>XT-Multicharacter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>QB-Multicharacter</title>
 </head>
     <body>
-        <div class="container">
+        <audio id="click" src="click.wav"></audio>
+        <audio id="musica_fondo" src="musica.mp3" loop></audio>
+        <div class="container">     
             <div class="main-screen">
+                <div class="fondocolor"></div>
+                <div class="topbar" style="display: block; top: 0%;"></div>
+                <img class="imagenlogo" style="display: none; top: 50%;" src="qb-pixel.png">
+                <div class="bottombar" style="display: block; top: 50%;"></div> 
+
                 <div class="welcomescreen">
                     <div class="loading-rondje">
                         <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-                        <p id="loading-text">Đang tải nhân vật</p>
+                        <p id="loading-text">Truy vấn nhân vật</p>
                     </div>
                 </div>
+                <div class="title-screen">
+                    <div class="fondo-negro"></div>
+                    <div class="contenedor">
+                        <div class="btn-iniciar">BẮT ĐẦU</div>
+                    </div>
+                </div>
+                <div class="jugadores-on" id="total-players">người chơi</div> 
                 <div class="characters-list">
-
                 </div>
 
                 <div class="character-info">
-                    <div class="char-info-titel"><span id="char-info-titel">Thông Tin</span></div>
+                    <div class="char-info-titel"><i class="material-icons" id="char-info-icon"></i><span id="char-info-titel">Thông Tin Nhân Vật</span></div>
                     <div class="character-info-valid">
-                        <span id="no-char">Chọn nhân vật để thấy toàn bộ thông tin.</span>
+                        <span id="no-char">Chọn nhân vật để thấy thông tin.</span>
                     </div>
                 </div>
 
                 <div class="character-register">
                     <div class="characters-register-block-header">
-                        <p>Đăng Ký</p>
-                        <i class="material-icons-one" id="close-reg">close</i>
+                        <p>Đăng ký</p>
+                        <i class="material-icons-one" id="close-reg">đóng</i>
                     </div>
                     <div class="char-register-inputs">
                         <input type="text" id="first_name" placeholder="Họ" class="char-reg-input">
                         <input type="text" id="last_name" placeholder="Tên" class="char-reg-input">
-                        <input type="text" id="nationality" placeholder="Quốc Tịch" class="char-reg-input">
-                        <input type="date" id="birthdate" placeholder="Ngày Sinh" min="1900-01-01" max="2999-12-31" class="char-reg-input">
+                        <input type="text" id="nationality" placeholder="Quốc tịch" class="char-reg-input">
+                        <input type="date" id="birthdate" placeholder="Ngày sinh" min="1900-01-01" max="2999-12-31" class="char-reg-input">
                         <select id="gender" name="gender">
                             <option value="Male" selected>Nam</option>
                             <option value="Female">Nữ</option>
@@ -49,16 +63,16 @@
                     <div class="character-reg-btn" id="create"><p id="create-text">Xác nhận</p></div>
                 </div>
 
-               <!--  <div class="character-delete">
+                <div class="character-delete">
                     <div class="characters-delete-block-header">
-                        <p>Delete Character</p>
+                        <p>Xoá nhân vật</p>
                     </div>
 
-                    <p>Are You Sure You Want To Delete Your Character?</p>
+                    <p>Bạn có chắc muốn xoá nhân vật?</p>
 
-                    <div class="character-acceptdel-btn" id="accept-delete"><p id="accept-text">Confirm</p></div>
+                    <div class="character-acceptdel-btn" id="accept-delete"><p id="accept-text">Xác nhận</p></div>
                     <div class="character-canceldel-btn" id="cancel-delete"><p id="cancel-text">Return</p></div>
-                </div> -->
+                </div>
             </div>
         </div>
     </body>

@@ -80,11 +80,11 @@ RegisterNetEvent('qb-admin:server:GetPlayersForBlips', function()
 end)
 
 RegisterNetEvent('qb-admin:server:kill', function(player)
-    TriggerClientEvent('hospital:client:KillPlayer', player.id)
+    TriggerClientEvent('xt-benhvien:client:KillPlayer', player.id)
 end)
 
 RegisterNetEvent('qb-admin:server:revive', function(player)
-    TriggerClientEvent('hospital:client:Revive', player.id)
+    TriggerClientEvent('xt-benhvien:client:Revive', player.id)
 end)
 
 RegisterNetEvent('qb-admin:server:kick', function(player, reason)

@@ -71,7 +71,7 @@ AddEventHandler('qb-diving:client:UseJerrycan', function()
             disableMouse = false,
             disableCombat = true,
         }, {}, {}, {}, function() -- Done
-            exports['LegacyFuel']:SetFuel(curVeh, 100)
+            exports['ps-fuel']:SetFuel(curVeh, 100)
             exports['okokNotify']:Alert("HỆ THỐNG", "Thuyền đã đổ đầy xăng ", 5000, 'success')  
             --QBCore.Functions.Notify('The boat has been refueled', 'success')
             TriggerServerEvent('qb-diving:server:RemoveItem', 'jerry_can', 1)

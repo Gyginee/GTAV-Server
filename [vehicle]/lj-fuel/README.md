@@ -1,11 +1,11 @@
 ![LJ FUEL](https://user-images.githubusercontent.com/91661118/139381416-32ce9dd7-a77d-4690-bf35-e0b3fd336039.png)
 
-# lj-fuel used with QBCore Framework
+# ps-fuel used with QBCore Framework
 Join my Discord laboratory for updates, support, and special early testing!
 <br>
 https://discord.gg/loljoshie (without-vanity url: https://discord.gg/HH6uTcBfew)
 
-lj-fuel is a modified version of LegacyFuel using PolyZones like NoPixel 3.0
+ps-fuel is a modified version of LegacyFuel using PolyZones like NoPixel 3.0
 <br>
 Runs at ~ 0.00 to 0.01 ms if you have more optimization suggestions feel free to reach out
 
@@ -15,7 +15,7 @@ Runs at ~ 0.00 to 0.01 ms if you have more optimization suggestions feel free to
 * [polyzone](https://github.com/qbcore-framework/PolyZone)
 
 # Installation
-* **IMPORTANT: Must rename ANY existing LegacyFuel exports to lj-fuel**
+* **IMPORTANT: Must rename ANY existing LegacyFuel exports to ps-fuel**
 
 ## qb-smallresources:
 * Remove this thread in **qb-smallresources/client/ignore.lua**

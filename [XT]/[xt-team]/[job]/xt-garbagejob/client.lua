@@ -130,7 +130,7 @@ local function Layxe()
 	Plate = GetVehicleNumberPlateText(xerac)
     TaskWarpPedIntoVehicle(PlayerPedId(), xerac, -1)
     exports['xt-vehiclekeys']:SetVehicleKey(GetVehicleNumberPlateText(xerac), true)
-    exports['lj-fuel']:SetFuel(xerac, 100.0)
+    exports['ps-fuel']:SetFuel(xerac, 100.0)
 end
 
 -- Thread

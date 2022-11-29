@@ -11,7 +11,7 @@ CreateThread(function()
         -- (11-11-2018) New Natives:
 
         -- Here you can add hover text for the "large" icon.
-        SetDiscordRichPresenceAssetText('MAFIA TOWN')
+        SetDiscordRichPresenceAssetText('X SERVER')
        
         -- Here you will have to put the image name for the "small" icon.
         SetDiscordRichPresenceAssetSmall('logo_name')
@@ -31,8 +31,8 @@ CreateThread(function()
             First paramater is the button index (0 or 1), second is the title and 
             last is the url (this has to start with "fivem://connect/" or "https://") 
         ]]--
-        SetDiscordRichPresenceAction(0, "MAFIA TOWN", "fivem://connect/172.65.247.221")
-        SetDiscordRichPresenceAction(1, "XTEAM", "https://discord.gg/XsTq3ugxQ6")
+        SetDiscordRichPresenceAction(0, "XSEVER", "fivem://connect/4ep8g9")
+        SetDiscordRichPresenceAction(1, "XTEAM", "https://discord.gg/")
         -- It updates every minute just in case.
 	Wait(60000)
     end

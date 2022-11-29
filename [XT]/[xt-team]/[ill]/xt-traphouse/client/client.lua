@@ -380,7 +380,7 @@ local function Layxe()
     SetVehicleNumberPlateText(xechotien, "RUTI"..tostring(math.random(0000, 9999)))
 	Plate = GetVehicleNumberPlateText(xechotien)
     exports['xt-vehiclekeys']:SetVehicleKey(GetVehicleNumberPlateText(xechotien), true)
-    exports['lj-fuel']:SetFuel(xechotien, 100.0)
+    exports['ps-fuel']:SetFuel(xechotien, 100.0)
     CreateThread(function()
 		while ganxetai do
 			sleep = 5

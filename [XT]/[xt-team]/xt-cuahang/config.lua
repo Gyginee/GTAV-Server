@@ -524,7 +524,7 @@ Config.Shops = {
     },
     ['Product'] = Config.Products["Weed"]
   },
-  [25] = {
+ --[[  [25] = {
     ['Name'] = 'Shop Súng',
     ['Type'] = 'shopsung',
     ['Coords'] = {
@@ -533,5 +533,5 @@ Config.Shops = {
       ['Z'] = 28.8,
     },
     ['Product'] = Config.Products["shopsung"]
-  },
+  }, ]]
 }

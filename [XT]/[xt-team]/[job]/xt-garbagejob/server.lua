@@ -83,11 +83,11 @@ end)
 RegisterNetEvent('xt-garbagejob:server:nemrac', function(jobID)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-    local mayman = math.random(1, 10)
+    local mayman = math.random(1, 20)
     TriggerClientEvent('xt-garbagejob:client:nemrac', -1, jobID)
     TriggerClientEvent('xt-notify:client:Alert', src, "HỆ THỐNG", "Bạn đã được nhận được "..Config.Tien.."$ tiền", 5000, 'success')
     Player.Functions.AddMoney('cash', Config.Tien)
-    if mayman >= 6 then
+    if mayman >= 17 then
         local item = Config.Thuong[math.random(1, #Config.Thuong)]
         local soluong = math.random(Config.Min, Config.Max)
         Player.Functions.AddItem(item, soluong)

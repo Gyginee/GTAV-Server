@@ -43,7 +43,7 @@ CreateThread(function()
 		options = {
 		{
 			type = "client",
-			event = "lj-fuel:client:SendMenuToServer",
+			event = "ps-fuel:client:SendMenuToServer",
 			icon = "fas fa-gas-pump",
 			label = "Đổ xăng",
 			canInteract = function()
@@ -161,44 +161,44 @@ end)
 
 -- Client Events
 
-RegisterNetEvent('lj-fuel:client:buyCanMenu', function()
+RegisterNetEvent('ps-fuel:client:buyCanMenu', function()
     exports['qb-menu']:openMenu({
         {
             header = "Pê trô li mít tựt",
             txt = 'Giá : $'..Config.canCost..' đã gồm thuế.',
             params = {
-                event = "lj-fuel:client:buyCan",
+                event = "ps-fuel:client:buyCan",
             }
         },
     })
 end)
 
-RegisterNetEvent('lj-fuel:client:buyCan', function()
+RegisterNetEvent('ps-fuel:client:buyCan', function()
     if not HasPedGotWeapon(ped, 883325847) then
 		if QBCore.Functions.GetPlayerData().money['cash'] >= Config.canCost then
 			TriggerServerEvent('QBCore:Server:AddItem', "weapon_petrolcan", 1)
 			SetPedAmmo(ped, 883325847, 4500)
 			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["weapon_petrolcan"], "add")
-        	TriggerServerEvent('lj-fuel:server:PayForFuel', Config.canCost, GetPlayerServerId(PlayerId()))
+        	TriggerServerEvent('ps-fuel:server:PayForFuel', Config.canCost, GetPlayerServerId(PlayerId()))
 		else
 			exports['xt-notify']:Alert("THÔNG BÁO", "Bạn không đủ <span style='color:#ff0000'>tiền</span>!", 5000, 'error')
 		end
     end
 end)
 
-RegisterNetEvent('lj-fuel:client:refuelCanMenu', function()
+RegisterNetEvent('ps-fuel:client:refuelCanMenu', function()
 	exports['qb-menu']:openMenu({
 		{
 			header = "Pê trô li mít tựt",
 			txt = "Mua can xăng",
 			params = {
-				event = "lj-fuel:client:refuelCan",
+				event = "ps-fuel:client:refuelCan",
 			}
 		},
 	})
 end)
 
-RegisterNetEvent('lj-fuel:client:refuelCan', function()
+RegisterNetEvent('ps-fuel:client:refuelCan', function()
 	local vehicle = QBCore.Functions.GetClosestVehicle()
 	local ped = PlayerPedId()
 	local CurFuel = GetVehicleFuelLevel(vehicle)
@@ -213,7 +213,7 @@ RegisterNetEvent('lj-fuel:client:refuelCan', function()
 			disableMouse = false,
 			disableCombat = true,
 			}, {}, {}, {}, function() -- Done
-			TriggerServerEvent('lj-fuel:server:PayForFuel', Config.refuelCost, GetPlayerServerId(PlayerId()))
+			TriggerServerEvent('ps-fuel:server:PayForFuel', Config.refuelCost, GetPlayerServerId(PlayerId()))
 			SetPedAmmo(ped, 883325847, 4500)
 			PlaySound(-1, "5_SEC_WARNING", "HUD_MINI_GAME_SOUNDSET", 0, 0, 1)
 			StopAnimTask(ped, "weapon@w_sp_jerrycan", "fire", 3.0, 3.0, -1, 2, 0, 0, 0, 0)
@@ -227,18 +227,18 @@ RegisterNetEvent('lj-fuel:client:refuelCan', function()
 	end
 end)
 
-RegisterNetEvent('lj-fuel:client:SendMenuToServer', function()
+RegisterNetEvent('ps-fuel:client:SendMenuToServer', function()
 	local vehicle = QBCore.Functions.GetClosestVehicle()
 	local CurFuel = GetVehicleFuelLevel(vehicle)
 	local refillCost = Round(Config.RefillCost - CurFuel) * Config.CostMultiplier
 	if CurFuel < 95 then
-		TriggerServerEvent('lj-fuel:server:OpenMenu', refillCost, inGasStation)
+		TriggerServerEvent('ps-fuel:server:OpenMenu', refillCost, inGasStation)
 	else
 		exports['xt-notify']:Alert("THÔNG BÁO", "Bình xăng đã <span style='color:#ff0000'>đầy</span>", 5000, 'error')
 	end
 end)
 
-RegisterNetEvent('lj-fuel:client:RefuelVehicle', function(refillCost)
+RegisterNetEvent('ps-fuel:client:RefuelVehicle', function(refillCost)
 	local vehicle = QBCore.Functions.GetClosestVehicle()
 	local ped = PlayerPedId()
 	local CurFuel = GetVehicleFuelLevel(vehicle)
@@ -297,7 +297,7 @@ RegisterNetEvent('lj-fuel:client:RefuelVehicle', function(refillCost)
 					disableMouse = false,
 					disableCombat = true,
 				}, {}, {}, {}, function() -- Done
-					TriggerServerEvent('lj-fuel:server:PayForFuel', refillCost, GetPlayerServerId(PlayerId()))
+					TriggerServerEvent('ps-fuel:server:PayForFuel', refillCost, GetPlayerServerId(PlayerId()))
 					SetFuel(vehicle, 100)
 					PlaySound(-1, "5_SEC_WARNING", "HUD_MINI_GAME_SOUNDSET", 0, 0, 1)
 					StopAnimTask(ped, "weapon@w_sp_jerrycan", "fire", 3.0, 3.0, -1, 2, 0, 0, 0, 0)
@@ -317,13 +317,13 @@ exports['qb-target']:AddTargetModel(props, {
 	options = {
 		{
 			type = "client",
-			event = "lj-fuel:client:buyCanMenu",
+			event = "ps-fuel:client:buyCanMenu",
 			icon = "fas fa-burn",
 			label = "Mua can xăng",
 		},
 		{
 			type = "client",
-			event = "lj-fuel:client:refuelCanMenu",
+			event = "ps-fuel:client:refuelCanMenu",
 			icon = "fas fa-gas-pump",
 			label = "Lấy xăng vào can",
 		},

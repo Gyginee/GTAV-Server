@@ -12,14 +12,14 @@ AddEventHandler("QBCore:Client:OnPlayerUnload", function()
 end)
 
 RegisterNetEvent("xt-vesinh:client:didai", function()
-    if QBCore.Functions.GetPlayerData().metadata['pee'] <= 20 then
+    if QBCore.Functions.GetPlayerData().metadata['pee'] >= 80 then
         QBCore.Functions.GetPlayerData(function(playerdata)
             if playerdata.charinfo.gender == 1 then
                 TriggerServerEvent('xt-vesinh:server:vesinh', GetPlayerPed(GetPlayerFromServerId(PlayerId())), 'di-dai', 'female')
-                TriggerServerEvent("QBCore:Server:SetMetaData", "pee", 100)
+                TriggerServerEvent("QBCore:Server:SetMetaData", "pee", 0)
             else
                 TriggerServerEvent('xt-vesinh:server:vesinh', GetPlayerPed(GetPlayerFromServerId(PlayerId())), 'di-dai', 'male')
-                TriggerServerEvent("QBCore:Server:SetMetaData", "pee", 100)
+                TriggerServerEvent("QBCore:Server:SetMetaData", "pee", 0)
             end
         end)
     else
@@ -29,9 +29,9 @@ RegisterNetEvent("xt-vesinh:client:didai", function()
 end)
 
 RegisterNetEvent("xt-vesinh:client:diia", function()
-    if QBCore.Functions.GetPlayerData().metadata['poo'] <= 20 then
+    if QBCore.Functions.GetPlayerData().metadata['poo'] >= 80 then
         TriggerServerEvent('xt-vesinh:server:vesinh', GetPlayerPed(GetPlayerFromServerId(PlayerId())), 'di-ia')
-        TriggerServerEvent("QBCore:Server:SetMetaData", "poo", 100)
+        TriggerServerEvent("QBCore:Server:SetMetaData", "poo", 0)
     else
         exports['xt-notify']:Alert("HỆ THỐNG", "Bạn chưa buồn ỉa", 5000, 'warning')
     end

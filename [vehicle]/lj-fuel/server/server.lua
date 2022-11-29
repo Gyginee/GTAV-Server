@@ -11,7 +11,7 @@ end
 
 -- Server Events
 
-RegisterNetEvent("lj-fuel:server:OpenMenu", function (amount, inGasStation)
+RegisterNetEvent("ps-fuel:server:OpenMenu", function (amount, inGasStation)
 	local src = source
 	if not src then return end
 	local player = QBCore.Functions.GetPlayer(src)
@@ -24,7 +24,7 @@ RegisterNetEvent("lj-fuel:server:OpenMenu", function (amount, inGasStation)
 				header = 'Pê trô li mít tựt',
 				txt = 'Tổng tiền : $'..total..' cả thuế.' ,
 				params = {
-					event = "lj-fuel:client:RefuelVehicle",
+					event = "ps-fuel:client:RefuelVehicle",
 					args = total,
 				}
 			},
@@ -36,7 +36,7 @@ RegisterNetEvent("lj-fuel:server:OpenMenu", function (amount, inGasStation)
 					header = 'Pê trô li mít tựt',
 					txt = 'Tổng tiền : $'..total..' cả thuế.' ,
 					params = {
-					event = "lj-fuel:client:RefuelVehicle",
+					event = "ps-fuel:client:RefuelVehicle",
 					args = total,
 				}
 			},
@@ -44,7 +44,7 @@ RegisterNetEvent("lj-fuel:server:OpenMenu", function (amount, inGasStation)
 	end
 end)
 
-RegisterNetEvent("lj-fuel:server:PayForFuel", function (amount)
+RegisterNetEvent("ps-fuel:server:PayForFuel", function (amount)
 	local src = source
 	if not src then return end
 	local player = QBCore.Functions.GetPlayer(src)

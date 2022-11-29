@@ -366,7 +366,7 @@ end
 function spawnCarJob(car)
         QBCore.Functions.SpawnVehicle(Config.Car, function(veh)
             vehicle = veh
-            exports['lj-fuel']:SetFuel(veh, 100.0)
+            exports['ps-fuel']:SetFuel(veh, 100.0)
             SetVehicleNumberPlateText(vehicle, Config.Plate..math.random(1000,9999))
             exports['xt-vehiclekeys']:SetVehicleKey(GetVehicleNumberPlateText(veh), true)
             SetEntityHeading(veh, 79.89)

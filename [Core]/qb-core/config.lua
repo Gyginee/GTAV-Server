@@ -12,11 +12,11 @@ QBConfig.Money.PayCheckTimeOut = 10 -- The time in minutes that it will give the
 QBConfig.Money.PayCheckSociety = false -- If true paycheck will come from the society account that the player is employed at, requires qb-bossmenu
 
 QBConfig.Player = {}
-QBConfig.Player.MaxWeight = 100000 -- Max weight a player can carry (currently 55kg, written in grams)
+QBConfig.Player.MaxWeight = 50000 -- Max weight a player can carry (currently 55kg, written in grams)
 QBConfig.Player.MaxInvSlots = 41 -- Max inventory slots for a player
 QBConfig.Player.HungerRate = 4.2 -- Rate at which hunger goes down.
 QBConfig.Player.ThirstRate = 3.8 -- Rate at which thirst goes down.
-QBConfig.Player.PeeRate = 3.8 -- Rate at which thirst goes down.
+QBConfig.Player.PeeRate = 3.2 -- Rate at which thirst goes down.
 QBConfig.Player.PooRate = 2 -- Rate at which thirst goes down.
 QBConfig.Player.CleanRate = 1 -- Rate at which thirst goes down.
 QBConfig.Player.Bloodtypes = {

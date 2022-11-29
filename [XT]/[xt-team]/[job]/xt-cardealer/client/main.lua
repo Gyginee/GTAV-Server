@@ -276,7 +276,7 @@ RegisterNetEvent('xt-cardealer:client:TestDrive', function()
     if laithu == false then
         if noSpace(plate) == "XEBAN" then
             SetVehicleNumberPlateText(veh, "XETEST"..tostring(math.random(000, 999)))
-            exports['lj-fuel']:SetFuel(veh, 100.0)
+            exports['ps-fuel']:SetFuel(veh, 100.0)
             exports['xt-vehiclekeys']:SetVehicleKey(QBCore.Functions.GetPlate(veh), true)
             SetVehicleEngineOn(veh, true, true)
             FreezeEntityPosition(veh, false)

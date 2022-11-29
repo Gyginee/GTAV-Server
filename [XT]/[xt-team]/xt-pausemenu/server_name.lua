@@ -6,7 +6,7 @@ function SetData()
 end
 	local name = GetPlayerName(PlayerId())
 	local id = GetPlayerServerId(PlayerId())
-	Citizen.InvokeNative(GetHashKey("ADD_TEXT_ENTRY"), 'FE_THDR_GTAO', "~o~X Team~s~ | Discord :  | ID: "..id.."")
+	Citizen.InvokeNative(GetHashKey("ADD_TEXT_ENTRY"), 'FE_THDR_GTAO', "~o~X Server~s~ | Discord :  | ID: "..id.."")
 end
 
 Citizen.CreateThread(function() 

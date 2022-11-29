@@ -173,7 +173,7 @@ RegisterNetEvent('QBCore:UpdatePlayer', function()
         Player.Functions.SetMetaData('pee', newPee)
         Player.Functions.SetMetaData('poo', newPoo)
         Player.Functions.SetMetaData('hunger', newHunger)
-        TriggerClientEvent('hud:client:UpdateNeeds', src, newHunger, newThirst,  newPoo, newPee)
+        TriggerClientEvent('hud:client:UpdateNeeds', src, newHunger, newThirst, newPee, newPoo)
         Player.Functions.Save()
     end
 end)
