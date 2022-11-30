@@ -18,7 +18,7 @@ local function GetClosestPlayer()
     local closestPlayer = -1
     local coords = GetEntityCoords(PlayerPedId())
 
-    for i=1, #closestPlayers, 1 do
+    for i = 1, #closestPlayers, 1 do
         if closestPlayers[i] ~= PlayerId() then
             local pos = GetEntityCoords(GetPlayerPed(closestPlayers[i]))
             local distance = #(pos - coords)
@@ -28,8 +28,8 @@ local function GetClosestPlayer()
                 closestDistance = distance
             end
         end
-	end
-	return closestPlayer, closestDistance
+    end
+    return closestPlayer, closestDistance
 end
 
 local function DrawText3D(x, y, z, text)
@@ -40,14 +40,14 @@ local function DrawText3D(x, y, z, text)
     SetTextEntry("STRING")
     SetTextCentre(true)
     AddTextComponentString(text)
-    SetDrawOrigin(x,y,z, 0)
+    SetDrawOrigin(x, y, z, 0)
     DrawText(0.0, 0.0)
 end
 
 function TakeOutVehicle(vehicleInfo)
     local coords = Config.Locations["vehicle"][currentGarage]
     QBCore.Functions.SpawnVehicle(vehicleInfo, function(veh)
-        SetVehicleNumberPlateText(veh, "AMBU"..tostring(math.random(1000, 9999)))
+        SetVehicleNumberPlateText(veh, "AMBU" .. tostring(math.random(1000, 9999)))
         SetEntityHeading(veh, coords.w)
         exports['ps-fuel']:SetFuel(veh, 100.0)
         TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
@@ -69,7 +69,7 @@ function MenuGarage()
 
     local authorizedVehicles = Config.AuthorizedVehicles[QBCore.Functions.GetPlayerData().job.grade.level]
     for veh, label in pairs(authorizedVehicles) do
-        vehicleMenu[#vehicleMenu+1] = {
+        vehicleMenu[#vehicleMenu + 1] = {
             header = label,
             txt = "",
             params = {
@@ -80,7 +80,7 @@ function MenuGarage()
             }
         }
     end
-    vehicleMenu[#vehicleMenu+1] = {
+    vehicleMenu[#vehicleMenu + 1] = {
         header = '⬅ ĐÓNG MENU',
         txt = "",
         params = {
@@ -150,23 +150,25 @@ RegisterNetEvent('xt-benhvien:client:CheckStatus', function()
             if result then
                 for k, v in pairs(result) do
                     if k ~= "BLEED" and k ~= "WEAPONWOUNDS" then
-                        statusChecks[#statusChecks+1] = {bone = Config.BoneIndexes[k], label = v.label .." (".. Config.WoundStates[v.severity] ..")"}
+                        statusChecks[#statusChecks + 1] = { bone = Config.BoneIndexes[k],
+                            label = v.label .. " (" .. Config.WoundStates[v.severity] .. ")" }
                     elseif result["WEAPONWOUNDS"] then
                         for k, v in pairs(result["WEAPONWOUNDS"]) do
                             TriggerEvent('chat:addMessage', {
-                                color = { 255, 0, 0},
+                                color = { 255, 0, 0 },
                                 multiline = false,
-                                args = {"Tình trạng", WeaponDamageList[v]}
+                                args = { "Tình trạng", WeaponDamageList[v] }
                             })
                         end
                     elseif result["BLEED"] > 0 then
                         TriggerEvent('chat:addMessage', {
-                            color = { 255, 0, 0},
+                            color = { 255, 0, 0 },
                             multiline = false,
-                            args = {"Tình trạng", "là :"..Config.BleedingStates[v].label}
+                            args = { "Tình trạng", "là :" .. Config.BleedingStates[v].label }
                         })
                     else
-                        exports['xt-notify']:Alert("THÔNG BÁO", "Bệnh nhân hoàn toàn khoẻ mạnh", 5000, 'success')
+                        exports['xt-notify']:Alert("THÔNG BÁO", "Bệnh nhân hoàn toàn khoẻ mạnh", 5000,
+                            'success')
                     end
                 end
                 isStatusChecking = true
@@ -208,7 +210,8 @@ RegisterNetEvent('xt-benhvien:client:RevivePlayer', function()
                 exports['xt-notify']:Alert("THÔNG BÁO", "Không có ai ở bên cạnh bạn", 5000, 'error')
             end
         else
-            exports['xt-notify']:Alert("THÔNG BÁO", "Bạn không có "..QBCore.Shared.Items['firstaid'].label, 5000, 'error')
+            exports['xt-notify']:Alert("THÔNG BÁO", "Bạn không có " .. QBCore.Shared.Items['firstaid'].label, 5000
+                , 'error')
         end
     end, 'firstaid')
 end)
@@ -243,37 +246,43 @@ RegisterNetEvent('xt-benhvien:client:TreatWounds', function()
                 exports['xt-notify']:Alert("THÔNG BÁO", "Không có ai ở bên cạnh bạn", 5000, 'error')
             end
         else
-            exports['xt-notify']:Alert("THÔNG BÁO", "Bạn không có "..QBCore.Shared.Items['bandage'].label, 5000, 'error')
+            exports['xt-notify']:Alert("THÔNG BÁO", "Bạn không có " .. QBCore.Shared.Items['bandage'].label, 5000,
+                'error')
         end
     end, 'bandage')
 end)
 RegisterNetEvent('xt-benhvien:client:duty', function()
-    if PlayerJob.name =="ambulance" then
+    if PlayerJob.name == "ambulance" then
         onDuty = not onDuty
         TriggerServerEvent("QBCore:ToggleDuty")
         TriggerServerEvent("police:server:UpdateBlips")
     else
-        exports['xt-notify']:Alert("THÔNG BÁO", "Bạn không phải <span style='color:#fc1100'>nhân viên y tế</span>", 5000, 'error')
+        exports['xt-notify']:Alert("THÔNG BÁO", "Bạn không phải <span style='color:#fc1100'>nhân viên y tế</span>"
+            , 5000, 'error')
     end
 end)
 
 
 RegisterNetEvent('xt-benhvien:client:tdcn', function()
-    if PlayerJob.name =="ambulance" then
-        TriggerServerEvent("inventory:server:OpenInventory", "stash", "ambulancestash_"..QBCore.Functions.GetPlayerData().citizenid)
+    if PlayerJob.name == "ambulance" then
+        TriggerServerEvent("inventory:server:OpenInventory", "stash",
+            "ambulancestash_" .. QBCore.Functions.GetPlayerData().citizenid)
     else
-        exports['xt-notify']:Alert("THÔNG BÁO", "Bạn không phải <span style='color:#fc1100'>nhân viên y tế</span>", 5000, 'error')
+        exports['xt-notify']:Alert("THÔNG BÁO", "Bạn không phải <span style='color:#fc1100'>nhân viên y tế</span>"
+            , 5000, 'error')
     end
 end)
 RegisterNetEvent('xt-benhvien:client:tuthuoc', function()
-    if PlayerJob.name =="ambulance" then
+    if PlayerJob.name == "ambulance" then
         if onDuty then
             TriggerServerEvent("inventory:server:OpenInventory", "shop", "hospital", Config.Items)
         else
-            exports['xt-notify']:Alert("THÔNG BÁO", "Bạn không trong <span style='color:#fc1100'>ca làm</span>", 5000, 'error')
+            exports['xt-notify']:Alert("THÔNG BÁO", "Bạn không trong <span style='color:#fc1100'>ca làm</span>",
+                5000, 'error')
         end
     else
-        exports['xt-notify']:Alert("THÔNG BÁO", "Bạn không phải <span style='color:#fc1100'>nhân viên y tế</span>", 5000, 'error')
+        exports['xt-notify']:Alert("THÔNG BÁO", "Bạn không phải <span style='color:#fc1100'>nhân viên y tế</span>"
+            , 5000, 'error')
     end
 end)
 RegisterNetEvent('xt-benhvien:client:lentang', function()
@@ -309,7 +318,7 @@ CreateThread(function()
         Wait(10)
         if isStatusChecking then
             for k, v in pairs(statusChecks) do
-                local x,y,z = table.unpack(GetPedBoneCoords(statusCheckPed, v.bone))
+                local x, y, z = table.unpack(GetPedBoneCoords(statusCheckPed, v.bone))
                 DrawText3D(x, y, z, v.label)
             end
         end
@@ -323,11 +332,11 @@ CreateThread(function()
     end
 end)
 
-RegisterNetEvent("xt-benhvien:client:VehicleMenuHeader", function (data)
+RegisterNetEvent("xt-benhvien:client:VehicleMenuHeader", function(data)
     local ped = PlayerPedId()
     local pos = GetEntityCoords(ped)
     local takeDist = Config.Locations['vehicle'][data]
-    takeDist = vector3(takeDist.x, takeDist.y,  takeDist.z)
+    takeDist = vector3(takeDist.x, takeDist.y, takeDist.z)
     if #(pos - takeDist) <= 15 then
         MenuGarage(data)
         currentGarage = data
@@ -340,14 +349,15 @@ CreateThread(function()
         if LocalPlayer.state.isLoggedIn then
             local ped = PlayerPedId()
             local pos = GetEntityCoords(ped)
-            if PlayerJob.name =="ambulance" then
+            if PlayerJob.name == "ambulance" then
 
                 for k, v in pairs(Config.Locations["helicopter"]) do
                     local dist = #(pos - vector3(v.x, v.y, v.z))
                     if dist < 7.5 then
                         if onDuty then
                             sleep = 5
-                            DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222, false, false, false, true, false, false, false)
+                            DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222,
+                                false, false, false, true, false, false, false)
                             if dist < 1.5 then
                                 if IsPedInAnyVehicle(ped, false) then
                                     DrawText3D(v.x, v.y, v.z, "Nhấn [~g~E~s~] - Cất máy bay")
@@ -360,7 +370,7 @@ CreateThread(function()
                                     else
                                         local coords = Config.Locations["helicopter"][k]
                                         QBCore.Functions.SpawnVehicle(Config.Helicopter, function(veh)
-                                            SetVehicleNumberPlateText(veh, "HELI"..tostring(math.random(1000, 9999)))
+                                            SetVehicleNumberPlateText(veh, "HELI" .. tostring(math.random(1000, 9999)))
                                             SetEntityHeading(veh, coords.w)
                                             SetVehicleLivery(veh, 1) -- Ambulance Livery
                                             exports['ps-fuel']:SetFuel(veh, 100.0)
@@ -374,7 +384,7 @@ CreateThread(function()
                         end
                     end
                 end
-                
+
             end
 
             local currentHospital = 1
@@ -383,129 +393,129 @@ CreateThread(function()
                 local dist = #(pos - vector3(v.x, v.y, v.z + 1))
                 if dist < 1.5 then
                     exports['qb-target']:AddCircleZone("bsveh", vector3(v.x, v.y, v.z), 2.0, {
-                        name="bsveh",
-                        debugPoly=false,
-                        useZ=true,
-                        }, {
-                            options = {
-                                {
-                                    type = "client",
-                                    action = function(entity)
-                                        TriggerEvent('xt-benhvien:client:VehicleMenuHeader', k)
-                                    end,
-                                    icon = "fa-solid fa-car",
-                                    label = "Gara bệnh viện (Xe công vụ)",
-                                },
-                                },
-                            distance = 2.0
-                        })
+                        name = "bsveh",
+                        debugPoly = false,
+                        useZ = true,
+                    }, {
+                        options = {
+                            {
+                                type = "client",
+                                action = function(entity)
+                                    TriggerEvent('xt-benhvien:client:VehicleMenuHeader', k)
+                                end,
+                                icon = "fa-solid fa-car",
+                                label = "Gara bệnh viện (Xe công vụ)",
+                            },
+                        },
+                        distance = 2.0
+                    })
                 end
             end
             for k, v in pairs(Config.Locations["checking"]) do
                 local dist = #(pos - vector3(v.x, v.y, v.z))
                 if dist < 1.5 then
-                  
+
                     exports['qb-target']:AddCircleZone("nhapvien", vector3(v.x, v.y, v.z), 2.0, {
-                        name="nhapvien",
-                        debugPoly=false,
-                        useZ=true,
-                        }, {
-                            options = {
-                                {
-                                    type = "client",
-                                    event = "xt-benhvien:client:dangky",
-                                    icon = "fa-solid fa-file-invoice-dollar",
-                                    label = "Đăng kí chữa bệnh",
-                                },
-                                },
-                            distance = 2.0
-                        })
+                        name = "nhapvien",
+                        debugPoly = false,
+                        useZ = true,
+                    }, {
+                        options = {
+                            {
+                                type = "client",
+                                event = "xt-benhvien:client:dangky",
+                                icon = "fa-solid fa-file-invoice-dollar",
+                                label = "Đăng kí chữa bệnh",
+                            },
+                        },
+                        distance = 2.0
+                    })
                 end
             end
             for k, v in pairs(Config.Locations["duty"]) do
                 local dist = #(pos - vector3(v.x, v.y, v.z + 1))
                 if dist < 1.5 then
                     exports['qb-target']:AddCircleZone("duty", vector3(v.x, v.y, v.z), 2.0, {
-                        name="duty",
-                        debugPoly=false,
-                        useZ=true,
-                        }, {
-                            options = {
-                                {
-                                    type = "client",
-                                    event = "xt-benhvien:client:duty",
-                                    icon = "fa-solid fa-user-check",
-                                    label = "Vào/Kết thúc ca làm",
-                                },
-                                },
-                            distance = 2.0
-                        })
+                        name = "duty",
+                        debugPoly = false,
+                        useZ = true,
+                    }, {
+                        options = {
+                            {
+                                type = "client",
+                                event = "xt-benhvien:client:duty",
+                                icon = "fa-solid fa-user-check",
+                                label = "Vào/Kết thúc ca làm",
+                            },
+                        },
+                        distance = 2.0
+                    })
                 end
             end
             for k, v in pairs(Config.Locations["tang2"]) do
                 local dist = #(pos - vector3(v.x, v.y, v.z + 1))
                 if dist < 1.5 then
                     exports['qb-target']:AddCircleZone("tang2", vector3(v.x, v.y, v.z), 2.0, {
-                        name="tang2",
-                        debugPoly=false,
-                        useZ=true,
-                        }, {
-                            options = {
-                                {
-                                    type = "client",
-                                    event = "xt-benhvien:client:xuongtang",
-                                    icon = "fa-solid fa-elevator",
-                                    label = "Xuống sảnh chính",
-                                },
-                                },
-                            distance = 2.0
-                        })
+                        name = "tang2",
+                        debugPoly = false,
+                        useZ = true,
+                    }, {
+                        options = {
+                            {
+                                type = "client",
+                                event = "xt-benhvien:client:xuongtang",
+                                icon = "fa-solid fa-elevator",
+                                label = "Xuống sảnh chính",
+                            },
+                        },
+                        distance = 2.0
+                    })
                 end
             end
             for k, v in pairs(Config.Locations["tang1"]) do
                 local dist = #(pos - vector3(v.x, v.y, v.z + 1))
                 if dist < 1.5 then
                     exports['qb-target']:AddCircleZone("tang1", vector3(v.x, v.y, v.z), 2.0, {
-                        name="tang1",
-                        debugPoly=false,
-                        useZ=true,
-                        }, {
-                            options = {
-                                {
-                                    type = "client",
-                                    event = "xt-benhvien:client:lentang",
-                                    icon = "fa-solid fa-elevator",
-                                    label = "Đi lên tầng thượng",
-                                },
-                                },
-                            distance = 2.0
-                        })
+                        name = "tang1",
+                        debugPoly = false,
+                        useZ = true,
+                    }, {
+                        options = {
+                            {
+                                type = "client",
+                                event = "xt-benhvien:client:lentang",
+                                icon = "fa-solid fa-elevator",
+                                label = "Đi lên tầng thượng",
+                            },
+                        },
+                        distance = 2.0
+                    })
                 end
             end
             for k, v in pairs(Config.Locations["tudo"]) do
                 local dist = #(pos - vector3(v.x, v.y, v.z + 1))
                 if dist < 1.5 then
                     exports['qb-target']:AddCircleZone("tudo", vector3(v.x, v.y, v.z), 2.0, {
-                        name="tudo",
-                        debugPoly=false,
-                        useZ=true,
-                        }, {
-                            options = {
-                                {
-                                    type = "client",
-                                    event = "xt-benhvien:client:tdcn",
-                                    icon = "fa-solid fa-box",
-                                    label = "Tủ đồ cá nhân",
-                                },
-                                {
-                                    type = "client",
-                                    event = "xt-benhvien:client:tuthuoc",
-                                    icon = "fa-solid fa-pills",
-                                    label = "Tủ thuốc",
-                                },
-                                },
-                            distance = 2.0
-                        })
+                        name = "tudo",
+                        debugPoly = false,
+                        useZ = true,
+                    }, {
+                        options = {
+                            {
+                                type = "client",
+                                event = "xt-benhvien:client:tdcn",
+                                icon = "fa-solid fa-box",
+                                label = "Tủ đồ cá nhân",
+                            },
+                            {
+                                type = "client",
+                                event = "xt-benhvien:client:tuthuoc",
+                                icon = "fa-solid fa-pills",
+                                label = "Tủ thuốc",
+                            },
+                        },
+                        distance = 2.0
+                    })
                 end
             end
         end
@@ -524,19 +534,19 @@ CreateThread(function()
         if LocalPlayer.state.isLoggedIn then
             for k, v in pairs(Config.Locations["yta"]) do
                 local dist = #(pos - vector3(v.x, v.y, v.z))
-                if dist <= 25.0  then
+                if dist <= 25.0 then
                     sleep = 5
                     if not DoesEntityExist(yta) then
-                    RequestModel(ytaped)
-                    while not HasModelLoaded(ytaped) do
-                        Wait(10)
-                    end
-                    yta = CreatePed(26, ytaped, v.x, v.y, v.z, v.w, false, false)
-                    SetEntityHeading(yta, v.w)
-                    FreezeEntityPosition(yta, true)
-                    SetEntityInvincible(yta, true)
-                    SetBlockingOfNonTemporaryEvents(yta, true)
-                    TaskStartScenarioInPlace(yta, "WORLD_HUMAN_GUARD_STAND", 0, false)
+                        RequestModel(ytaped)
+                        while not HasModelLoaded(ytaped) do
+                            Wait(10)
+                        end
+                        yta = CreatePed(26, ytaped, v.x, v.y, v.z, v.w, false, false)
+                        SetEntityHeading(yta, v.w)
+                        FreezeEntityPosition(yta, true)
+                        SetEntityInvincible(yta, true)
+                        SetBlockingOfNonTemporaryEvents(yta, true)
+                        TaskStartScenarioInPlace(yta, "WORLD_HUMAN_GUARD_STAND", 0, false)
                     end
                 else
                     sleep = 1500
@@ -547,19 +557,19 @@ CreateThread(function()
             end
             for k, v in pairs(Config.Locations["baove"]) do
                 local dist = #(pos - vector3(v.x, v.y, v.z))
-                if dist <= 25.0  then
+                if dist <= 25.0 then
                     sleep = 5
                     if not DoesEntityExist(baove) then
-                    RequestModel(baoveped)
-                    while not HasModelLoaded(baoveped) do
-                        Wait(10)
-                    end
-                    baove = CreatePed(26, baoveped, v.x, v.y, v.z, v.w, false, false)
-                    SetEntityHeading(baove, v.w)
-                    FreezeEntityPosition(baove, true)
-                    SetEntityInvincible(baove, true)
-                    SetBlockingOfNonTemporaryEvents(baove, true)
-                    TaskStartScenarioInPlace(baove, "WORLD_HUMAN_COP_IDLES", 0, false)
+                        RequestModel(baoveped)
+                        while not HasModelLoaded(baoveped) do
+                            Wait(10)
+                        end
+                        baove = CreatePed(26, baoveped, v.x, v.y, v.z, v.w, false, false)
+                        SetEntityHeading(baove, v.w)
+                        FreezeEntityPosition(baove, true)
+                        SetEntityInvincible(baove, true)
+                        SetBlockingOfNonTemporaryEvents(baove, true)
+                        TaskStartScenarioInPlace(baove, "WORLD_HUMAN_COP_IDLES", 0, false)
                     end
                 else
                     sleep = 1500
@@ -570,5 +580,38 @@ CreateThread(function()
             end
         end
         Wait(sleep)
-	end
+    end
+end)
+
+CreateThread(function()
+    while true do
+        sleep = 1000
+        if LocalPlayer.state.isLoggedIn then
+            local ped = PlayerPedId()
+            local pos = GetEntityCoords(ped)
+            if PlayerJob.name == "ambulance" then
+                for k, v in pairs(Config.Locations["phuongtien"]) do
+                    local dist = #(pos - vector3(v.x, v.y, v.z))
+                    if dist < 7.5 then
+                        sleep = 5
+                        DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222,
+                            false, false, false, true, false, false, false)
+                        if dist < 1.5 then
+                            if IsPedInAnyVehicle(ped, false) then
+                                DrawText3D(v.x, v.y, v.z, "Nhấn [~g~E~s~] - Cất phương tiện")
+                                if IsControlJustReleased(0, 38) then
+                                    if IsPedInAnyVehicle(ped, false) then
+                                        QBCore.Functions.DeleteVehicle(GetVehiclePedIsIn(ped))
+                                    end
+                                end
+                            end
+
+                        end
+
+                    end
+                end
+            end
+            Wait(sleep)
+        end
+    end
 end)
