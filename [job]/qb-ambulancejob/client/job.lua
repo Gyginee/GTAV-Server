@@ -592,11 +592,11 @@ CreateThread(function()
             if PlayerJob.name == "ambulance" then
                 for k, v in pairs(Config.Locations["phuongtien"]) do
                     local dist = #(pos - vector3(v.x, v.y, v.z))
-                    if dist < 7.5 then
+                    if dist < 10.5 then
                         sleep = 5
                         DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222,
                             false, false, false, true, false, false, false)
-                        if dist < 3.5 then
+                        if dist < 5.5 then
                             if IsPedInAnyVehicle(ped, false) then
                                 DrawText3D(v.x, v.y, v.z, "Nhấn [~g~E~s~] - Cất phương tiện")
                                 if IsControlJustReleased(0, 38) then

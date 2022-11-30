@@ -44,7 +44,7 @@ RegisterNetEvent("xt-vongquay:client:quay", function(data)
 	SendNUIMessage({
         type = "ui",
 		data = Config["hom"][data].list,
-		img = "/../../[qb]/lj-inventory/html/images",
+		img = Config['image_source'],
 		win = draw[random]
     })
 	Wait(9000)
@@ -53,7 +53,5 @@ RegisterNetEvent("xt-vongquay:client:quay", function(data)
 	elseif draw[random].money then
 		TriggerServerEvent('xt-vongquay:server:nhantien', draw[random].money)
 	end
-    --[[ if Config["broadcast"] then
-        TriggerServerEvent("mkbuss:boradcast", draw[random].tier)
-    end ]]
+   
 end)
