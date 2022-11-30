@@ -69,6 +69,29 @@ Config.Locations = {
 
 Config.Helicopter = "polmav"
 
+Config.AuthorizedVehicles = { -- Vehicles players can use based on their ambulance job grade level
+	-- Grade 0
+	[0] = {
+		["ambulance"] = "Ambulance",
+	},
+	-- Grade 1
+	[1] = {
+		["ambulance"] = "Ambulance",
+
+	},
+	-- Grade 2
+	[2] = {
+		["ambulance"] = "Ambulance",
+	},
+	-- Grade 3
+	[3] = {
+		["ambulance"] = "Ambulance",
+	},
+	-- Grade 4
+	[4] = {
+		["ambulance"] = "Ambulance",
+	}
+}
 Config.Items = {
     label = "Tủ thuốc",
     slots = 30,
