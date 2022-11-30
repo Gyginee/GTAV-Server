@@ -1075,7 +1075,7 @@ Config = {
 
 },	
 	Workbenches = {																									-- ten cac vat pham de can tao																								-- nếu thêm 1 ví trí,. điểm cuối cùng k cần dấu phẩy ở đuôi! các cái trên cần
-		{coords = vector3(101.12, 6616.56, 32.44), jobs = {},grades = {}, blip = true, recipes = {'tool_bucket', 'tool_axe', 'tool_scissor_2', 'tool_fishingrod', 'tool_drill_2', 'glass_bottle','plastic-bag','screwdriverset','lockpick'}, radius = 2.0, name = "Chế tạo dụng cụ" },
+		{coords = vector3(101.12, 6616.56, 32.44), jobs = {},grades = {}, blip = false, recipes = {'tool_bucket', 'tool_axe', 'tool_scissor_2', 'tool_fishingrod', 'tool_drill_2', 'glass_bottle','plastic-bag','screwdriverset','lockpick'}, radius = 2.0, name = "Chế tạo dụng cụ" },
 		{coords = vector3(-352.85, -130.17, 39.02), jobs = {'mechanic'},grades = {'1'}, blip = false, recipes = {'repairkit','advancedrepairkit','cleaningkit'}, radius = 2.0, name = "Chế tạo dụng cụ" },
 		--{coords = vector3(1692.57, 3585.1, 35.62), jobs = {},grades = {}, blip = false, recipes = {'lockpick', 'screwdriverset', 'electronickit', 'radio', 'rolling_paper'}, radius = 2.0, name = "Chế tạo dụng cụ" },
 		{coords = vector3(-584.13, -938.89, 23.89), jobs = {'doxe'},grades = {}, blip = false, recipes = {'giay-dan', 'son'}, radius = 2.0, name = "Chế tạo dụng cụ" },
