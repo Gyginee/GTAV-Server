@@ -615,15 +615,31 @@ local function EMSHelicopter(k)
         end
     end)
 end
+
+RegisterNetEvent('xt-benhvien:client:layxe', function()
+    if PlayerJob.name == "ambulance" and onDuty then
+       
+        EMSVehicle(k)
+    end
+end)
+
 CreateThread(function()
     for k, v in pairs(Config.Locations["vehicle"]) do
-        local boxZone = BoxZone:Create(vector3(vector3(v.x, v.y, v.z)), 5, 5, {
-            name = "vehicle" .. k,
-            debugPoly = false,
-            heading = 70,
-            minZ = v.z - 2,
-            maxZ = v.z + 2,
-        })
+        exports['qb-target']:AddCircleZone("xe", vector3(v.x, v.y, v.z), 2.0, {
+            name="xe",
+            debugPoly=false,
+            useZ=true,
+            }, {
+                options = {
+                    {
+                        type = "client",
+                        event = "xt-benhvien:client:layxe",
+                        icon = "fa-solid fa-car",
+                        label = "Lấy phương tiện",
+                    },
+                    },
+                distance = 2.0
+            })
         boxZone:onPlayerInOut(function(isPointInside)
             if isPointInside and PlayerJob.name == "ambulance" and onDuty then
                 DrawText3D(v.x, v.y, v.z + 1.9, '~g~E~w~ - Phương tiện')
