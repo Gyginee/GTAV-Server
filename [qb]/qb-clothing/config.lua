@@ -533,7 +533,7 @@ Config.ClothingRooms = {
     [1] = { requiredJob = "police", coords = vector3(460.99, -999.05, 30.69),
         cameraLocation = vector4(457.69, -998.06, 30.69, 247.04) },
     [2] = { requiredJob = "ambulance", coords = vector3(305.6, -598.0, 43.28),
-        cameraLocation = vector4(307.93, -601.88, 43.28, 24.85) }, -- Right double door in Hospital Map that is on QBCore GitHub
+        cameraLocation = vector4(306.13, -599.88, 43.28, 5.61) }, -- Right double door in Hospital Map that is on QBCore GitHub
     [3] = { requiredJob = "police", coords = vector3(314.76, 671.78, 14.73),
         cameraLocation = vector4(317.62, 671.86, 14.73, 91.53) },
     [4] = { requiredJob = "ambulance", coords = vector3(338.70, 659.61, 14.71),
