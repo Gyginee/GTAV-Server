@@ -73,37 +73,37 @@ Config.AuthorizedVehicles = { -- Vehicles players can use based on their ambulan
 	-- Grade 0
 	[0] = {
 		["ambulance"] = "Ambulance",
-		["emsair"] = "Emsair",
 		["emsa"] = "Emsa",
+		
 		["EMSC"] = "EMSC",
 	},
 	-- Grade 1
 	[1] = {
 		["ambulance"] = "Ambulance",
-        ["emsair"] = "Emsair",
-		["emsa"] = "Emsa",
+        ["emsa"] = "Emsa",
+		
 		["EMSC"] = "EMSC",
 
 	},
 	-- Grade 2
 	[2] = {
 		["ambulance"] = "Ambulance",
-        ["emsair"] = "Emsair",
-		["emsa"] = "Emsa",
+        ["emsa"] = "Emsa",
+		
 		["EMSC"] = "EMSC",
 	},
 	-- Grade 3
 	[3] = {
 		["ambulance"] = "Ambulance",
-        ["emsair"] = "Emsair",
-		["emsa"] = "Emsa",
+        ["emsa"] = "Emsa",
+		
 		["EMSC"] = "EMSC",
 	},
 	-- Grade 4
 	[4] = {
 		["ambulance"] = "Ambulance",
-        ["emsair"] = "Emsair",
-		["emsa"] = "Emsa",
+        ["emsa"] = "Emsa",
+		
 		["EMSC"] = "EMSC",
 	}
 }

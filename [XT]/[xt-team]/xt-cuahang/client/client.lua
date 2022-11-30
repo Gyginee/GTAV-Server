@@ -18,7 +18,7 @@ end)
 
 -- Code
 Citizen.CreateThread(function()
-	for k, v in pairs(Config.Shops) do
+--[[ 	for k, v in pairs(Config.Shops) do
 		local blip = AddBlipForCoord(v['Coords']['X'],v['Coords']['Y'],v['Coords']['Z'])
 		SetBlipAsShortRange(blip, true)
 		SetBlipSprite(blip, 59)
@@ -28,7 +28,7 @@ Citizen.CreateThread(function()
 		BeginTextCommandSetBlipName('STRING')
 		AddTextComponentString(v['Name'])
 		EndTextCommandSetBlipName(blip)
-	end
+	end ]]
 end)
 
 CreateThread(function()
