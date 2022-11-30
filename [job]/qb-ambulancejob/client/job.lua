@@ -611,7 +611,8 @@ CreateThread(function()
                     end
                 end
             end
-            Wait(sleep)
+           
         end
+        Wait(sleep)
     end
 end)
