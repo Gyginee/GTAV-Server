@@ -572,3 +572,95 @@ CreateThread(function()
         Wait(sleep)
 	end
 end)
+local CheckVehicle = false
+
+local function EMSVehicle(k)
+    CheckVehicle = true
+    CreateThread(function()
+        while CheckVehicle do
+            if IsControlJustPressed(0, 38) then
+                exports['qb-core']:KeyPressed(38)
+                CheckVehicle = false
+                local ped = PlayerPedId()
+                if IsPedInAnyVehicle(ped, false) then
+                    QBCore.Functions.DeleteVehicle(GetVehiclePedIsIn(ped))
+                else
+                    local currentVehicle = k
+                    MenuGarage(currentVehicle)
+                    currentGarage = currentVehicle
+                end
+            end
+            Wait(1)
+        end
+    end)
+end
+
+local CheckHeli = false
+local function EMSHelicopter(k)
+    CheckHeli = true
+    CreateThread(function()
+        while CheckHeli do
+            if IsControlJustPressed(0, 38) then
+                exports['qb-core']:KeyPressed(38)
+                CheckHeli = false
+                local ped = PlayerPedId()
+                if IsPedInAnyVehicle(ped, false) then
+                    QBCore.Functions.DeleteVehicle(GetVehiclePedIsIn(ped))
+                else
+                    local currentHelictoper = k
+                    local coords = Config.Locations["helicopter"][currentHelictoper]
+                    QBCore.Functions.TriggerCallback('QBCore:Server:SpawnVehicle', function(netId)
+                        local veh = NetToVeh(netId)
+                        SetVehicleNumberPlateText(veh, 'XGYN' .. tostring(math.random(1000, 9999)))
+                        SetEntityHeading(veh, coords.w)
+                        SetVehicleLivery(veh, 1) -- Ambulance Livery
+                        exports['ps-fuel']:SetFuel(veh, 100.0)
+                        TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
+                        TriggerEvent("xt-vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
+                        SetVehicleEngineOn(veh, true, true)
+                    end, Config.Helicopter, coords, true)
+                end
+            end
+            Wait(1)
+        end
+    end)
+end
+CreateThread(function()
+    for k, v in pairs(Config.Locations["vehicle"]) do
+        local boxZone = BoxZone:Create(vector3(vector3(v.x, v.y, v.z)), 5, 5, {
+            name = "vehicle" .. k,
+            debugPoly = false,
+            heading = 70,
+            minZ = v.z - 2,
+            maxZ = v.z + 2,
+        })
+        boxZone:onPlayerInOut(function(isPointInside)
+            if isPointInside and PlayerJob.name == "ambulance" and onDuty then
+                DrawText3D(v.x, v.y, v.z + 1.9, '~g~E~w~ - Phương tiện')
+                EMSVehicle(k)
+            else
+                CheckVehicle = false
+                
+            end
+        end)
+    end
+
+    for k, v in pairs(Config.Locations["helicopter"]) do
+        local boxZone = BoxZone:Create(vector3(vector3(v.x, v.y, v.z)), 5, 5, {
+            name = "helicopter" .. k,
+            debugPoly = false,
+            heading = 70,
+            minZ = v.z - 2,
+            maxZ = v.z + 2,
+        })
+        boxZone:onPlayerInOut(function(isPointInside)
+            if isPointInside and PlayerJob.name == "ambulance" and onDuty then
+                DrawText3D(v.x, v.y, v.z + 1.9, '~g~E~w~ - Trực thăng')
+                EMSHelicopter(k)
+            else
+                CheckHeli = false
+                
+            end
+        end)
+    end
+end)
