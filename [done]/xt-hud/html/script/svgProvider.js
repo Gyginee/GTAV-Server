@@ -1,6 +1,8 @@
-let loaded = false
+let loaded = false;
 function onLoad(hudColors, currentHud) {
-    app.AddSvg('textHudHealthInner', `
+  app.AddSvg(
+    "textHudHealthInner",
+    `
     <svg class="textHudInner" id="radialHealth" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_223" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -12,9 +14,12 @@ function onLoad(hudColors, currentHud) {
         <path class="fillNone" id="healthBorder" transform="translate(125,125)" />
         <path fill="url('#paint0_radial_172_223')" id="healthLoader" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudHealthInner2', `
+  app.AddSvg(
+    "textHudHealthInner2",
+    `
     <svg class="textHudInner" id="radialHealth2" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_2277" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -26,8 +31,11 @@ function onLoad(hudColors, currentHud) {
         <path class="fillNone" id="healthBorder2" transform="translate(125,125)" />
         <path fill="url('#paint0_radial_172_2277')" id="healthLoader2" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
-    app.AddSvg('textHudHealthInner3', `
+`
+  );
+  app.AddSvg(
+    "textHudHealthInner3",
+    `
     <svg class="textHudInner" id="radialHealth3" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_2278" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -39,8 +47,11 @@ function onLoad(hudColors, currentHud) {
         <path class="fillNone" id="healthBorder3" transform="translate(125,125)" />
         <path fill="url('#paint0_radial_172_2278')" id="healthLoader3" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
-    app.AddSvg('textHudOxyInner', `
+`
+  );
+  app.AddSvg(
+    "textHudOxyInner",
+    `
     <svg class="textHudInner" id="radialOxy" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_2256" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -52,8 +63,11 @@ function onLoad(hudColors, currentHud) {
         <path class="fillNone" id="oxyBorder" transform="translate(125,125)" />
         <path fill="url('#paint0_radial_172_2256')" id="oxyLoader" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
-    app.AddSvg('textHudOxyRadial', `
+`
+  );
+  app.AddSvg(
+    "textHudOxyRadial",
+    `
 
         <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             class="textHudRadial">
@@ -64,8 +78,11 @@ function onLoad(hudColors, currentHud) {
                 stroke-linejoin="miter" fill="none"
                 d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
         </svg>
-`)
-    app.AddSvg('textHudOxyInner2', `
+`
+  );
+  app.AddSvg(
+    "textHudOxyInner2",
+    `
     <svg class="textHudInner" id="radialOxy2" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_22242424256" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -77,8 +94,11 @@ function onLoad(hudColors, currentHud) {
         <path class="fillNone" id="oxyBorder2" transform="translate(125,125)" />
         <path fill="url('#paint0_radial_172_22242424256')" id="oxyLoader2" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
-    app.AddSvg('textHudOxyRadial2', `
+`
+  );
+  app.AddSvg(
+    "textHudOxyRadial2",
+    `
 
         <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             class="textHudRadial">
@@ -89,9 +109,12 @@ function onLoad(hudColors, currentHud) {
                 stroke-linejoin="miter" fill="none"
                 d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
         </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudOxyInner3', `
+  app.AddSvg(
+    "textHudOxyInner3",
+    `
     <svg class="textHudInner" id="radialOxy3" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_222424244353256" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -103,9 +126,12 @@ function onLoad(hudColors, currentHud) {
         <path class="fillNone" id="oxyBorder3" transform="translate(125,125)" />
         <path fill="url('#paint0_radial_172_222424244353256')" id="oxyLoader3" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudOxyRadial3', `
+  app.AddSvg(
+    "textHudOxyRadial3",
+    `
 
         <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             class="textHudRadial">
@@ -116,18 +142,21 @@ function onLoad(hudColors, currentHud) {
                 stroke-linejoin="miter" fill="none"
                 d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
         </svg>
-`)
+`
+  );
 
-
-    app.AddSvg('oxyIcon', `
+  app.AddSvg(
+    "oxyIcon",
+    `
 
     <img class="textHudIcon" src = "./assets/images/lungs-white.png">
 
-`)
+`
+  );
 
-
-
-    app.AddSvg('textHudHealthRadial', `
+  app.AddSvg(
+    "textHudHealthRadial",
+    `
 
         <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             class="textHudRadial">
@@ -138,9 +167,12 @@ function onLoad(hudColors, currentHud) {
                 stroke-linejoin="miter" fill="none"
                 d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
         </svg>
-`)
+`
+  );
 
-    app.AddSvg('colorPickerIcon', `
+  app.AddSvg(
+    "colorPickerIcon",
+    `
 <svg class=" colorpickerIcon" width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_1182_122)">
 <path d="M6.72709 0.273255C6.36283 -0.0910122 5.77224 -0.0911176 5.40775 0.273134L5.15595 0.524931C5.02069 0.389687 4.80161 0.389687 4.66637 0.524931C4.53109 0.66007 4.53109 0.879393 4.66637 1.01453L4.74794 1.09615L2.02787 3.81642H2.02763L1.08345 4.76069C1.00841 4.83574 0.964169 4.93611 0.95941 5.04212L0.95715 5.09249C0.95715 5.09273 0.95715 5.09294 0.95715 5.09318L0.919058 5.94727C0.917491 5.98693 0.932358 6.02537 0.960313 6.05343C0.986687 6.07993 1.02275 6.09467 1.06018 6.09467C1.06221 6.09467 1.06423 6.09467 1.0665 6.09455L1.51934 6.07451H1.51958L1.79549 6.06223L1.92078 6.05672C2.0594 6.05051 2.19106 5.99257 2.28934 5.89441L5.91782 2.26603L5.98569 2.33388C6.05332 2.40148 6.14192 2.4353 6.23048 2.4353C6.31906 2.4353 6.40768 2.40148 6.47529 2.33388C6.61055 2.19873 6.61055 1.97941 6.47529 1.84428L6.72707 1.59247C7.09135 1.22822 7.09135 0.637627 6.72709 0.273255ZM4.10686 3.4241L2.83259 3.66449L4.91116 1.58583L5.42828 2.10271L4.10686 3.4241Z" fill="white"/>
@@ -153,9 +185,12 @@ function onLoad(hudColors, currentHud) {
 </defs>
 </svg>
 
-`)
+`
+  );
 
-    app.AddSvg('textHudHealthRadial2', `
+  app.AddSvg(
+    "textHudHealthRadial2",
+    `
 
         <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             class="textHudRadial">
@@ -166,10 +201,12 @@ function onLoad(hudColors, currentHud) {
                 stroke-linejoin="miter" fill="none"
                 d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
         </svg>
-`)
+`
+  );
 
-
-    app.AddSvg('textHudHealthRadial3', `
+  app.AddSvg(
+    "textHudHealthRadial3",
+    `
 
         <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             class="textHudRadial">
@@ -180,8 +217,11 @@ function onLoad(hudColors, currentHud) {
                 stroke-linejoin="miter" fill="none"
                 d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
         </svg>
-`)
-    app.AddSvg('ammo-hud', `
+`
+  );
+  app.AddSvg(
+    "ammo-hud",
+    `
 <svg width = "52" height = "38" viewBox = "0 0 52 38" fill = "none" xmlns = "http://www.w3.org/2000/svg" xmlns: xlink = "http://www.w3.org/1999/xlink" >
 <g filter="url(#filter0_d_343_248)">
 <rect x="13" y="9" width="12" height="12" fill="url(#pattern0)"/>
@@ -212,29 +252,38 @@ function onLoad(hudColors, currentHud) {
 </defs>
 </svg>
 
-`)
+`
+  );
 
-
-
-
-    app.AddSvg('textHudHeartIcon', `
+  app.AddSvg(
+    "textHudHeartIcon",
+    `
     <svg class="textHudIcon" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M10.9914 0.875427C9.54396 0.875555 8.20906 1.6688 7.5 2.95043C6.79094 1.6688 5.45604 0.875555 4.00862 0.875427C1.79481 0.875427 0 2.96095 0 5.20934C0 10.8566 7.5 14.7965 7.5 14.7965C7.5 14.7965 15 10.8566 15 5.20934C15 2.96095 13.2052 0.875427 10.9914 0.875427Z" fill="white"/>
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudHeartIcon2', `
+  app.AddSvg(
+    "textHudHeartIcon2",
+    `
     <svg class="textHudIcon" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M10.9914 0.875427C9.54396 0.875555 8.20906 1.6688 7.5 2.95043C6.79094 1.6688 5.45604 0.875555 4.00862 0.875427C1.79481 0.875427 0 2.96095 0 5.20934C0 10.8566 7.5 14.7965 7.5 14.7965C7.5 14.7965 15 10.8566 15 5.20934C15 2.96095 13.2052 0.875427 10.9914 0.875427Z" fill="white"/>
     </svg>
-`)
-    app.AddSvg('textHudHeartIconText', `
+`
+  );
+  app.AddSvg(
+    "textHudHeartIconText",
+    `
     <svg class="textHudIcon" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M10.9914 0.875427C9.54396 0.875555 8.20906 1.6688 7.5 2.95043C6.79094 1.6688 5.45604 0.875555 4.00862 0.875427C1.79481 0.875427 0 2.96095 0 5.20934C0 10.8566 7.5 14.7965 7.5 14.7965C7.5 14.7965 15 10.8566 15 5.20934C15 2.96095 13.2052 0.875427 10.9914 0.875427Z" fill="${hudColors[currentHud].health}"/>
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudWaterInner', `
+  app.AddSvg(
+    "textHudWaterInner",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_224" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -246,9 +295,12 @@ function onLoad(hudColors, currentHud) {
         <path class="fillNone" id="waterBorder" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_224')" id="waterLoader" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudWaterInner2', `
+  app.AddSvg(
+    "textHudWaterInner2",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_22777" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -260,9 +312,12 @@ function onLoad(hudColors, currentHud) {
         <path class="fillNone" id="waterBorder2" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_22777')" id="waterLoader2" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudWaterInner3', `
+  app.AddSvg(
+    "textHudWaterInner3",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_22773553537" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -274,10 +329,12 @@ function onLoad(hudColors, currentHud) {
         <path class="fillNone" id="waterBorder3" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_22773553537')" id="waterLoader3" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-
-    app.AddSvg('textHudWaterhRadial', `
+  app.AddSvg(
+    "textHudWaterhRadial",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         class="textHudRadial">
@@ -288,8 +345,11 @@ function onLoad(hudColors, currentHud) {
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
-    app.AddSvg('textHudWaterRadial2', `
+`
+  );
+  app.AddSvg(
+    "textHudWaterRadial2",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         class="textHudRadial">
@@ -300,9 +360,12 @@ function onLoad(hudColors, currentHud) {
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudWaterRadial3', `
+  app.AddSvg(
+    "textHudWaterRadial3",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         class="textHudRadial">
@@ -313,22 +376,29 @@ function onLoad(hudColors, currentHud) {
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
-    app.AddSvg('textHudWaterIcon', `
+`
+  );
+  app.AddSvg(
+    "textHudWaterIcon",
+    `
     <svg class="textHudIcon" width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M7.44429 1.28143C7.10811 0.902064 6.78794 0.553045 6.49978 0.234375C6.21163 0.56822 5.89146 0.917239 5.55528 1.28143C3.5222 3.49695 0.720703 6.57742 0.720703 8.97504C0.720703 10.4925 1.36104 11.8582 2.41761 12.8446C3.45816 13.831 4.89893 14.4531 6.49978 14.4531C8.10064 14.4531 9.54141 13.8461 10.582 12.8446C11.6225 11.8582 12.2789 10.4773 12.2789 8.97504C12.2789 6.57742 9.47737 3.51212 7.44429 1.28143Z" fill="white"/>
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudWaterIconText', `
+  app.AddSvg(
+    "textHudWaterIconText",
+    `
     <svg class="textHudIcon" width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M7.44429 1.28143C7.10811 0.902064 6.78794 0.553045 6.49978 0.234375C6.21163 0.56822 5.89146 0.917239 5.55528 1.28143C3.5222 3.49695 0.720703 6.57742 0.720703 8.97504C0.720703 10.4925 1.36104 11.8582 2.41761 12.8446C3.45816 13.831 4.89893 14.4531 6.49978 14.4531C8.10064 14.4531 9.54141 13.8461 10.582 12.8446C11.6225 11.8582 12.2789 10.4773 12.2789 8.97504C12.2789 6.57742 9.47737 3.51212 7.44429 1.28143Z" fill="${hudColors[currentHud].thirst}"/>
     </svg>
-`)
+`
+  );
 
-
-
-    app.AddSvg('textHudMicrophonelow', `
+  app.AddSvg(
+    "textHudMicrophonelow",
+    `
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect opacity="0.6" width="48" height="48" rx="6" fill="url(#paint0_linear_54_1636)"/>
 <g clip-path="url(#clip0_54_1636)">
@@ -346,9 +416,12 @@ function onLoad(hudColors, currentHud) {
 </defs>
 </svg>
 
-`)
+`
+  );
 
-    app.AddSvg('textHudMicrophonemid', `
+  app.AddSvg(
+    "textHudMicrophonemid",
+    `
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.6">
 <rect width="48" height="48" rx="6" fill="url(#paint0_linear_54_1751)"/>
@@ -379,9 +452,12 @@ function onLoad(hudColors, currentHud) {
 </svg>
 
 
-`)
+`
+  );
 
-    app.AddSvg('textHudMicrophonehigh', `
+  app.AddSvg(
+    "textHudMicrophonehigh",
+    `
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect opacity="0.6" width="48" height="48" rx="6" fill="url(#paint0_linear_54_1761)"/>
 <g clip-path="url(#clip0_54_1761)">
@@ -398,8 +474,11 @@ function onLoad(hudColors, currentHud) {
 </clipPath>
 </defs>
 </svg>
-`)
-    app.AddSvg('textHudMicrophone2', `
+`
+  );
+  app.AddSvg(
+    "textHudMicrophone2",
+    `
 <svg class="textHudMicIcon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 
 <rect  opacity="0.6" width="48" height="48" rx="6" fill="#141B1F"/>
@@ -414,8 +493,11 @@ function onLoad(hudColors, currentHud) {
 </defs>
 </svg>
 
-`)
-    app.AddSvg('textHudTextMicrophonelow', `
+`
+  );
+  app.AddSvg(
+    "textHudTextMicrophonelow",
+    `
 <svg  class="textHudMicIcon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect opacity="0.6" width="48" height="48" rx="6" fill="url(#paint0_linear_54_1637)"/>
 <g clip-path="url(#clip0_54_1637)">
@@ -433,9 +515,12 @@ function onLoad(hudColors, currentHud) {
 </defs>
 </svg>
 
-`)
+`
+  );
 
-    app.AddSvg('textHudTextMicrophonemid', `
+  app.AddSvg(
+    "textHudTextMicrophonemid",
+    `
 <svg  class="textHudMicIcon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.6">
 <rect width="48" height="48" rx="6" fill="url(#paint0_linear_54_1752)"/>
@@ -466,8 +551,11 @@ function onLoad(hudColors, currentHud) {
 </svg>
 
 
-`)
-    app.AddSvg('textHudMicrophone', `
+`
+  );
+  app.AddSvg(
+    "textHudMicrophone",
+    `
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 
 <rect opacity="0.6" width="48" height="48" rx="6" fill="#141B1F"/>
@@ -481,23 +569,31 @@ function onLoad(hudColors, currentHud) {
 </clipPath>
 </defs>
 </svg>
-`)
-    app.AddSvg('bank-icon', `
+`
+  );
+  app.AddSvg(
+    "bank-icon",
+    `
 
 <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 1.66667C0 1.22464 0.171205 0.800716 0.475951 0.488155C0.780698 0.175595 1.19402 0 1.625 0H11.375C11.806 0 12.2193 0.175595 12.524 0.488155C12.8288 0.800716 13 1.22464 13 1.66667V5.83333H0V1.66667ZM9.34375 2.5C9.23601 2.5 9.13267 2.5439 9.05649 2.62204C8.9803 2.70018 8.9375 2.80616 8.9375 2.91667V3.75C8.9375 3.86051 8.9803 3.96649 9.05649 4.04463C9.13267 4.12277 9.23601 4.16667 9.34375 4.16667H10.9688C11.0765 4.16667 11.1798 4.12277 11.256 4.04463C11.3322 3.96649 11.375 3.86051 11.375 3.75V2.91667C11.375 2.80616 11.3322 2.70018 11.256 2.62204C11.1798 2.5439 11.0765 2.5 10.9688 2.5H9.34375ZM0 7.5V8.33333C0 8.77536 0.171205 9.19928 0.475951 9.51184C0.780698 9.8244 1.19402 10 1.625 10H11.375C11.806 10 12.2193 9.8244 12.524 9.51184C12.8288 9.19928 13 8.77536 13 8.33333V7.5H0Z" fill="black"/>
 </svg>
-`)
+`
+  );
 
-    app.AddSvg('money-icon', `
+  app.AddSvg(
+    "money-icon",
+    `
 <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M2 0C1.46957 0 0.960859 0.210714 0.585786 0.585786C0.210714 0.960859 0 1.46957 0 2V6C0 6.53043 0.210714 7.03914 0.585786 7.41421C0.960859 7.78929 1.46957 8 2 8V2H12C12 1.46957 11.7893 0.960859 11.4142 0.585786C11.0391 0.210714 10.5304 0 10 0H2ZM4 6C4 5.46957 4.21071 4.96086 4.58579 4.58579C4.96086 4.21071 5.46957 4 6 4H14C14.5304 4 15.0391 4.21071 15.4142 4.58579C15.7893 4.96086 16 5.46957 16 6V10C16 10.5304 15.7893 11.0391 15.4142 11.4142C15.0391 11.7893 14.5304 12 14 12H6C5.46957 12 4.96086 11.7893 4.58579 11.4142C4.21071 11.0391 4 10.5304 4 10V6ZM10 10C10.5304 10 11.0391 9.78929 11.4142 9.41421C11.7893 9.03914 12 8.53043 12 8C12 7.46957 11.7893 6.96086 11.4142 6.58579C11.0391 6.21071 10.5304 6 10 6C9.46957 6 8.96086 6.21071 8.58579 6.58579C8.21071 6.96086 8 7.46957 8 8C8 8.53043 8.21071 9.03914 8.58579 9.41421C8.96086 9.78929 9.46957 10 10 10Z" fill="black"/>
 </svg>
 
-`)
+`
+  );
 
-
-    app.AddSvg('mic-muted', `
+  app.AddSvg(
+    "mic-muted",
+    `
 <svg class="textHudMicIcon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect opacity="0.6" width="48" height="48" rx="6" fill="#141B1F"/>
 <path d="M31.5 23.9116C31.5 23.4116 31.1176 23.0293 30.6176 23.0293C30.1176 23.0293 29.7353 23.4116 29.7353 23.9116C29.7353 27.3528 26.9412 30.1469 23.5 30.1469C20.0588 30.1469 17.2647 27.3528 17.2647 23.9116C17.2647 23.4116 16.8824 23.0293 16.3824 23.0293C15.8824 23.0293 15.5 23.4116 15.5 23.9116C15.5 27.9999 18.5588 31.4411 22.6176 31.8822V34.2352H19.4118C18.9118 34.2352 18.5294 34.6175 18.5294 35.1175C18.5294 35.6175 18.9118 35.9999 19.4118 35.9999H27.5882C28.0882 35.9999 28.4706 35.6175 28.4706 35.1175C28.4706 34.6175 28.0882 34.2352 27.5882 34.2352H24.3824V31.8822C28.4412 31.4411 31.5 27.9999 31.5 23.9116Z" fill="#FF4848"/>
@@ -506,9 +602,12 @@ function onLoad(hudColors, currentHud) {
 </svg>
 
 
-`)
+`
+  );
 
-    app.AddSvg('textHudTextMicrophonehigh', `
+  app.AddSvg(
+    "textHudTextMicrophonehigh",
+    `
 <svg class="textHudMicIcon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect opacity="0.6" width="48" height="48" rx="6" fill="url(#paint0_linear_54_1763)"/>
 <g clip-path="url(#clip0_54_1763)">
@@ -525,11 +624,12 @@ function onLoad(hudColors, currentHud) {
 </clipPath>
 </defs>
 </svg>
-`)
+`
+  );
 
-
-
-    app.AddSvg('textHudArmorInner', `
+  app.AddSvg(
+    "textHudArmorInner",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_225" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -541,9 +641,12 @@ function onLoad(hudColors, currentHud) {
         <path class="fillNone" id="armorBorder" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_225')" id="armorLoader" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudArmorRadial', `
+  app.AddSvg(
+    "textHudArmorRadial",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         class="textHudRadial">
@@ -554,8 +657,11 @@ function onLoad(hudColors, currentHud) {
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
-    app.AddSvg('textHudArmorInner2', `
+`
+  );
+  app.AddSvg(
+    "textHudArmorInner2",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_222242424225" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -567,9 +673,12 @@ function onLoad(hudColors, currentHud) {
         <path class="fillNone" id="armorBorder2" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_222242424225')" id="armorLoader2" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudArmorRadial2', `
+  app.AddSvg(
+    "textHudArmorRadial2",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         class="textHudRadial">
@@ -580,9 +689,12 @@ function onLoad(hudColors, currentHud) {
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudArmorInner3', `
+  app.AddSvg(
+    "textHudArmorInner3",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_22222224242424225" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -594,9 +706,12 @@ function onLoad(hudColors, currentHud) {
         <path class="fillNone" id="armorBorder3" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_22222224242424225')" id="armorLoader3" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudArmorRadial3', `
+  app.AddSvg(
+    "textHudArmorRadial3",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         class="textHudRadial">
@@ -607,20 +722,29 @@ function onLoad(hudColors, currentHud) {
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
-    app.AddSvg('textHudArmorIcon', `
+`
+  );
+  app.AddSvg(
+    "textHudArmorIcon",
+    `
     <svg class="textHudIcon" width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8.07427 11.0602H12.0133C12.1169 11.0602 12.2009 10.9749 12.2009 10.8697V10.4755C12.2009 10.3703 12.1169 10.285 12.0133 10.285H8.07424C7.84803 10.285 7.65338 10.1084 7.64276 9.87892C7.63138 9.6339 7.82363 9.43164 8.06239 9.43164H12.0133C12.1169 9.43164 12.2009 9.34633 12.2009 9.2411V8.88261C12.2009 8.77738 12.1169 8.69207 12.0133 8.69207H8.07424C7.84803 8.69207 7.65338 8.51553 7.64276 8.28604C7.63138 8.04102 7.82363 7.83876 8.06239 7.83876H12.0133C12.1169 7.83876 12.2009 7.75345 12.2009 7.64822V6.36352L12.1559 6.27293C11.7505 5.45612 11.5314 4.54095 11.5221 3.62635C11.5129 2.71174 11.7135 1.79214 12.1022 0.967212C12.1794 0.803668 12.1664 0.613752 12.0669 0.462132C11.9714 0.316502 11.8058 0.234375 11.6336 0.234375H10.9391C10.8499 0.234375 10.7729 0.298333 10.7552 0.387216C10.6799 0.76543 10.6702 0.812923 10.6684 0.821496C10.4514 1.83012 9.95774 2.77042 9.27839 3.46913C8.48099 4.28929 7.48355 4.72278 6.3939 4.72278C5.29726 4.72278 4.2907 4.28966 3.48313 3.47024C2.78508 2.76199 2.2857 1.78964 2.11299 0.802561C2.11053 0.788537 2.10709 0.764777 2.057 0.398884C2.04415 0.304692 1.96485 0.234375 1.87118 0.234375H1.07857C0.936576 0.234375 0.797686 0.289391 0.700611 0.394625C0.561805 0.545082 0.526083 0.759014 0.602222 0.943792L0.728003 1.24893C1.35422 2.76786 1.33698 4.50263 0.68071 6.00841L0.521024 6.37479V7.66607C0.521024 7.77131 0.605018 7.85661 0.708633 7.85661H4.63967C4.86588 7.85661 5.06054 8.03316 5.07116 8.26265C5.08253 8.50766 4.89029 8.70993 4.65153 8.70993H0.708605C0.60499 8.70993 0.520996 8.79524 0.520996 8.90047V9.25895C0.520996 9.36419 0.60499 9.44949 0.708605 9.44949H4.63965C4.86586 9.44949 5.06051 9.62604 5.07113 9.85553C5.08251 10.1005 4.89026 10.3028 4.6515 10.3028H0.708605C0.60499 10.3028 0.520996 10.3881 0.520996 10.4934V10.8875C0.520996 10.9928 0.60499 11.0781 0.708605 11.0781H4.63965C4.86586 11.0781 5.06051 11.2546 5.07113 11.4841C5.08251 11.7291 4.89026 11.9314 4.6515 11.9314H0.708605C0.60499 11.9314 0.520996 12.0167 0.520996 12.1219V12.9198C0.520996 13.4159 0.84238 13.8529 1.31079 13.9936L1.51097 14.0538C3.09757 14.5307 4.72892 14.769 6.36091 14.769C7.99246 14.769 9.62462 14.5306 11.2108 14.0538L11.4111 13.9936C11.8795 13.8528 12.2009 13.4159 12.2009 12.9198V12.1041C12.2009 11.9988 12.1169 11.9135 12.0133 11.9135H8.06239V11.9135C7.82363 11.9135 7.63141 11.7112 7.64276 11.4662C7.65341 11.2368 7.84806 11.0602 8.07427 11.0602Z" fill="white"/>
     </svg>
-`)
-    app.AddSvg('textHudArmorIconText', `
+`
+  );
+  app.AddSvg(
+    "textHudArmorIconText",
+    `
     <svg class="textHudIcon" width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8.07427 11.0602H12.0133C12.1169 11.0602 12.2009 10.9749 12.2009 10.8697V10.4755C12.2009 10.3703 12.1169 10.285 12.0133 10.285H8.07424C7.84803 10.285 7.65338 10.1084 7.64276 9.87892C7.63138 9.6339 7.82363 9.43164 8.06239 9.43164H12.0133C12.1169 9.43164 12.2009 9.34633 12.2009 9.2411V8.88261C12.2009 8.77738 12.1169 8.69207 12.0133 8.69207H8.07424C7.84803 8.69207 7.65338 8.51553 7.64276 8.28604C7.63138 8.04102 7.82363 7.83876 8.06239 7.83876H12.0133C12.1169 7.83876 12.2009 7.75345 12.2009 7.64822V6.36352L12.1559 6.27293C11.7505 5.45612 11.5314 4.54095 11.5221 3.62635C11.5129 2.71174 11.7135 1.79214 12.1022 0.967212C12.1794 0.803668 12.1664 0.613752 12.0669 0.462132C11.9714 0.316502 11.8058 0.234375 11.6336 0.234375H10.9391C10.8499 0.234375 10.7729 0.298333 10.7552 0.387216C10.6799 0.76543 10.6702 0.812923 10.6684 0.821496C10.4514 1.83012 9.95774 2.77042 9.27839 3.46913C8.48099 4.28929 7.48355 4.72278 6.3939 4.72278C5.29726 4.72278 4.2907 4.28966 3.48313 3.47024C2.78508 2.76199 2.2857 1.78964 2.11299 0.802561C2.11053 0.788537 2.10709 0.764777 2.057 0.398884C2.04415 0.304692 1.96485 0.234375 1.87118 0.234375H1.07857C0.936576 0.234375 0.797686 0.289391 0.700611 0.394625C0.561805 0.545082 0.526083 0.759014 0.602222 0.943792L0.728003 1.24893C1.35422 2.76786 1.33698 4.50263 0.68071 6.00841L0.521024 6.37479V7.66607C0.521024 7.77131 0.605018 7.85661 0.708633 7.85661H4.63967C4.86588 7.85661 5.06054 8.03316 5.07116 8.26265C5.08253 8.50766 4.89029 8.70993 4.65153 8.70993H0.708605C0.60499 8.70993 0.520996 8.79524 0.520996 8.90047V9.25895C0.520996 9.36419 0.60499 9.44949 0.708605 9.44949H4.63965C4.86586 9.44949 5.06051 9.62604 5.07113 9.85553C5.08251 10.1005 4.89026 10.3028 4.6515 10.3028H0.708605C0.60499 10.3028 0.520996 10.3881 0.520996 10.4934V10.8875C0.520996 10.9928 0.60499 11.0781 0.708605 11.0781H4.63965C4.86586 11.0781 5.06051 11.2546 5.07113 11.4841C5.08251 11.7291 4.89026 11.9314 4.6515 11.9314H0.708605C0.60499 11.9314 0.520996 12.0167 0.520996 12.1219V12.9198C0.520996 13.4159 0.84238 13.8529 1.31079 13.9936L1.51097 14.0538C3.09757 14.5307 4.72892 14.769 6.36091 14.769C7.99246 14.769 9.62462 14.5306 11.2108 14.0538L11.4111 13.9936C11.8795 13.8528 12.2009 13.4159 12.2009 12.9198V12.1041C12.2009 11.9988 12.1169 11.9135 12.0133 11.9135H8.06239V11.9135C7.82363 11.9135 7.63141 11.7112 7.64276 11.4662C7.65341 11.2368 7.84806 11.0602 8.07427 11.0602Z" fill="${hudColors[currentHud].armor}"/>
     </svg>
-`)
+`
+  );
 
-//hunger-------------------------------------------------------------------
-    app.AddSvg('textHudHungerInner', `
+  //hunger-------------------------------------------------------------------
+  app.AddSvg(
+    "textHudHungerInner",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_226" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -632,9 +756,12 @@ function onLoad(hudColors, currentHud) {
         <path class="fillNone" id="hungerBorder" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_226')" id="hungerLoader" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudHungerRadial', `
+  app.AddSvg(
+    "textHudHungerRadial",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.15" stroke-width="30.07px"
@@ -644,10 +771,12 @@ function onLoad(hudColors, currentHud) {
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
+`
+  );
 
-
-    app.AddSvg('textHudHungerInner2', `
+  app.AddSvg(
+    "textHudHungerInner2",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_17224242425225_226" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -659,9 +788,12 @@ function onLoad(hudColors, currentHud) {
         <path class="fillNone" id="hungerBorder2" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_17224242425225_226')" id="hungerLoader2" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudHungerRadial2', `
+  app.AddSvg(
+    "textHudHungerRadial2",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.15" stroke-width="30.07px"
@@ -671,8 +803,11 @@ function onLoad(hudColors, currentHud) {
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
-    app.AddSvg('textHudHungerInner3', `
+`
+  );
+  app.AddSvg(
+    "textHudHungerInner3",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_1722424242242425225_226" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -684,9 +819,12 @@ function onLoad(hudColors, currentHud) {
         <path class="fillNone" id="hungerBorder3" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_1722424242242425225_226')" id="hungerLoader3" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudHungerRadial3', `
+  app.AddSvg(
+    "textHudHungerRadial3",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.15" stroke-width="30.07px"
@@ -696,10 +834,12 @@ function onLoad(hudColors, currentHud) {
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
+`
+  );
 
-
-    app.AddSvg('textHudHungerIcon', `
+  app.AddSvg(
+    "textHudHungerIcon",
+    `
 <svg class="textHudIcon"  width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_172_191)">
 <path d="M14.6097 12.3238L8.72796 6.74834L1.85609 0.234375H1.31905L1.20939 0.498505C0.919963 1.19567 0.796301 1.90872 0.851819 2.56047C0.9151 3.3034 1.21284 3.94661 1.71291 4.42063L7.07746 9.50578L7.78504 8.83505L12.7446 14.0919C13.2379 14.5596 14.0871 14.5873 14.6097 14.0919C15.124 13.6044 15.124 12.8113 14.6097 12.3238Z" fill="white"/>
@@ -713,9 +853,12 @@ function onLoad(hudColors, currentHud) {
 </defs>
 </svg>
 
-`)
+`
+  );
 
-    app.AddSvg('textHudHungerIconText', `
+  app.AddSvg(
+    "textHudHungerIconText",
+    `
 
 
 <svg class="textHudIcon"  width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -730,11 +873,14 @@ function onLoad(hudColors, currentHud) {
 </clipPath>
 </defs>
 </svg>
-`)
-//-------------------------------------------------------------------
+`
+  );
+  //-------------------------------------------------------------------
 
-//pee-------------------------------------------------------------------
-app.AddSvg('textHudPeeInner', `
+  //pee-------------------------------------------------------------------
+  app.AddSvg(
+    "textHudPeeInner",
+    `
 <svg class="textHudInner" viewbox="0 0 250 250">
     <defs>
         <radialGradient id="paint0_radial_17" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -746,9 +892,12 @@ app.AddSvg('textHudPeeInner', `
     <path class="fillNone" id="peeBorder" transform="translate(125,125)" />
     <path  fill="url('#paint0_radial_17')" id="peeLoader" transform="translate(125,125) scale(.84)" />
 </svg>
-`)
+`
+  );
 
-app.AddSvg('textHudPeeRadial', `
+  app.AddSvg(
+    "textHudPeeRadial",
+    `
 
 <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
     <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.15" stroke-width="30.07px"
@@ -758,10 +907,12 @@ app.AddSvg('textHudPeeRadial', `
         stroke-linejoin="miter" fill="none"
         d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
 </svg>
-`)
+`
+  );
 
-
-app.AddSvg('textHudPeeInner2', `
+  app.AddSvg(
+    "textHudPeeInner2",
+    `
 <svg class="textHudInner" viewbox="0 0 250 250">
     <defs>
         <radialGradient id="paint0_radial_17224242425" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -773,9 +924,12 @@ app.AddSvg('textHudPeeInner2', `
     <path class="fillNone" id="peeBorder2" transform="translate(125,125)" />
     <path  fill="url('#paint0_radial_17224242425')" id="peeLoader2" transform="translate(125,125) scale(.84)" />
 </svg>
-`)
+`
+  );
 
-app.AddSvg('textHudPeeRadial2', `
+  app.AddSvg(
+    "textHudPeeRadial2",
+    `
 
 <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
     <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.15" stroke-width="30.07px"
@@ -785,8 +939,11 @@ app.AddSvg('textHudPeeRadial2', `
         stroke-linejoin="miter" fill="none"
         d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
 </svg>
-`)
-app.AddSvg('textHudPeeInner3', `
+`
+  );
+  app.AddSvg(
+    "textHudPeeInner3",
+    `
 <svg class="textHudInner" viewbox="0 0 250 250">
     <defs>
         <radialGradient id="paint0_radial_1722424242242425" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -798,9 +955,12 @@ app.AddSvg('textHudPeeInner3', `
     <path class="fillNone" id="peeBorder3" transform="translate(125,125)" />
     <path  fill="url('#paint0_radial_1722424242242425')" id="peeLoader3" transform="translate(125,125) scale(.84)" />
 </svg>
-`)
+`
+  );
 
-app.AddSvg('textHudPeeRadial3', `
+  app.AddSvg(
+    "textHudPeeRadial3",
+    `
 
 <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
     <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.15" stroke-width="30.07px"
@@ -810,40 +970,30 @@ app.AddSvg('textHudPeeRadial3', `
         stroke-linejoin="miter" fill="none"
         d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
 </svg>
-`)
+`
+  );
 
-
-app.AddSvg('textHudPeeIcon', `
+  app.AddSvg(
+    "textHudPeeIcon",
+    `
 
 <svg class="textHudIcon"  width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_pee)">
-<path d="M154.644,191.75H24.394c-0.782,0-1.518-0.365-1.991-0.988c-0.473-0.622-0.627-1.43-0.417-2.183l10.063-36.14
-c-8.884-10.501-13.978-24.109-14.501-38.689h-4.545c-1.381,0-2.5-1.119-2.5-2.5v-1.75c0-5.928,4.822-10.75,10.75-10.75h86.642
-c5.38,0,9.85,3.973,10.629,9.139c1.33-0.683,2.46-1.75,3.253-3.121c0.663-1.146,1.013-2.556,1.013-4.078V28.25h-1.959
-c-1.381,0-2.5-1.119-2.5-2.5V18.5c0-4.273,3.477-7.75,7.75-7.75h16.377c-0.351-0.891-0.543-1.861-0.543-2.875
-c0-4.343,3.533-7.875,7.875-7.875s7.875,3.532,7.875,7.875c0,1.014-0.193,1.984-0.543,2.875h16.377c4.273,0,7.75,3.477,7.75,7.75
-v7.25c0,1.381-1.119,2.5-2.5,2.5h-1.959v65.454c0,7.462-2.346,13.939-7.384,20.384c-0.783,1.003-1.689,2.126-2.586,3.238
-c-0.745,0.923-1.484,1.838-2.138,2.667c-0.664,0.842-1.362,1.692-2.079,2.565c-4.971,6.049-10.604,12.905-11.972,26.197
-c-1.145,11.132,6.148,38.89,6.222,39.168l0.184,0.6c0.23,0.758,0.088,1.579-0.384,2.216
-C156.18,191.375,155.435,191.75,154.644,191.75z M27.685,186.75h123.708c-1.833-7.34-6.773-28.429-5.736-38.506
-c1.521-14.79,7.931-22.592,13.082-28.86c0.695-0.846,1.373-1.67,2.017-2.486c0.665-0.843,1.415-1.773,2.172-2.711
-c0.88-1.092,1.77-2.193,2.539-3.177c4.314-5.52,6.323-11.019,6.323-17.306V28.25h-44v72.439c0,2.4-0.583,4.677-1.685,6.582
-c-1.943,3.359-5.279,5.649-9.015,6.294c-0.292,0.119-0.611,0.185-0.945,0.185H22.55c0.535,13.835,5.505,26.682,14.133,36.404
-c0.003,0.004,0.007,0.009,0.011,0.013c0.011,0.012,0.021,0.024,0.031,0.036c0.181,0.211,12.283,14.047,35.418,14.047
-c1.381,0,2.5,1.119,2.5,2.5s-1.119,2.5-2.5,2.5c-18.693,0-30.708-8.08-36.05-12.699L27.685,186.75z M20.002,108.75h93.593
-c-0.369-2.817-2.785-5-5.701-5H21.252c-2.917,0-5.333,2.183-5.701,5H20.002z M174.289,23.25h1.959V18.5
-c0-1.517-1.233-2.75-2.75-2.75H126.08c-1.516,0-2.75,1.233-2.75,2.75v4.75H174.289z M149.789,5c-1.585,0-2.875,1.29-2.875,2.875
-s1.29,2.875,2.875,2.875s2.875-1.29,2.875-2.875S151.375,5,149.789,5z" fill="white"/>
-</g>
-<defs>
-<clipPath id="clip0_pee">
-<rect width="15" height="14.2188" fill="white" transform="translate(0 0.234375)"/>
-</clipPath>
-</defs>
+<g>
+		<path d="M223.314,0h-57.187c-4.284,0-7.761,3.479-7.761,7.761c0,4.282,3.477,7.761,7.761,7.761h3.192
+			c-0.527,1.349-0.84,2.805-0.84,4.345v82.458c0,6.686-5.428,12.109-12.106,12.109H32.468c-6.686,0-12.244,5.489-10.762,12.011
+			c4.072,17.894,16.559,30.481,25.611,37.538c5.271,4.098,10.055,12.125,10.055,18.812v49.868c0,1.549,0.315,3.006,0.84,4.35H38.288
+			c-4.277,0-7.756,3.486-7.756,7.766c0,4.28,3.479,7.757,7.756,7.757H188.11c4.284,0,7.757-3.472,7.757-7.757
+			c0-4.284-3.473-7.766-7.757-7.766h-14.893c0.522-1.344,0.845-2.801,0.845-4.35v-54.287c0-6.684,5.283-13.479,11.383-16.214
+			c9.834-4.415,23.821-12.909,32.768-27.881c3.426-5.748,5.102-16.382,5.102-23.072V19.872c0-1.54-0.317-2.996-0.841-4.345h0.841
+			c4.284,0,7.757-3.479,7.757-7.762C231.071,3.479,227.599,0,223.314,0z" fill="white"/>
+	</g>
 </svg>
-`)
+`
+  );
 
-app.AddSvg('textHudPeeIconText', `
+  app.AddSvg(
+    "textHudPeeIconText",
+    `
 
 
 <svg class="textHudIcon"  width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -858,12 +1008,14 @@ app.AddSvg('textHudPeeIconText', `
 </clipPath>
 </defs>
 </svg>
-`)
-//-------------------------------------------------------------------
+`
+  );
+  //-------------------------------------------------------------------
 
-
-//poo-------------------------------------------------------------------
-app.AddSvg('textHudPooInner', `
+  //poo-------------------------------------------------------------------
+  app.AddSvg(
+    "textHudPooInner",
+    `
 <svg class="textHudInner" viewbox="0 0 250 250">
     <defs>
         <radialGradient id="paint0_radial_172" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -875,9 +1027,12 @@ app.AddSvg('textHudPooInner', `
     <path class="fillNone" id="pooBorder" transform="translate(125,125)" />
     <path  fill="url('#paint0_radial_172')" id="pooLoader" transform="translate(125,125) scale(.84)" />
 </svg>
-`)
+`
+  );
 
-app.AddSvg('textHudPooRadial', `
+  app.AddSvg(
+    "textHudPooRadial",
+    `
 
 <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
     <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.15" stroke-width="30.07px"
@@ -887,10 +1042,12 @@ app.AddSvg('textHudPooRadial', `
         stroke-linejoin="miter" fill="none"
         d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
 </svg>
-`)
+`
+  );
 
-
-app.AddSvg('textHudPooInner2', `
+  app.AddSvg(
+    "textHudPooInner2",
+    `
 <svg class="textHudInner" viewbox="0 0 250 250">
     <defs>
         <radialGradient id="paint0_radial_17224242425225" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -902,9 +1059,12 @@ app.AddSvg('textHudPooInner2', `
     <path class="fillNone" id="pooBorder2" transform="translate(125,125)" />
     <path  fill="url('#paint0_radial_17224242425225')" id="pooLoader2" transform="translate(125,125) scale(.84)" />
 </svg>
-`)
+`
+  );
 
-app.AddSvg('textHudPooRadial2', `
+  app.AddSvg(
+    "textHudPooRadial2",
+    `
 
 <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
     <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.15" stroke-width="30.07px"
@@ -914,8 +1074,11 @@ app.AddSvg('textHudPooRadial2', `
         stroke-linejoin="miter" fill="none"
         d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
 </svg>
-`)
-app.AddSvg('textHudPooInner3', `
+`
+  );
+  app.AddSvg(
+    "textHudPooInner3",
+    `
 <svg class="textHudInner" viewbox="0 0 250 250">
     <defs>
         <radialGradient id="paint0_radial_1722424242242425225" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -927,9 +1090,12 @@ app.AddSvg('textHudPooInner3', `
     <path class="fillNone" id="pooBorder3" transform="translate(125,125)" />
     <path  fill="url('#paint0_radial_1722424242242425225')" id="pooLoader3" transform="translate(125,125) scale(.84)" />
 </svg>
-`)
+`
+  );
 
-app.AddSvg('textHudPooRadial3', `
+  app.AddSvg(
+    "textHudPooRadial3",
+    `
 
 <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
     <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.15" stroke-width="30.07px"
@@ -939,12 +1105,14 @@ app.AddSvg('textHudPooRadial3', `
         stroke-linejoin="miter" fill="none"
         d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
 </svg>
-`)
+`
+  );
 
-
-app.AddSvg('textHudPooIcon', `
+  app.AddSvg(
+    "textHudPooIcon",
+    `
 <svg class="textHudIcon"  width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_poo)">
+<g">
 <path d="M2.111,241.061C2.111,272.952,43.4,297,98.153,297c41.54,0,75.38-13.592,89.544-33.871
 c6.583-4.603,23.148-14.49,43.83-14.49c38.38,0,58.554-19.732,59.394-20.573c2.541-2.54,3.967-5.985,3.967-9.578V19.222
 c0-5.478-3.3-10.417-8.362-12.514c-5.061-2.095-10.886-0.939-14.761,2.936c-0.126,0.126-13.389,12.638-40.239,12.638
@@ -956,16 +1124,14 @@ c27.377,0,51.394-5.975,68.588-15.916v145.601C167.775,252.973,140.653,269.91,98.1
 c5.765-3.737,18.212-9.564,36.662-9.564c14.831,0,26.894-2.865,36.272-6.529v169.127c-6.251,3.737-17.798,9.66-36.272,9.66
 c-15.046,0-27.28,3.036-36.662,6.774V58.793V58.855z" fill="white"/>
 </g>
-<defs>
-<clipPath id="clip0_poo">
-<rect width="15" height="14.2188" fill="white" transform="translate(0 0.234375)"/>
-</clipPath>
-</defs>
 </svg>
 
-`)
+`
+  );
 
-app.AddSvg('textHudPooIconText', `
+  app.AddSvg(
+    "textHudPooIconText",
+    `
 
 
 <svg class="textHudIcon"  width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -980,11 +1146,13 @@ app.AddSvg('textHudPooIconText', `
 </clipPath>
 </defs>
 </svg>
-`)
-//-------------------------------------------------------------------
+`
+  );
+  //-------------------------------------------------------------------
 
-
-    app.AddSvg('textHudStaminaInner', `
+  app.AddSvg(
+    "textHudStaminaInner",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_227" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -996,9 +1164,12 @@ app.AddSvg('textHudPooIconText', `
         <path class="fillNone" id="staminaBorder" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_227')" id="staminaLoader" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudStaminaRadial', `
+  app.AddSvg(
+    "textHudStaminaRadial",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.25" stroke-width="30.07px"
@@ -1008,9 +1179,12 @@ app.AddSvg('textHudPooIconText', `
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudStaminaInner2', `
+  app.AddSvg(
+    "textHudStaminaInner2",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172242452525252_227" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -1022,9 +1196,12 @@ app.AddSvg('textHudPooIconText', `
         <path class="fillNone" id="staminaBorder2" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172242452525252_227')" id="staminaLoader2" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudStaminaRadial2', `
+  app.AddSvg(
+    "textHudStaminaRadial2",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.25" stroke-width="30.07px"
@@ -1034,9 +1211,12 @@ app.AddSvg('textHudPooIconText', `
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudStaminaInner3', `
+  app.AddSvg(
+    "textHudStaminaInner3",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172242452525252_227" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -1048,9 +1228,12 @@ app.AddSvg('textHudPooIconText', `
         <path class="fillNone" id="staminaBorder3" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172242452525252_227')" id="staminaLoader3" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudStaminaRadial3', `
+  app.AddSvg(
+    "textHudStaminaRadial3",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.25" stroke-width="30.07px"
@@ -1060,10 +1243,12 @@ app.AddSvg('textHudPooIconText', `
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
+`
+  );
 
-
-    app.AddSvg('textHudStaminaIcon', `
+  app.AddSvg(
+    "textHudStaminaIcon",
+    `
 <svg class="textHudIcon" width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path 
         fill-rule="evenodd" 
@@ -1071,8 +1256,11 @@ app.AddSvg('textHudPooIconText', `
         d="M9.94285 0.234957C9.18142 0.364707 8.59227 1.07772 8.59412 1.86718C8.59514 2.3047 8.7559 2.68791 9.07436 3.01197C9.73282 3.68197 10.7712 3.65839 11.392 2.95934C11.9753 2.30249 11.9513 1.33309 11.3364 0.707507C11.2233 0.592433 11.0624 0.46101 10.9789 0.415429C10.6948 0.260333 10.2493 0.18274 9.94285 0.234957ZM13.8556 2.15014C13.6638 2.22006 13.4805 2.36858 13.3916 2.52612C13.353 2.59442 13.1543 3.12107 12.9499 3.69644C12.7455 4.27181 12.5684 4.75296 12.5563 4.76567C12.5442 4.77834 12.2059 4.66667 11.8044 4.51747L11.0745 4.24619L10.8387 4.31425C10.6419 4.37101 10.5346 4.38198 10.1922 4.38039C9.83439 4.37875 9.74831 4.36823 9.52323 4.29865C8.94977 4.12134 8.47357 3.77289 8.15854 3.30016C8.04022 3.12259 8.03676 3.12023 7.73718 3.01212C7.09069 2.77884 6.74433 2.76542 5.38225 2.92093C4.356 3.0381 4.24575 3.06565 3.96761 3.27428C3.68343 3.48748 3.61609 3.61938 3.19424 4.7891C2.77194 5.9601 2.74323 6.08558 2.82887 6.3857C2.89343 6.61205 3.13822 6.87358 3.35617 6.94911C3.51798 7.00518 3.74582 7.0137 3.90191 6.96953C4.05264 6.92684 4.2622 6.78278 4.35617 6.65724C4.4048 6.59226 4.56072 6.20762 4.74163 5.70628C4.90869 5.2433 5.05513 4.85584 5.06707 4.84532C5.09013 4.82497 6.80411 4.65615 6.81748 4.67289C6.82182 4.67833 6.34732 6.02108 5.76307 7.65677L4.70074 10.6308L3.45759 10.6457L2.21441 10.6606L2.0499 10.743C1.26843 11.1341 1.27401 12.2667 2.05923 12.6362L2.24374 12.723L3.78139 12.7315C4.81656 12.7372 5.36979 12.7293 5.47432 12.7072C5.81657 12.6347 6.16888 12.3785 6.34169 12.0764C6.38273 12.0046 6.53193 11.6205 6.67324 11.2229L6.93014 10.4999L7.10932 10.5683C7.20787 10.6059 7.57557 10.7426 7.92642 10.872C8.27726 11.0014 8.56435 11.1215 8.56435 11.1388C8.56435 11.1561 8.32443 11.8357 8.03122 12.649L7.49806 14.1278L7.49594 14.4118C7.49401 14.6666 7.50225 14.7125 7.5764 14.8601C7.8687 15.4419 8.56517 15.6308 9.08146 15.2684C9.34649 15.0823 9.36951 15.0307 10.1066 12.9716C10.4846 11.9156 10.8082 10.9675 10.8258 10.8647C10.9084 10.3814 10.6592 9.81624 10.244 9.545C10.1671 9.49475 9.93259 9.39041 9.72288 9.31309C9.51317 9.23573 9.33103 9.16298 9.3181 9.15135C9.29733 9.1327 10.3924 6.00007 10.4382 5.94698C10.4482 5.93539 10.9074 6.09302 11.4587 6.29726C12.0099 6.50149 12.5448 6.68223 12.6472 6.69891C13.1758 6.78496 13.74 6.48738 13.9858 5.99295C14.0199 5.92445 14.2617 5.27211 14.5233 4.54332C14.9775 3.27781 14.999 3.20814 15 2.99404C15.0013 2.72211 14.9338 2.55066 14.753 2.36636C14.5189 2.12785 14.1564 2.04048 13.8556 2.15014ZM0.22763 6.85161C0.103799 6.91824 0 7.09458 0 7.23832C0 7.3817 0.0976687 7.54483 0.228275 7.61965C0.338174 7.68259 0.379412 7.68666 0.907058 7.68666C1.55906 7.68666 1.65327 7.66033 1.75942 7.44832C1.83421 7.29894 1.83421 7.1777 1.75942 7.02832C1.65292 6.8156 1.55959 6.78977 0.903069 6.7913C0.39789 6.79249 0.325562 6.79895 0.22763 6.85161ZM0.22763 8.64497C0.103799 8.71159 0 8.88794 0 9.03168C0 9.17506 0.0976687 9.33819 0.228275 9.41301C0.344598 9.47963 0.353015 9.48002 1.64031 9.48002C2.88035 9.48002 2.94024 9.47745 3.05108 9.41985C3.18121 9.35218 3.28495 9.17999 3.28495 9.03168C3.28495 8.88337 3.18121 8.71117 3.05108 8.64351C2.94012 8.58582 2.88173 8.5834 1.63632 8.58465C0.400941 8.58591 0.331927 8.58887 0.22763 8.64497Z" 
     fill="white"/>
 </svg>
-`)
-    app.AddSvg('textHudStaminaIconText', `
+`
+  );
+  app.AddSvg(
+    "textHudStaminaIconText",
+    `
 <svg class="textHudIcon" width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path 
         fill-rule="evenodd" 
@@ -1080,11 +1268,12 @@ app.AddSvg('textHudPooIconText', `
         d="M9.94285 0.234957C9.18142 0.364707 8.59227 1.07772 8.59412 1.86718C8.59514 2.3047 8.7559 2.68791 9.07436 3.01197C9.73282 3.68197 10.7712 3.65839 11.392 2.95934C11.9753 2.30249 11.9513 1.33309 11.3364 0.707507C11.2233 0.592433 11.0624 0.46101 10.9789 0.415429C10.6948 0.260333 10.2493 0.18274 9.94285 0.234957ZM13.8556 2.15014C13.6638 2.22006 13.4805 2.36858 13.3916 2.52612C13.353 2.59442 13.1543 3.12107 12.9499 3.69644C12.7455 4.27181 12.5684 4.75296 12.5563 4.76567C12.5442 4.77834 12.2059 4.66667 11.8044 4.51747L11.0745 4.24619L10.8387 4.31425C10.6419 4.37101 10.5346 4.38198 10.1922 4.38039C9.83439 4.37875 9.74831 4.36823 9.52323 4.29865C8.94977 4.12134 8.47357 3.77289 8.15854 3.30016C8.04022 3.12259 8.03676 3.12023 7.73718 3.01212C7.09069 2.77884 6.74433 2.76542 5.38225 2.92093C4.356 3.0381 4.24575 3.06565 3.96761 3.27428C3.68343 3.48748 3.61609 3.61938 3.19424 4.7891C2.77194 5.9601 2.74323 6.08558 2.82887 6.3857C2.89343 6.61205 3.13822 6.87358 3.35617 6.94911C3.51798 7.00518 3.74582 7.0137 3.90191 6.96953C4.05264 6.92684 4.2622 6.78278 4.35617 6.65724C4.4048 6.59226 4.56072 6.20762 4.74163 5.70628C4.90869 5.2433 5.05513 4.85584 5.06707 4.84532C5.09013 4.82497 6.80411 4.65615 6.81748 4.67289C6.82182 4.67833 6.34732 6.02108 5.76307 7.65677L4.70074 10.6308L3.45759 10.6457L2.21441 10.6606L2.0499 10.743C1.26843 11.1341 1.27401 12.2667 2.05923 12.6362L2.24374 12.723L3.78139 12.7315C4.81656 12.7372 5.36979 12.7293 5.47432 12.7072C5.81657 12.6347 6.16888 12.3785 6.34169 12.0764C6.38273 12.0046 6.53193 11.6205 6.67324 11.2229L6.93014 10.4999L7.10932 10.5683C7.20787 10.6059 7.57557 10.7426 7.92642 10.872C8.27726 11.0014 8.56435 11.1215 8.56435 11.1388C8.56435 11.1561 8.32443 11.8357 8.03122 12.649L7.49806 14.1278L7.49594 14.4118C7.49401 14.6666 7.50225 14.7125 7.5764 14.8601C7.8687 15.4419 8.56517 15.6308 9.08146 15.2684C9.34649 15.0823 9.36951 15.0307 10.1066 12.9716C10.4846 11.9156 10.8082 10.9675 10.8258 10.8647C10.9084 10.3814 10.6592 9.81624 10.244 9.545C10.1671 9.49475 9.93259 9.39041 9.72288 9.31309C9.51317 9.23573 9.33103 9.16298 9.3181 9.15135C9.29733 9.1327 10.3924 6.00007 10.4382 5.94698C10.4482 5.93539 10.9074 6.09302 11.4587 6.29726C12.0099 6.50149 12.5448 6.68223 12.6472 6.69891C13.1758 6.78496 13.74 6.48738 13.9858 5.99295C14.0199 5.92445 14.2617 5.27211 14.5233 4.54332C14.9775 3.27781 14.999 3.20814 15 2.99404C15.0013 2.72211 14.9338 2.55066 14.753 2.36636C14.5189 2.12785 14.1564 2.04048 13.8556 2.15014ZM0.22763 6.85161C0.103799 6.91824 0 7.09458 0 7.23832C0 7.3817 0.0976687 7.54483 0.228275 7.61965C0.338174 7.68259 0.379412 7.68666 0.907058 7.68666C1.55906 7.68666 1.65327 7.66033 1.75942 7.44832C1.83421 7.29894 1.83421 7.1777 1.75942 7.02832C1.65292 6.8156 1.55959 6.78977 0.903069 6.7913C0.39789 6.79249 0.325562 6.79895 0.22763 6.85161ZM0.22763 8.64497C0.103799 8.71159 0 8.88794 0 9.03168C0 9.17506 0.0976687 9.33819 0.228275 9.41301C0.344598 9.47963 0.353015 9.48002 1.64031 9.48002C2.88035 9.48002 2.94024 9.47745 3.05108 9.41985C3.18121 9.35218 3.28495 9.17999 3.28495 9.03168C3.28495 8.88337 3.18121 8.71117 3.05108 8.64351C2.94012 8.58582 2.88173 8.5834 1.63632 8.58465C0.400941 8.58591 0.331927 8.58887 0.22763 8.64497Z" 
     fill="${hudColors[currentHud].stamina}"/>
 </svg>
-`)
+`
+  );
 
-
-
-    app.AddSvg('textHudStressInner', `
+  app.AddSvg(
+    "textHudStressInner",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_228" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -1096,9 +1285,12 @@ app.AddSvg('textHudPooIconText', `
         <path class="fillNone" id="stressBorder" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_228')" id="stressLoader" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudStressInner2', `
+  app.AddSvg(
+    "textHudStressInner2",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_2287777" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -1110,9 +1302,12 @@ app.AddSvg('textHudPooIconText', `
         <path class="fillNone" id="stressBorder2" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_2287777')" id="stressLoader2" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudStressInner3', `
+  app.AddSvg(
+    "textHudStressInner3",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_2277778" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -1124,9 +1319,12 @@ app.AddSvg('textHudPooIconText', `
         <path class="fillNone" id="stressBorder3" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_2277778')" id="stressLoader3" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudNitroInner', `
+  app.AddSvg(
+    "textHudNitroInner",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_333" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -1138,9 +1336,12 @@ app.AddSvg('textHudPooIconText', `
         <path class="fillNone" id="nitroBorder" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_333')" id="nitroLoader" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudNitroRadial', `
+  app.AddSvg(
+    "textHudNitroRadial",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.25" stroke-width="30.07px"
@@ -1150,9 +1351,12 @@ app.AddSvg('textHudPooIconText', `
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudNitroInner2', `
+  app.AddSvg(
+    "textHudNitroInner2",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_242424242333" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -1164,9 +1368,12 @@ app.AddSvg('textHudPooIconText', `
         <path class="fillNone" id="nitroBorder2" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_242424242333')" id="nitroLoader2" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudNitroRadial2', `
+  app.AddSvg(
+    "textHudNitroRadial2",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.25" stroke-width="30.07px"
@@ -1176,9 +1383,12 @@ app.AddSvg('textHudPooIconText', `
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudNitroInner3', `
+  app.AddSvg(
+    "textHudNitroInner3",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_24242424354352333" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -1190,9 +1400,12 @@ app.AddSvg('textHudPooIconText', `
         <path class="fillNone" id="nitroBorder3" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_24242424354352333')" id="nitroLoader3" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudNitroRadial3', `
+  app.AddSvg(
+    "textHudNitroRadial3",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.25" stroke-width="30.07px"
@@ -1202,10 +1415,12 @@ app.AddSvg('textHudPooIconText', `
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
+`
+  );
 
-
-    app.AddSvg('textHudAltitudeInner', `
+  app.AddSvg(
+    "textHudAltitudeInner",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_334" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -1217,9 +1432,12 @@ app.AddSvg('textHudPooIconText', `
         <path class="fillNone" id="altitudeBorder" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_334')" id="altitudeLoader" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudAltitudeRadial', `
+  app.AddSvg(
+    "textHudAltitudeRadial",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.25" stroke-width="30.07px"
@@ -1229,9 +1447,12 @@ app.AddSvg('textHudPooIconText', `
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudAltitudeInner2', `
+  app.AddSvg(
+    "textHudAltitudeInner2",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_335353636334" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -1243,9 +1464,12 @@ app.AddSvg('textHudPooIconText', `
         <path class="fillNone" id="altitudeBorder2" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_335353636334')" id="altitudeLoader2" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudAltitudeRadial2', `
+  app.AddSvg(
+    "textHudAltitudeRadial2",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.25" stroke-width="30.07px"
@@ -1255,8 +1479,11 @@ app.AddSvg('textHudPooIconText', `
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
-    app.AddSvg('textHudAltitudeInner3', `
+`
+  );
+  app.AddSvg(
+    "textHudAltitudeInner3",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_33523535353636334" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -1268,9 +1495,12 @@ app.AddSvg('textHudPooIconText', `
         <path class="fillNone" id="altitudeBorder3" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_33523535353636334')" id="altitudeLoader3" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudAltitudeRadial3', `
+  app.AddSvg(
+    "textHudAltitudeRadial3",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.25" stroke-width="30.07px"
@@ -1280,9 +1510,12 @@ app.AddSvg('textHudPooIconText', `
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudParachuteInner', `
+  app.AddSvg(
+    "textHudParachuteInner",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_335" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -1294,9 +1527,12 @@ app.AddSvg('textHudPooIconText', `
         <path class="fillNone" id="parachuteBorder" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_335')" id="parachuteLoader" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudParachuteRadial', `
+  app.AddSvg(
+    "textHudParachuteRadial",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.25" stroke-width="30.07px"
@@ -1306,9 +1542,12 @@ app.AddSvg('textHudPooIconText', `
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudParachuteInner2', `
+  app.AddSvg(
+    "textHudParachuteInner2",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_355535353335" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -1320,9 +1559,12 @@ app.AddSvg('textHudPooIconText', `
         <path class="fillNone" id="parachuteBorder2" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_355535353335')" id="parachuteLoader2" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudParachuteRadial2', `
+  app.AddSvg(
+    "textHudParachuteRadial2",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.25" stroke-width="30.07px"
@@ -1332,8 +1574,11 @@ app.AddSvg('textHudPooIconText', `
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
-    app.AddSvg('textHudParachuteInner3', `
+`
+  );
+  app.AddSvg(
+    "textHudParachuteInner3",
+    `
     <svg class="textHudInner" viewbox="0 0 250 250">
         <defs>
             <radialGradient id="paint0_radial_172_35553535353353335" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
@@ -1345,9 +1590,12 @@ app.AddSvg('textHudPooIconText', `
         <path class="fillNone" id="parachuteBorder3" transform="translate(125,125)" />
         <path  fill="url('#paint0_radial_172_35553535353353335')" id="parachuteLoader3" transform="translate(125,125) scale(.84)" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudParachuteRadial3', `
+  app.AddSvg(
+    "textHudParachuteRadial3",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.25" stroke-width="30.07px"
@@ -1357,9 +1605,12 @@ app.AddSvg('textHudPooIconText', `
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudStressRadial', `
+  app.AddSvg(
+    "textHudStressRadial",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.25" stroke-width="30.07px"
@@ -1369,9 +1620,12 @@ app.AddSvg('textHudPooIconText', `
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
+`
+  );
 
-    app.AddSvg('textHudStressRadial2', `
+  app.AddSvg(
+    "textHudStressRadial2",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.25" stroke-width="30.07px"
@@ -1381,8 +1635,11 @@ app.AddSvg('textHudPooIconText', `
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
-    app.AddSvg('textHudStressRadial3', `
+`
+  );
+  app.AddSvg(
+    "textHudStressRadial3",
+    `
 
     <svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="textHudRadial">
         <path fill-rule="evenodd" stroke="#fff" stroke-opacity="0.25" stroke-width="30.07px"
@@ -1392,26 +1649,37 @@ app.AddSvg('textHudPooIconText', `
             stroke-linejoin="miter" fill="none"
             d="M200.34,15.33 C302.208,15.33 385.36,97.861 385.36,200.35 C385.36,302.208 302.208,385.36 200.34,385.36 C97.861,385.36 15.33,302.208 15.33,200.35 C15.33,97.861 97.861,15.33 200.34,15.33 Z" />
     </svg>
-`)
-    app.AddSvg('textHudStressIcon', `
+`
+  );
+  app.AddSvg(
+    "textHudStressIcon",
+    `
 <svg class="textHudIcon" width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.98487 0.0146948C8.2668 0.062028 7.47469 0.206503 6.745 0.423198C6.55619 0.479279 6.40173 0.528308 6.40173 0.532173C6.40177 0.536038 6.51932 0.656542 6.66304 0.799931C6.97074 1.10702 7.18237 1.48423 7.26813 1.87849C7.39727 2.47219 7.21536 2.82363 6.76306 2.85411C6.59382 2.8655 6.54003 2.85462 6.43884 2.78837C6.26246 2.67292 6.19511 2.5381 6.17296 2.25624C6.14268 1.87032 5.98014 1.61541 5.60645 1.36783C5.17063 1.07905 4.78058 1.04568 4.17175 1.24509C3.41185 1.49393 2.75392 1.8848 2.24405 2.39027C1.76394 2.86622 1.43304 3.40122 1.36421 3.81278C1.22782 4.62836 1.88565 5.60103 2.82947 5.97946C3.01008 6.05185 3.21938 6.1023 3.47157 6.13417C3.86285 6.18364 3.95594 6.22359 4.09352 6.40108C4.19531 6.53237 4.19531 6.85401 4.09352 6.98529C3.93545 7.1892 3.85588 7.21914 3.48544 7.21406C2.34098 7.19836 1.09998 6.40305 0.542909 5.32829L0.385501 5.02459L0.327128 5.15533C-0.236106 6.41689 -0.0725363 7.60418 0.82178 8.74615C0.94356 8.90164 1.11818 9.13651 1.20983 9.26807C1.54376 9.7474 2.05352 10.1214 2.58183 10.2746C2.89354 10.3651 3.53923 10.358 3.95044 10.2596C4.91348 10.0292 5.45095 9.40027 5.64881 8.27234C5.70327 7.962 5.70334 7.91968 5.64979 7.67969C5.56738 7.31032 5.64705 7.09308 5.91282 6.96247C6.19733 6.82271 6.52549 6.92606 6.67268 7.20178C6.79334 7.42777 6.84344 7.8696 6.79482 8.27939C6.68768 9.1831 6.32583 9.96718 5.7426 10.5596L5.45317 10.8536L5.60177 10.9559C5.82456 11.1094 6.15385 11.2601 6.44296 11.3411C6.81752 11.4459 7.57274 11.468 8.10946 11.3899L8.51307 11.3311L8.69843 11.4927C9.0292 11.781 9.53829 11.9564 10.1836 12.0041L10.4883 12.0267L11.3666 12.9666C11.9404 13.5807 12.2847 13.9227 12.3598 13.9532C12.445 13.9879 12.6624 14 13.1966 14C13.855 14 13.9288 13.9941 14.0379 13.9322C14.3296 13.7667 14.3851 13.5644 14.2674 13.0963C14.2206 12.9103 14.1824 12.7455 14.1824 12.7301C14.1824 12.7147 14.2396 12.6918 14.3096 12.6792C14.5462 12.6364 15.0771 12.4549 15.4105 12.3029C16.0525 12.0099 16.6962 11.5211 17.0936 11.0245C17.3176 10.7446 17.546 10.3127 17.6342 10.0023C17.6973 9.78009 17.7077 9.66999 17.6951 9.35809C17.6781 8.93813 17.609 8.71611 17.4041 8.42282L17.2865 8.25464L17.4814 7.97424C17.869 7.41665 18 7.01147 18 6.37108C18 6.01415 17.9848 5.87883 17.9198 5.65966C17.7621 5.12763 17.4669 4.63552 17.0127 4.14777C16.8986 4.02524 16.6655 3.76168 16.4946 3.56214C16.3237 3.3626 16.0147 3.03002 15.8079 2.82312L15.4319 2.44693L15.3184 2.71371C15.0265 3.39966 14.5372 3.94888 13.9897 4.20494C13.4239 4.46961 12.9235 4.25058 12.9601 3.75426C12.9791 3.49796 13.0961 3.36644 13.4068 3.25207C13.6097 3.17741 13.6878 3.12496 13.8448 2.9579C14.203 2.57672 14.3921 2.12485 14.3215 1.81916C14.2661 1.57957 14.1602 1.45317 13.8479 1.25384C13.3832 0.957189 13.2315 0.895208 12.9704 0.895208C12.7691 0.895208 12.7056 0.913145 12.4388 1.04535C11.8436 1.3403 11.4862 1.67617 11.2384 2.17337C10.9912 2.66936 10.9049 3.04046 10.8773 3.72639C10.858 4.20436 10.843 4.31863 10.7895 4.39542C10.5685 4.71231 10.0882 4.70268 9.83761 4.37644C9.76899 4.28706 9.76403 4.23725 9.76473 3.64745C9.76544 3.06338 9.77325 2.98546 9.86553 2.64138C10.113 1.71832 10.4851 1.08769 11.1236 0.508811L11.4388 0.223049L11.1842 0.167307C10.5629 0.0312073 9.67204 -0.0306041 8.98487 0.0146948ZM8.18315 3.169C8.53074 3.3759 8.57528 4.07986 8.27363 4.59859L8.18051 4.75876L8.35594 4.9303C8.56426 5.13397 8.74096 5.20012 8.91495 5.13953C9.19696 5.04131 9.46146 5.12577 9.63109 5.3682C9.76741 5.56295 9.7208 5.87001 9.52917 6.03995C9.39806 6.15621 9.06518 6.25241 8.79398 6.25241C8.31968 6.25241 7.85217 6.03402 7.48106 5.63904L7.29137 5.43716L7.1265 5.50521C6.52073 5.75531 5.78122 5.76921 5.28949 5.53976C5.01393 5.41119 4.72467 5.13587 4.67376 4.95373C4.59814 4.68336 4.72259 4.42414 4.98076 4.31415C5.21858 4.21284 5.40546 4.24878 5.62719 4.43842C5.75703 4.5495 5.84051 4.59222 5.96183 4.60975C6.28453 4.65637 6.79453 4.5025 7.08988 4.26943C7.29771 4.10542 7.35062 3.98014 7.32742 3.70726C7.31323 3.54034 7.32277 3.45815 7.36558 3.37844C7.42677 3.26445 7.6071 3.11746 7.72198 3.0879C7.8489 3.05524 8.05208 3.09098 8.18315 3.169ZM11.8959 4.85167C12.3476 5.0664 12.7363 5.58435 12.8655 6.1435C12.9618 6.56017 12.8931 7.33422 12.7234 7.74557C12.7083 7.78219 12.7678 7.84441 12.9228 7.9542C13.4065 8.29665 13.8242 8.80175 13.9778 9.22972C14.0894 9.54098 14.0953 10.1094 13.9887 10.2837C13.7574 10.662 13.2341 10.6631 13.0047 10.2859C12.9529 10.2007 12.9353 10.1057 12.9331 9.89951C12.9309 9.68861 12.9121 9.58994 12.8506 9.46801C12.68 9.1298 12.2996 8.81457 11.7574 8.56204C11.3675 8.38043 11.0224 8.30852 10.6325 8.32754C10.2771 8.3449 10.0942 8.41902 9.93633 8.60968C9.71566 8.87611 9.61556 8.95969 9.47269 8.99675C9.21129 9.06453 8.95143 8.95023 8.83349 8.7156C8.73663 8.52291 8.74153 8.40468 8.85553 8.18442C9.06184 7.78572 9.57613 7.41929 10.116 7.28645C10.399 7.2168 11.0134 7.21731 11.3707 7.2875C11.5262 7.31805 11.6604 7.33636 11.6688 7.32819C11.7033 7.29499 11.7871 6.83437 11.7877 6.67515C11.7885 6.45228 11.7142 6.18208 11.6128 6.03961C11.5682 5.97698 11.4489 5.87001 11.3477 5.80186C11.1395 5.66176 11.049 5.51115 11.049 5.30469C11.049 5.07508 11.1946 4.87683 11.4187 4.80142C11.5891 4.74405 11.6923 4.75493 11.8959 4.85167ZM15.4866 5.77758C15.7532 5.84889 15.9443 6.17205 15.8711 6.42757C15.828 6.57781 15.7208 6.71312 15.5954 6.77558C15.479 6.83353 14.5978 6.99834 14.4043 6.99834C14.2466 6.99834 14.0742 6.90266 13.9568 6.75005C13.8497 6.61086 13.8539 6.30876 13.9651 6.15866C14.083 5.99953 14.1999 5.95332 14.7585 5.84516C15.3381 5.73293 15.3244 5.73422 15.4866 5.77758Z" fill="white"/>
 </svg>
-`)
+`
+  );
 
-
-    app.AddSvg('textHudParachuteIcon', `
+  app.AddSvg(
+    "textHudParachuteIcon",
+    `
     <img class="textHudIcon" src="./assets/images/parachute.png">
 
-`)
-    app.AddSvg('textHudParachuteIconText', `
+`
+  );
+  app.AddSvg(
+    "textHudParachuteIconText",
+    `
 <svg class="textHudIcon"  width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.65385 0C5.19231 0 0 2.15385 0 7L9 14L18 7C18 4.57692 16.062 0 8.65385 0ZM5.53846 6.73077C4.70769 4.14615 1.38462 5.11538 1.38462 6.73077L7.61538 11.5769L5.53846 6.73077ZM6.92308 7C6.57692 5.65385 10.3846 4.30769 11.0769 7L9 11.8462L6.92308 7ZM16.9615 6.73077C15.0231 3.93077 12.4615 5.65385 12.4615 7L10.3846 11.5769L16.9615 6.73077Z" fill="${hudColors[currentHud].parachute}"/>
 </svg>
 
 
-`)
-    app.AddSvg('textHudNitroIconText', `
+`
+  );
+  app.AddSvg(
+    "textHudNitroIconText",
+    `
 <svg class="textHudIcon" width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M6.44552 5.03446L2.19208 8.32309L7.39072 12.3425L11.6442 9.0539L6.44552 5.03446Z" fill="${hudColors[currentHud].nitro}"/>
 <path d="M12.5894 8.32309L7.39072 4.30366C8.57223 3.57285 11.4079 2.54972 13.2983 4.30366C15.1887 6.05759 13.6133 7.71409 12.5894 8.32309Z" fill="${hudColors[currentHud].nitro}"/>
@@ -1420,9 +1688,12 @@ app.AddSvg('textHudPooIconText', `
 </svg>
 
 
-`)
+`
+  );
 
-    app.AddSvg('textHudAltitudeIconText', `
+  app.AddSvg(
+    "textHudAltitudeIconText",
+    `
 <svg class="textHudIcon" width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M17.5 7C17.5 10.4802 13.8186 13.5 9 13.5C4.18136 13.5 0.5 10.4802 0.5 7C0.5 3.51981 4.18136 0.5 9 0.5C13.8186 0.5 17.5 3.51981 17.5 7Z" stroke="${hudColors[currentHud].altitude}"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M4.2353 6.58823L2.64706 5.7647C2.64706 5.35294 4.76471 2.05882 9.00001 2.05882C12.3882 2.05882 14.6471 4.52941 15.3529 5.7647L13.7647 6.58823H10.5882L9.00001 5.7647L7.41177 6.58823H4.2353ZM7.41177 4.11765V3.70588H10.5882V4.11765H7.41177ZM10.5882 4.94118V4.52941H7.41177V4.94118H10.5882Z" fill="${hudColors[currentHud].altitude}"/>
@@ -1433,25 +1704,36 @@ app.AddSvg('textHudPooIconText', `
 </svg>
 
 
-`)
-    app.AddSvg('textHudAltitudeIcon', `
+`
+  );
+  app.AddSvg(
+    "textHudAltitudeIcon",
+    `
     <img class="textHudIcon" src="./assets/images/altitude.png">
 
-`)
+`
+  );
 
-
-    app.AddSvg('textHudNitroIcon', `
+  app.AddSvg(
+    "textHudNitroIcon",
+    `
     <img class="textHudIcon" src="./assets/images/nitro.png">
 
-`)
-    app.AddSvg('textHudStressIconText', `
+`
+  );
+  app.AddSvg(
+    "textHudStressIconText",
+    `
 <svg class="textHudIcon" width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.98487 0.0146948C8.2668 0.062028 7.47469 0.206503 6.745 0.423198C6.55619 0.479279 6.40173 0.528308 6.40173 0.532173C6.40177 0.536038 6.51932 0.656542 6.66304 0.799931C6.97074 1.10702 7.18237 1.48423 7.26813 1.87849C7.39727 2.47219 7.21536 2.82363 6.76306 2.85411C6.59382 2.8655 6.54003 2.85462 6.43884 2.78837C6.26246 2.67292 6.19511 2.5381 6.17296 2.25624C6.14268 1.87032 5.98014 1.61541 5.60645 1.36783C5.17063 1.07905 4.78058 1.04568 4.17175 1.24509C3.41185 1.49393 2.75392 1.8848 2.24405 2.39027C1.76394 2.86622 1.43304 3.40122 1.36421 3.81278C1.22782 4.62836 1.88565 5.60103 2.82947 5.97946C3.01008 6.05185 3.21938 6.1023 3.47157 6.13417C3.86285 6.18364 3.95594 6.22359 4.09352 6.40108C4.19531 6.53237 4.19531 6.85401 4.09352 6.98529C3.93545 7.1892 3.85588 7.21914 3.48544 7.21406C2.34098 7.19836 1.09998 6.40305 0.542909 5.32829L0.385501 5.02459L0.327128 5.15533C-0.236106 6.41689 -0.0725363 7.60418 0.82178 8.74615C0.94356 8.90164 1.11818 9.13651 1.20983 9.26807C1.54376 9.7474 2.05352 10.1214 2.58183 10.2746C2.89354 10.3651 3.53923 10.358 3.95044 10.2596C4.91348 10.0292 5.45095 9.40027 5.64881 8.27234C5.70327 7.962 5.70334 7.91968 5.64979 7.67969C5.56738 7.31032 5.64705 7.09308 5.91282 6.96247C6.19733 6.82271 6.52549 6.92606 6.67268 7.20178C6.79334 7.42777 6.84344 7.8696 6.79482 8.27939C6.68768 9.1831 6.32583 9.96718 5.7426 10.5596L5.45317 10.8536L5.60177 10.9559C5.82456 11.1094 6.15385 11.2601 6.44296 11.3411C6.81752 11.4459 7.57274 11.468 8.10946 11.3899L8.51307 11.3311L8.69843 11.4927C9.0292 11.781 9.53829 11.9564 10.1836 12.0041L10.4883 12.0267L11.3666 12.9666C11.9404 13.5807 12.2847 13.9227 12.3598 13.9532C12.445 13.9879 12.6624 14 13.1966 14C13.855 14 13.9288 13.9941 14.0379 13.9322C14.3296 13.7667 14.3851 13.5644 14.2674 13.0963C14.2206 12.9103 14.1824 12.7455 14.1824 12.7301C14.1824 12.7147 14.2396 12.6918 14.3096 12.6792C14.5462 12.6364 15.0771 12.4549 15.4105 12.3029C16.0525 12.0099 16.6962 11.5211 17.0936 11.0245C17.3176 10.7446 17.546 10.3127 17.6342 10.0023C17.6973 9.78009 17.7077 9.66999 17.6951 9.35809C17.6781 8.93813 17.609 8.71611 17.4041 8.42282L17.2865 8.25464L17.4814 7.97424C17.869 7.41665 18 7.01147 18 6.37108C18 6.01415 17.9848 5.87883 17.9198 5.65966C17.7621 5.12763 17.4669 4.63552 17.0127 4.14777C16.8986 4.02524 16.6655 3.76168 16.4946 3.56214C16.3237 3.3626 16.0147 3.03002 15.8079 2.82312L15.4319 2.44693L15.3184 2.71371C15.0265 3.39966 14.5372 3.94888 13.9897 4.20494C13.4239 4.46961 12.9235 4.25058 12.9601 3.75426C12.9791 3.49796 13.0961 3.36644 13.4068 3.25207C13.6097 3.17741 13.6878 3.12496 13.8448 2.9579C14.203 2.57672 14.3921 2.12485 14.3215 1.81916C14.2661 1.57957 14.1602 1.45317 13.8479 1.25384C13.3832 0.957189 13.2315 0.895208 12.9704 0.895208C12.7691 0.895208 12.7056 0.913145 12.4388 1.04535C11.8436 1.3403 11.4862 1.67617 11.2384 2.17337C10.9912 2.66936 10.9049 3.04046 10.8773 3.72639C10.858 4.20436 10.843 4.31863 10.7895 4.39542C10.5685 4.71231 10.0882 4.70268 9.83761 4.37644C9.76899 4.28706 9.76403 4.23725 9.76473 3.64745C9.76544 3.06338 9.77325 2.98546 9.86553 2.64138C10.113 1.71832 10.4851 1.08769 11.1236 0.508811L11.4388 0.223049L11.1842 0.167307C10.5629 0.0312073 9.67204 -0.0306041 8.98487 0.0146948ZM8.18315 3.169C8.53074 3.3759 8.57528 4.07986 8.27363 4.59859L8.18051 4.75876L8.35594 4.9303C8.56426 5.13397 8.74096 5.20012 8.91495 5.13953C9.19696 5.04131 9.46146 5.12577 9.63109 5.3682C9.76741 5.56295 9.7208 5.87001 9.52917 6.03995C9.39806 6.15621 9.06518 6.25241 8.79398 6.25241C8.31968 6.25241 7.85217 6.03402 7.48106 5.63904L7.29137 5.43716L7.1265 5.50521C6.52073 5.75531 5.78122 5.76921 5.28949 5.53976C5.01393 5.41119 4.72467 5.13587 4.67376 4.95373C4.59814 4.68336 4.72259 4.42414 4.98076 4.31415C5.21858 4.21284 5.40546 4.24878 5.62719 4.43842C5.75703 4.5495 5.84051 4.59222 5.96183 4.60975C6.28453 4.65637 6.79453 4.5025 7.08988 4.26943C7.29771 4.10542 7.35062 3.98014 7.32742 3.70726C7.31323 3.54034 7.32277 3.45815 7.36558 3.37844C7.42677 3.26445 7.6071 3.11746 7.72198 3.0879C7.8489 3.05524 8.05208 3.09098 8.18315 3.169ZM11.8959 4.85167C12.3476 5.0664 12.7363 5.58435 12.8655 6.1435C12.9618 6.56017 12.8931 7.33422 12.7234 7.74557C12.7083 7.78219 12.7678 7.84441 12.9228 7.9542C13.4065 8.29665 13.8242 8.80175 13.9778 9.22972C14.0894 9.54098 14.0953 10.1094 13.9887 10.2837C13.7574 10.662 13.2341 10.6631 13.0047 10.2859C12.9529 10.2007 12.9353 10.1057 12.9331 9.89951C12.9309 9.68861 12.9121 9.58994 12.8506 9.46801C12.68 9.1298 12.2996 8.81457 11.7574 8.56204C11.3675 8.38043 11.0224 8.30852 10.6325 8.32754C10.2771 8.3449 10.0942 8.41902 9.93633 8.60968C9.71566 8.87611 9.61556 8.95969 9.47269 8.99675C9.21129 9.06453 8.95143 8.95023 8.83349 8.7156C8.73663 8.52291 8.74153 8.40468 8.85553 8.18442C9.06184 7.78572 9.57613 7.41929 10.116 7.28645C10.399 7.2168 11.0134 7.21731 11.3707 7.2875C11.5262 7.31805 11.6604 7.33636 11.6688 7.32819C11.7033 7.29499 11.7871 6.83437 11.7877 6.67515C11.7885 6.45228 11.7142 6.18208 11.6128 6.03961C11.5682 5.97698 11.4489 5.87001 11.3477 5.80186C11.1395 5.66176 11.049 5.51115 11.049 5.30469C11.049 5.07508 11.1946 4.87683 11.4187 4.80142C11.5891 4.74405 11.6923 4.75493 11.8959 4.85167ZM15.4866 5.77758C15.7532 5.84889 15.9443 6.17205 15.8711 6.42757C15.828 6.57781 15.7208 6.71312 15.5954 6.77558C15.479 6.83353 14.5978 6.99834 14.4043 6.99834C14.2466 6.99834 14.0742 6.90266 13.9568 6.75005C13.8497 6.61086 13.8539 6.30876 13.9651 6.15866C14.083 5.99953 14.1999 5.95332 14.7585 5.84516C15.3381 5.73293 15.3244 5.73422 15.4866 5.77758Z" fill="${hudColors[currentHud].stress}"/>
 </svg>
 
-`)
+`
+  );
 
-    app.AddSvg('textHudOxyIconText', `
+  app.AddSvg(
+    "textHudOxyIconText",
+    `
 <svg class="textHudIcon" width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 13.0912C0.184615 5.77446 3.76923 3.82573 5.53846 3.76595C6.69231 3.76595 6.69231 6.99391 6.92308 8.24923C7.84615 7.81883 8.23077 7.11347 8.30769 6.81458V4.66261C8.30769 4.37568 8.76923 4.30395 9 4.30395C9.18462 4.16048 9.53846 4.48328 9.69231 4.66261V6.81458C9.69231 7.5319 10.7692 8.0699 11.3077 8.24923C11.4615 6.93413 11.9077 4.19635 12.4615 3.76595C16.8462 4.66261 18 12.3738 18 13.0912C17.7692 13.6292 15 13.9878 14.5385 13.9878C12.6923 14.1313 11.4615 12.9716 11.0769 12.3738V9.50455C10.6154 9.50455 9.23077 8.60789 9 8.24923C9 8.53616 7.61538 9.20566 6.92308 9.50455V12.3738C6 13.9878 3.46154 13.9878 3.23077 13.9878C1.38462 13.9878 0.461538 13.2705 0 13.0912Z" fill="${hudColors[currentHud].oxy}"/>
 <path d="M9.69231 2.68997C9.69231 2.98709 9.38235 3.22796 9 3.22796C8.61765 3.22796 8.30769 2.98709 8.30769 2.68997C8.30769 2.39284 8.61765 2.15197 9 2.15197C9.38235 2.15197 9.69231 2.39284 9.69231 2.68997Z" fill="${hudColors[currentHud].oxy}"/>
@@ -1459,9 +1741,12 @@ app.AddSvg('textHudPooIconText', `
 </svg>
 
 
-`)
+`
+  );
 
-app.AddSvg('muted-classic', `
+  app.AddSvg(
+    "muted-classic",
+    `
 
 <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect opacity="0.6" width="25" height="25" rx="3" fill="#141B1F"/>
@@ -1470,22 +1755,31 @@ app.AddSvg('muted-classic', `
 <path d="M17.709 6.22852L12.2402 12.7389L6.77149 19.2493" stroke="white"/>
 </svg>
 
-`)
+`
+  );
 
-    app.AddSvg('clock', `
+  app.AddSvg(
+    "clock",
+    `
 <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M5.88339 0.0157837C4.66736 0.142249 3.56086 0.576469 2.57285 1.31498C2.25173 1.55504 1.55997 2.24652 1.32369 2.56366C0.697834 3.40376 0.292059 4.31771 0.113565 5.28934C-0.224838 7.13126 0.197232 8.92739 1.32369 10.4395C1.55997 10.7566 2.25173 11.4481 2.57285 11.6881C3.49933 12.3806 4.52598 12.8002 5.70515 12.9682C6.00592 13.011 7.00548 13.0105 7.3195 12.9673C8.7909 12.765 10.1087 12.1124 11.1109 11.0896C11.4302 10.7637 11.5063 10.6771 11.7105 10.4067C12.37 9.53352 12.8029 8.46511 12.9681 7.30294C13.0106 7.0036 13.0106 5.99936 12.9681 5.70018C12.8219 4.67235 12.4592 3.69856 11.9257 2.90171C10.8807 1.34063 9.27401 0.326286 7.40848 0.0498741C7.09662 0.00364856 6.194 -0.0165004 5.88339 0.0157837ZM6.74362 2.38962C6.7982 2.41954 6.86845 2.48935 6.90251 2.5475L6.96358 2.65179V4.46206V6.27236L8.08135 7.16724C8.92089 7.83935 9.21002 8.08478 9.24297 8.15316C9.26709 8.20325 9.2871 8.30395 9.28741 8.37691C9.28842 8.62127 9.08804 8.81665 8.83641 8.81665C8.76837 8.81665 8.67667 8.79907 8.63262 8.77757C8.51923 8.72227 6.17644 6.83473 6.11326 6.74775C6.0618 6.67694 6.06097 6.64733 6.05425 4.66589L6.04744 2.65586L6.10413 2.55491C6.19367 2.3955 6.39556 2.29513 6.56952 2.32353C6.61147 2.33039 6.68983 2.36013 6.74362 2.38962Z" fill="white"/>
 </svg>
 
-`)
-    app.AddSvg('fuel', `
+`
+  );
+  app.AddSvg(
+    "fuel",
+    `
 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.423185 2.08791L6.02253 3.73743C6.19632 3.78836 6.35778 3.8747 6.49666 3.99083L8.19919 5.4092L9.63214 3.87198L7.27913 1.96009C7.21986 1.91188 7.15147 1.87584 7.07826 1.85437L1.01745 0.0696713C0.870723 0.0264233 0.712787 0.043242 0.578397 0.116443C0.444008 0.189645 0.344217 0.313142 0.300969 0.460025L0.0333114 1.37224C-0.0563883 1.67738 0.118046 1.99773 0.423185 2.08791Z" fill="white"/>
 <path d="M8.89375 5.9872C8.96023 6.04263 9.00556 6.11935 9.0219 6.20425L11.6272 19.7455C11.715 20.2025 12.0062 20.5945 12.4185 20.8104C12.8306 21.0263 13.3187 21.0425 13.7443 20.8546L17.64 19.1333C17.7325 19.0925 17.8379 19.0907 17.9318 19.1287C18.0257 19.1667 18.1003 19.2408 18.1386 19.3347C18.1887 19.4575 18.2858 19.5556 18.4082 19.6068C18.5307 19.6582 18.6685 19.6587 18.7913 19.6084L20.6894 18.8296C20.9451 18.725 21.0674 18.4329 20.9627 18.1774L17.4196 9.53163C17.3659 9.40076 17.3906 9.25083 17.4833 9.14399L17.8903 8.67387C18.0982 8.43312 18.0721 8.06952 17.8318 7.86097L13.8782 4.4354C13.7622 4.33545 13.6113 4.28563 13.4587 4.297C13.306 4.30838 13.1641 4.37982 13.0641 4.49579L12.184 5.51404C12.0501 5.66941 11.8162 5.68847 11.6591 5.55681L10.2112 4.35034L8.7749 5.89046L8.89375 5.9872ZM13.6925 19.6515C13.4502 19.7582 13.1719 19.746 12.9399 19.6185C12.7078 19.491 12.5482 19.2628 12.5082 19.001L11.6309 13.205C11.5638 12.7655 11.6624 12.3166 11.908 11.946L12.8854 12.7184C13.2685 13.0173 13.5545 13.4233 13.7068 13.8849L15.3939 18.9001L13.6925 19.6515ZM13.0927 11.1618L13.655 11.0608C14.5331 10.9084 15.3917 11.4171 15.6795 12.2606L17.4791 17.6072C17.5413 17.7911 17.4527 17.9918 17.2752 18.0701L16.0848 18.5961L14.4188 13.6492C14.2205 13.0475 13.8477 12.5186 13.348 12.1294L12.4444 11.4136C12.6429 11.2883 12.8638 11.2028 13.0949 11.1618H13.0927ZM11.0491 8.53356L11.5803 10.7831C11.6272 10.9843 11.5023 11.1856 11.3011 11.2329C11.2727 11.2398 11.2439 11.2431 11.2147 11.243C11.0409 11.243 10.8899 11.1235 10.85 10.9543L10.3187 8.70495C10.2879 8.5744 10.3291 8.43745 10.4267 8.34551C10.5242 8.25372 10.6634 8.22073 10.7919 8.25933C10.9202 8.29793 11.0182 8.40205 11.0491 8.53243V8.53356ZM9.9993 6.28818C10.1998 6.23708 10.4039 6.35802 10.4552 6.55856L10.6427 7.29298C10.6938 7.49368 10.5726 7.69775 10.372 7.74884C10.3416 7.75685 10.3104 7.7607 10.279 7.76054C10.1079 7.76038 9.95846 7.64441 9.91617 7.47862L9.7294 6.74533C9.70442 6.64874 9.71899 6.54639 9.76977 6.46053C9.8207 6.37484 9.90352 6.31285 10.0001 6.28818H9.9993Z" fill="white"/>
 <path d="M1.87566 11.4316C2.37782 11.4489 2.86476 11.257 3.22019 10.9016C3.57563 10.5463 3.76752 10.0594 3.75006 9.55708C3.75006 8.68955 2.53655 6.75845 1.87566 5.99536C1.21508 6.75797 0.00109459 8.68907 0.00109459 9.55708C-0.0163648 10.0594 0.175689 10.5463 0.530963 10.9016C0.886398 11.257 1.37334 11.4489 1.87566 11.4316Z" fill="white"/>
 </svg>
-`)
-    app.AddSvg('indicator', `
+`
+  );
+  app.AddSvg(
+    "indicator",
+    `
 <svg class="indicator" width="8" height="89" viewBox="0 0 8 89" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8 81.0447C8 85.4383 6.20914 89 4 89C1.79086 89 0 85.4383 0 81.0447C0 76.6511 1.79086 0 4 0C6.20914 0 8 76.6511 8 81.0447Z" fill="url(#paint0_linear_172_804)"/>
 <defs>
@@ -1495,10 +1789,12 @@ app.AddSvg('muted-classic', `
 </linearGradient>
 </defs>
 </svg>
-`)
+`
+  );
 
-
-    app.AddSvg('gps', `
+  app.AddSvg(
+    "gps",
+    `
 <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_81_3236)">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M19.3388 11.3457C12.7846 13.8662 13.0892 13.7393 13.0175 13.9785C12.9569 14.1804 13.0582 14.4115 13.2511 14.5111C13.2932 14.5329 14.6311 14.848 16.2241 15.2114C17.8171 15.5748 19.1224 15.874 19.1247 15.8763C19.127 15.8787 19.4326 17.1965 19.8037 18.8047C20.5379 21.986 20.5047 21.8729 20.7318 21.9677C20.9488 22.0583 21.2265 21.9508 21.3259 21.7377C21.3505 21.6848 22.4086 18.9378 23.6771 15.6333C25.0822 11.9728 25.989 9.57217 25.9976 9.48968C26.025 9.22922 25.8133 8.9989 25.5477 9C25.4721 9.00029 23.5159 9.73938 19.3388 11.3457Z" fill="white"/>
@@ -1516,8 +1812,11 @@ app.AddSvg('muted-classic', `
 </defs>
 </svg>
 
-`)
-    app.AddSvg('gps2', `
+`
+  );
+  app.AddSvg(
+    "gps2",
+    `
 <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_111_716)">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7521 12.6087C12.6686 16.4864 13.1372 16.2912 13.0269 16.6592C12.9338 16.9699 13.0896 17.3254 13.3863 17.4787C13.4511 17.5122 15.5093 17.997 17.9601 18.556C20.411 19.115 22.4191 19.5754 22.4226 19.579C22.4262 19.5826 22.8963 21.6099 23.4673 24.0842C24.5967 28.9784 24.5457 28.8044 24.8951 28.9503C25.2289 29.0897 25.6561 28.9243 25.809 28.5965C25.847 28.5151 27.4747 24.2889 29.4263 19.2051C31.588 13.5735 32.983 9.88026 32.9963 9.75335C33.0384 9.35264 32.7128 8.99831 32.3041 9.00001C32.1878 9.00045 29.1782 10.1375 22.7521 12.6087Z" fill="white"/>
@@ -1534,9 +1833,12 @@ app.AddSvg('muted-classic', `
 </filter>
 </defs>
 </svg>
-`)
+`
+  );
 
-    app.AddSvg('belt-unactive', `
+  app.AddSvg(
+    "belt-unactive",
+    `
 <svg class="icon" width="20" class="icon" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.55" clip-path="url(#clip0_172_807)">
 <path d="M7.71792 3.44916L4.55695 0.288181C4.40285 0.134083 4.15233 0.134083 3.99823 0.288181C3.84413 0.442279 3.84413 0.6928 3.99823 0.846898L6.88027 3.72813L4.27798 6.33042L1.39597 3.44916C1.24187 3.29506 0.991351 3.29506 0.837253 3.44916C0.683155 3.60325 0.683155 3.85377 0.837253 4.00787L3.99823 7.16885C4.07568 7.24549 4.17681 7.28424 4.27798 7.28424C4.37914 7.28424 4.48027 7.24553 4.55695 7.16885L7.71792 4.00787C7.87202 3.85377 7.87202 3.60325 7.71792 3.44916Z" fill="rgba(255, 255, 255, 0.35)"/>
@@ -1560,9 +1862,12 @@ app.AddSvg('muted-classic', `
 </defs>
 </svg>
 
-`)
+`
+  );
 
-    app.AddSvg('belt-active', `
+  app.AddSvg(
+    "belt-active",
+    `
 <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="1" clip-path="url(#clip0_172_807)">
 <path d="M7.71792 3.44916L4.55695 0.288181C4.40285 0.134083 4.15233 0.134083 3.99823 0.288181C3.84413 0.442279 3.84413 0.6928 3.99823 0.846898L6.88027 3.72813L4.27798 6.33042L1.39597 3.44916C1.24187 3.29506 0.991351 3.29506 0.837253 3.44916C0.683155 3.60325 0.683155 3.85377 0.837253 4.00787L3.99823 7.16885C4.07568 7.24549 4.17681 7.28424 4.27798 7.28424C4.37914 7.28424 4.48027 7.24553 4.55695 7.16885L7.71792 4.00787C7.87202 3.85377 7.87202 3.60325 7.71792 3.44916Z" fill="white"/>
@@ -1586,24 +1891,32 @@ app.AddSvg('muted-classic', `
 </defs>
 </svg>
 
-`)
+`
+  );
 
-    app.AddSvg('lights-unactive', `
+  app.AddSvg(
+    "lights-unactive",
+    `
 <svg class="icon" width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M12.1498 10.3311H18.9655V11.8128H11.9165C12.0022 11.3576 12.0826 10.8609 12.1498 10.3311ZM12.335 7.47889C12.335 7.72907 12.3304 7.97606 12.322 8.21973H18.9655V6.73805H12.322C12.3304 6.98157 12.335 7.22871 12.335 7.47889ZM11.8954 3.03384C11.9828 3.48732 12.0657 3.9842 12.1355 4.51552H18.9655V3.03384H11.8954ZM9.78401 14.2081C9.82771 14.0847 10.8533 11.1421 10.8533 7.47889C10.8533 3.81563 9.82771 0.872963 9.78401 0.749537L9.59765 0.222412L9.0397 0.257139C8.94941 0.262782 6.80329 0.405018 4.62664 1.31819C1.5999 2.58775 0 4.7181 0 7.47889C0 10.2395 1.5999 12.3699 4.62664 13.6396C6.80329 14.5526 8.94927 14.695 9.03956 14.7006L9.59765 14.7354L9.78401 14.2081ZM9.37163 7.47889C9.37163 9.98689 8.8406 12.1743 8.55859 13.1592C7.82296 13.0599 6.48481 12.8173 5.16852 12.2602C2.72215 11.2245 1.48168 9.61589 1.48168 7.47889C1.48168 5.34188 2.72215 3.73316 5.16852 2.69757C6.48525 2.14021 7.82397 1.89755 8.55917 1.79843C8.84147 2.78121 9.37163 4.96263 9.37163 7.47889Z" fill="rgba(255, 255, 255, 0.35)"/>
 </svg>
 
-`)
+`
+  );
 
-
-    app.AddSvg('lights-active', `
+  app.AddSvg(
+    "lights-active",
+    `
 <svg class="icon" width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M12.1498 10.3311H18.9655V11.8128H11.9165C12.0022 11.3576 12.0826 10.8609 12.1498 10.3311ZM12.335 7.47889C12.335 7.72907 12.3304 7.97606 12.322 8.21973H18.9655V6.73805H12.322C12.3304 6.98157 12.335 7.22871 12.335 7.47889ZM11.8954 3.03384C11.9828 3.48732 12.0657 3.9842 12.1355 4.51552H18.9655V3.03384H11.8954ZM9.78401 14.2081C9.82771 14.0847 10.8533 11.1421 10.8533 7.47889C10.8533 3.81563 9.82771 0.872963 9.78401 0.749537L9.59765 0.222412L9.0397 0.257139C8.94941 0.262782 6.80329 0.405018 4.62664 1.31819C1.5999 2.58775 0 4.7181 0 7.47889C0 10.2395 1.5999 12.3699 4.62664 13.6396C6.80329 14.5526 8.94927 14.695 9.03956 14.7006L9.59765 14.7354L9.78401 14.2081ZM9.37163 7.47889C9.37163 9.98689 8.8406 12.1743 8.55859 13.1592C7.82296 13.0599 6.48481 12.8173 5.16852 12.2602C2.72215 11.2245 1.48168 9.61589 1.48168 7.47889C1.48168 5.34188 2.72215 3.73316 5.16852 2.69757C6.48525 2.14021 7.82397 1.89755 8.55917 1.79843C8.84147 2.78121 9.37163 4.96263 9.37163 7.47889Z" fill="white"/>
 </svg>
 
-`)
+`
+  );
 
-    app.AddSvg('door-active', `
+  app.AddSvg(
+    "door-active",
+    `
 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect width="22" height="22" fill="url(#pattern333)" fill-opacity="1"/>
 <defs>
@@ -1616,8 +1929,11 @@ app.AddSvg('muted-classic', `
 
 
 
-`)
-    app.AddSvg('door-unactive', `
+`
+  );
+  app.AddSvg(
+    "door-unactive",
+    `
 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect width="22" height="22" fill="url(#pattern222)" fill-opacity="0.35"/>
 <defs>
@@ -1630,35 +1946,50 @@ app.AddSvg('muted-classic', `
 
 
 
-`)
-    app.AddSvg('engine-active', `
+`
+  );
+  app.AddSvg(
+    "engine-active",
+    `
 <svg class="icon" width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M16.6356 3.60112C16.3288 3.60112 16.08 3.84989 16.08 4.15675V4.71238H14.9687V4.15675C14.9687 3.84989 14.7199 3.60112 14.4131 3.60112H13.532L12.5834 2.65258C12.4792 2.54838 12.338 2.48986 12.1906 2.48986H11.6349V1.37859H12.1906C12.4974 1.37859 12.7462 1.12982 12.7462 0.822964C12.7462 0.516108 12.4974 0.267334 12.1906 0.267334H6.56018C6.25332 0.267334 6.00455 0.516108 6.00455 0.822964C6.00455 1.12982 6.25332 1.37859 6.56018 1.37859H7.11581V2.48986H6.56018C6.41279 2.48986 6.27151 2.54838 6.16731 2.65258L5.21877 3.60112H3.22639C2.91954 3.60112 2.67076 3.84989 2.67076 4.15675V6.37927H1.5595V4.15675C1.5595 3.84989 1.31073 3.60112 1.00387 3.60112C0.697016 3.60112 0.448242 3.84989 0.448242 4.15675V9.71305C0.448242 10.0199 0.697016 10.2687 1.00387 10.2687C1.31073 10.2687 1.5595 10.0199 1.5595 9.71305V7.49053H2.67076V9.71305C2.67076 10.0199 2.91954 10.2687 3.22639 10.2687H5.21877L7.27857 12.3285C7.38277 12.4327 7.52405 12.4912 7.67144 12.4912H13.3018C13.5123 12.4912 13.7047 12.3723 13.7988 12.1841L14.7565 10.2687H16.08V10.8243C16.08 11.1312 16.3288 11.3799 16.6356 11.3799C18.1675 11.3799 19.4138 10.1337 19.4138 8.60179V6.37927C19.4138 4.8474 18.1675 3.60112 16.6356 3.60112ZM4.89329 9.15742H3.78202V4.71238H4.89329V9.15742ZM8.22707 1.37859H10.5237V2.48986H8.22707V1.37859ZM13.8575 9.58189L12.9584 11.3799H7.90158L6.00455 9.48291V4.38689L6.79032 3.60112C7.01631 3.60112 11.7611 3.60112 11.9604 3.60112L12.9089 4.54965C13.0132 4.65385 13.1544 4.71238 13.3018 4.71238H13.8575C13.8575 4.93956 13.8575 9.40105 13.8575 9.58189ZM16.08 9.15742H14.9687V5.82364H16.08V9.15742ZM18.3025 8.60179C18.3025 9.32618 17.838 9.94416 17.1912 10.1735C17.1912 9.78328 17.1912 4.95471 17.1912 4.80761C17.838 5.03694 18.3025 5.65487 18.3025 6.37931V8.60179Z" fill="white"/>
 </svg>
 
 
-`)
+`
+  );
 
-    app.AddSvg('engine-middamaged', `
+  app.AddSvg(
+    "engine-middamaged",
+    `
 <svg class="icon" width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M16.6356 3.60112C16.3288 3.60112 16.08 3.84989 16.08 4.15675V4.71238H14.9687V4.15675C14.9687 3.84989 14.7199 3.60112 14.4131 3.60112H13.532L12.5834 2.65258C12.4792 2.54838 12.338 2.48986 12.1906 2.48986H11.6349V1.37859H12.1906C12.4974 1.37859 12.7462 1.12982 12.7462 0.822964C12.7462 0.516108 12.4974 0.267334 12.1906 0.267334H6.56018C6.25332 0.267334 6.00455 0.516108 6.00455 0.822964C6.00455 1.12982 6.25332 1.37859 6.56018 1.37859H7.11581V2.48986H6.56018C6.41279 2.48986 6.27151 2.54838 6.16731 2.65258L5.21877 3.60112H3.22639C2.91954 3.60112 2.67076 3.84989 2.67076 4.15675V6.37927H1.5595V4.15675C1.5595 3.84989 1.31073 3.60112 1.00387 3.60112C0.697016 3.60112 0.448242 3.84989 0.448242 4.15675V9.71305C0.448242 10.0199 0.697016 10.2687 1.00387 10.2687C1.31073 10.2687 1.5595 10.0199 1.5595 9.71305V7.49053H2.67076V9.71305C2.67076 10.0199 2.91954 10.2687 3.22639 10.2687H5.21877L7.27857 12.3285C7.38277 12.4327 7.52405 12.4912 7.67144 12.4912H13.3018C13.5123 12.4912 13.7047 12.3723 13.7988 12.1841L14.7565 10.2687H16.08V10.8243C16.08 11.1312 16.3288 11.3799 16.6356 11.3799C18.1675 11.3799 19.4138 10.1337 19.4138 8.60179V6.37927C19.4138 4.8474 18.1675 3.60112 16.6356 3.60112ZM4.89329 9.15742H3.78202V4.71238H4.89329V9.15742ZM8.22707 1.37859H10.5237V2.48986H8.22707V1.37859ZM13.8575 9.58189L12.9584 11.3799H7.90158L6.00455 9.48291V4.38689L6.79032 3.60112C7.01631 3.60112 11.7611 3.60112 11.9604 3.60112L12.9089 4.54965C13.0132 4.65385 13.1544 4.71238 13.3018 4.71238H13.8575C13.8575 4.93956 13.8575 9.40105 13.8575 9.58189ZM16.08 9.15742H14.9687V5.82364H16.08V9.15742ZM18.3025 8.60179C18.3025 9.32618 17.838 9.94416 17.1912 10.1735C17.1912 9.78328 17.1912 4.95471 17.1912 4.80761C17.838 5.03694 18.3025 5.65487 18.3025 6.37931V8.60179Z" fill="#FFB800"/>
 </svg>
-`)
+`
+  );
 
-    app.AddSvg('engine-damaged', `
+  app.AddSvg(
+    "engine-damaged",
+    `
 <svg class="icon" width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M16.6356 3.60112C16.3288 3.60112 16.08 3.84989 16.08 4.15675V4.71238H14.9687V4.15675C14.9687 3.84989 14.7199 3.60112 14.4131 3.60112H13.532L12.5834 2.65258C12.4792 2.54838 12.338 2.48986 12.1906 2.48986H11.6349V1.37859H12.1906C12.4974 1.37859 12.7462 1.12982 12.7462 0.822964C12.7462 0.516108 12.4974 0.267334 12.1906 0.267334H6.56018C6.25332 0.267334 6.00455 0.516108 6.00455 0.822964C6.00455 1.12982 6.25332 1.37859 6.56018 1.37859H7.11581V2.48986H6.56018C6.41279 2.48986 6.27151 2.54838 6.16731 2.65258L5.21877 3.60112H3.22639C2.91954 3.60112 2.67076 3.84989 2.67076 4.15675V6.37927H1.5595V4.15675C1.5595 3.84989 1.31073 3.60112 1.00387 3.60112C0.697016 3.60112 0.448242 3.84989 0.448242 4.15675V9.71305C0.448242 10.0199 0.697016 10.2687 1.00387 10.2687C1.31073 10.2687 1.5595 10.0199 1.5595 9.71305V7.49053H2.67076V9.71305C2.67076 10.0199 2.91954 10.2687 3.22639 10.2687H5.21877L7.27857 12.3285C7.38277 12.4327 7.52405 12.4912 7.67144 12.4912H13.3018C13.5123 12.4912 13.7047 12.3723 13.7988 12.1841L14.7565 10.2687H16.08V10.8243C16.08 11.1312 16.3288 11.3799 16.6356 11.3799C18.1675 11.3799 19.4138 10.1337 19.4138 8.60179V6.37927C19.4138 4.8474 18.1675 3.60112 16.6356 3.60112ZM4.89329 9.15742H3.78202V4.71238H4.89329V9.15742ZM8.22707 1.37859H10.5237V2.48986H8.22707V1.37859ZM13.8575 9.58189L12.9584 11.3799H7.90158L6.00455 9.48291V4.38689L6.79032 3.60112C7.01631 3.60112 11.7611 3.60112 11.9604 3.60112L12.9089 4.54965C13.0132 4.65385 13.1544 4.71238 13.3018 4.71238H13.8575C13.8575 4.93956 13.8575 9.40105 13.8575 9.58189ZM16.08 9.15742H14.9687V5.82364H16.08V9.15742ZM18.3025 8.60179C18.3025 9.32618 17.838 9.94416 17.1912 10.1735C17.1912 9.78328 17.1912 4.95471 17.1912 4.80761C17.838 5.03694 18.3025 5.65487 18.3025 6.37931V8.60179Z" fill="#FF0000"/>
 </svg>
-`)
+`
+  );
 
-    app.AddSvg('engine-unactive', `
+  app.AddSvg(
+    "engine-unactive",
+    `
 <svg  class="icon" width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M16.6356 3.60112C16.3288 3.60112 16.08 3.84989 16.08 4.15675V4.71238H14.9687V4.15675C14.9687 3.84989 14.7199 3.60112 14.4131 3.60112H13.532L12.5834 2.65258C12.4792 2.54838 12.338 2.48986 12.1906 2.48986H11.6349V1.37859H12.1906C12.4974 1.37859 12.7462 1.12982 12.7462 0.822964C12.7462 0.516108 12.4974 0.267334 12.1906 0.267334H6.56018C6.25332 0.267334 6.00455 0.516108 6.00455 0.822964C6.00455 1.12982 6.25332 1.37859 6.56018 1.37859H7.11581V2.48986H6.56018C6.41279 2.48986 6.27151 2.54838 6.16731 2.65258L5.21877 3.60112H3.22639C2.91954 3.60112 2.67076 3.84989 2.67076 4.15675V6.37927H1.5595V4.15675C1.5595 3.84989 1.31073 3.60112 1.00387 3.60112C0.697016 3.60112 0.448242 3.84989 0.448242 4.15675V9.71305C0.448242 10.0199 0.697016 10.2687 1.00387 10.2687C1.31073 10.2687 1.5595 10.0199 1.5595 9.71305V7.49053H2.67076V9.71305C2.67076 10.0199 2.91954 10.2687 3.22639 10.2687H5.21877L7.27857 12.3285C7.38277 12.4327 7.52405 12.4912 7.67144 12.4912H13.3018C13.5123 12.4912 13.7047 12.3723 13.7988 12.1841L14.7565 10.2687H16.08V10.8243C16.08 11.1312 16.3288 11.3799 16.6356 11.3799C18.1675 11.3799 19.4138 10.1337 19.4138 8.60179V6.37927C19.4138 4.8474 18.1675 3.60112 16.6356 3.60112ZM4.89329 9.15742H3.78202V4.71238H4.89329V9.15742ZM8.22707 1.37859H10.5237V2.48986H8.22707V1.37859ZM13.8575 9.58189L12.9584 11.3799H7.90158L6.00455 9.48291V4.38689L6.79032 3.60112C7.01631 3.60112 11.7611 3.60112 11.9604 3.60112L12.9089 4.54965C13.0132 4.65385 13.1544 4.71238 13.3018 4.71238H13.8575C13.8575 4.93956 13.8575 9.40105 13.8575 9.58189ZM16.08 9.15742H14.9687V5.82364H16.08V9.15742ZM18.3025 8.60179C18.3025 9.32618 17.838 9.94416 17.1912 10.1735C17.1912 9.78328 17.1912 4.95471 17.1912 4.80761C17.838 5.03694 18.3025 5.65487 18.3025 6.37931V8.60179Z" fill="rgba(255, 255, 255, 0.35)"/>
 </svg>
 
-`)
+`
+  );
 
-    app.AddSvg('classichud-health', `
+  app.AddSvg(
+    "classichud-health",
+    `
 <svg class="classicHudIcon" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect width="15" height="15" fill="url(#pattern0)"/>
 <defs>
@@ -1669,8 +2000,11 @@ app.AddSvg('muted-classic', `
 </defs>
 </svg>
 
-`)
-    app.AddSvg('classichud-armor', `
+`
+  );
+  app.AddSvg(
+    "classichud-armor",
+    `
 <svg class="classicHudIcon" width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect width="13" height="15" fill="url(#pattern1)"/>
 <defs>
@@ -1680,9 +2014,12 @@ app.AddSvg('muted-classic', `
 <image id="image0_1_32" width="13" height="15" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAPCAYAAAA/I0V3AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADISURBVHgBlZLhEYIwDIVbj/92Ax2BDWQEN0AncATchBEcQZ1AnIAygW5Q38Pg5XKC+O6+a2nymtDWpZQKcAbBTQjx/JMnJqr4YapBqxce3GXCsKYBnPRiK9WOXwwB3CRe2UqDmFCCLTioDalal56r/p8WoHTzxQJ5hkkHog3K+BS0lp7tqSSK91XLGMHemJpMDBs3rpX5jpnsWJhAUOPOxO5j7Q2XeLHtee8jj7xK/2nDI7+6+Yqg85yl9wvnYeRCMIkNQWt9gReSIfyNskVDkQAAAABJRU5ErkJggg=="/>
 </defs>
 </svg>
-`)
+`
+  );
 
-    app.AddSvg('classichud-thirsty', `
+  app.AddSvg(
+    "classichud-thirsty",
+    `
 <svg class="classicHudIconSmall" width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect width="13" height="15" fill="url(#pattern2)"/>
 <defs>
@@ -1692,9 +2029,12 @@ app.AddSvg('muted-classic', `
 <image id="image0_1_47" width="13" height="15" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAPCAYAAAA/I0V3AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACTSURBVHgBlZGBDUAwEEXvugA26AaMYCNGMIIN2EBMxAZscO7iKkiq7iU/Ee3rPwoQgYhasMBCTyfDX6GjJ51VCLQxoaJv6reQc5aEJOu57HfqSb2Hb2S9uTelWgKbtDmdNdUSkPG8AzsZ6sdtBqlwiLjzw/hTGHW/6Zf7xxHygjNEhCnckYDvfj2t5FSclTNfIykHdsgUNzvcIRQAAAAASUVORK5CYII="/>
 </defs>
 </svg>
-`)
+`
+  );
 
-    app.AddSvg('classichud-hunger', `
+  app.AddSvg(
+    "classichud-hunger",
+    `
 <svg class="classicHudIconSmall"  width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect width="15" height="15" fill="url(#pattern3)"/>
 <defs>
@@ -1704,9 +2044,12 @@ app.AddSvg('muted-classic', `
 <image id="image0_1_42" width="15" height="15" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADCSURBVHgBjZINEcMgDIUjoRKQUClzsDloHTAHlcAcTEIlIKESkJAlLGwp5e/d5a6FvI+QAEBCREcxQ0eUs57y6GfCr0ILQHtPCs85vzz6MPgXA24VoxPjBRDwrHtmZG3KGGEpYS4AVtnzas1RvChsXhoDjgzAJzyyNVtrimkAdooFOuMoAmBEckq6QhgGSDNQdZWrsAqw9Ywop5rKntOmSZpRNFYAb/bBiFEBdO6uX5dvGVWV6dEcaTRLLGNAAogT+QCGkeDhc8cqTwAAAABJRU5ErkJggg=="/>
 </defs>
 </svg>
-`)
+`
+  );
 
-    app.AddSvg('classichud-stress', `
+  app.AddSvg(
+    "classichud-stress",
+    `
 <svg class="classicHudIconSmall" width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect width="18" height="14" fill="url(#pattern4)"/>
 <defs>
@@ -1716,15 +2059,21 @@ app.AddSvg('muted-classic', `
 <image id="image0_1_52" width="18" height="14" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAOCAYAAAAi2ky3AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAD6SURBVHgBnZIBEYMwDEV7U4AEJOAAHIADcLA5AAdsCpCABOagc9A5qIQsuf0eaa9wt/27XGkaXpMmxhyIiBq2jc3TV5atEDNnQtDE5tgW+AJE1APuEVMdQSzFapXPIc6p81LAKWikvMS/oMRS+Wu1nzRoVkGSxQBfAZCUc6c9w5XisjuB3PCDg9PjPQasBb5DOaOKC2BrdHq8VuqmsG7qewXMI74LKRlF9UnqDe2SMmuK30ZruzD4gaeS+QgtfatevBAzsHXwTUnjn7muedy6UF42M2Or7lxN++NWdK4x2ffmZNJbgK8UD2Kq2fwilKuB0pDa/KME1uqzD2THfdl1zeFnAAAAAElFTkSuQmCC"/>
 </defs>
 </svg>
-`)
+`
+  );
 
-    app.AddSvg('classichud-oxy', `
+  app.AddSvg(
+    "classichud-oxy",
+    `
 
 <img class="textHudIcon" src="./assets/images/lungs-white.png">
 
-`)
+`
+  );
 
-    app.AddSvg('classichud-stamina', `
+  app.AddSvg(
+    "classichud-stamina",
+    `
 <svg class="classicHudIconSmall" width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect width="15" height="16" fill="url(#pattern5)"/>
 <defs>
@@ -1734,21 +2083,33 @@ app.AddSvg('muted-classic', `
 <image id="image0_1_56" width="15" height="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAYAAADJViUEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADzSURBVHgBlVLbEYIwELw4/ksHUoJWoB1IB9IBJYAd2AFYgVABdKAdiBWIFcQ9PcYjAyg7sxMuucduAtEfsNYmYAn6NAUoCOwXZ302Hyjw5bMRkorfSrDsjFO0wlKCntoOQc5bgCdjTIO8BzdyJ8dSeJWYm2VgBdYco/AuObme6omvi8SRHYc/F6mtN+5+VHI1tjIxYGWQX/OElKe43p0pN+rBDCzAJxJCli77kZOXDxUvFT0lsSNZ7HVgRGbrhaRJQh//tWrEPtduAy6Oe24zlbNUxxrtOxeOVL75g2MhoynAtO2v2x7DRtaKpkL+ur16wg5e0pjWVifDeQ4AAAAASUVORK5CYII="/>
 </defs>
 </svg>
-`)
+`
+  );
 
-    app.AddSvg('classichud-parachute', `
+  app.AddSvg(
+    "classichud-parachute",
+    `
 <img class="textHudIcon" src="./assets/images/parachute.png">
-`)
+`
+  );
 
-    app.AddSvg('classichud-nitro', `
+  app.AddSvg(
+    "classichud-nitro",
+    `
 <img class="textHudIcon" src="./assets/images/nitro.png">
-`)
+`
+  );
 
-    app.AddSvg('classichud-altitude', `
+  app.AddSvg(
+    "classichud-altitude",
+    `
 <img class="textHudIcon" src="./assets/images/altitude.png">
-`)
+`
+  );
 
-    app.AddSvg('classichud-mic', `
+  app.AddSvg(
+    "classichud-mic",
+    `
 <svg   width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect width="25" height="25" fill="url(#pattern6)"/>
 <defs>
@@ -1758,8 +2119,11 @@ app.AddSvg('muted-classic', `
 <image id="image0_1_37" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANkSURBVHgB7ZpdSFNRHMD/Z/O6te0u2V3WnKYV3b7WB0FWhhlZQqBBEkW9BOVD+pCJTz30UNCjGEGSUPbmS9RD9tKHYimMgkhyZY4ibXPDjw1tbt7duXvbX1NERIx7dF7a72G799x74P87955z/udwCfzFZrMZYkRfDETiAQgPqxFZ9koE3gQH+p0zRQR/7PbtnAhCrQzAgQpIxBkQQV8XGvgW0GKB3my6qZbgkUSrG7QwuS/DtMapzbTnHpaBFIDKQAmJaGIaSYYToFrINg0Qkg2qhfAaUDkpgWSTEkg2aUCZtZmMrvyG1bGn2MibLGnseFAKeb5M+J/eGf7Y7xJCQBlitec1AiVyHXr2evPGUpNFw86/hiJ3L/56QVuC6itU+dBeslDwCJZfvmcrAspQE9hVZLRy2cyi+VQWr8vKLzfbgCLUBDbv11uWct/6XIYFiqSG0WSTEkg2KYFk838LlNVa+frP/IUch870L/Uw5Wj4vu0S1geFKBLg7Gkspgh8/pol72hExuLRDVvTWUZPdFgfFKJIIOCJTSVm1o3pbNfrsH8pddwfJgJ5e6dnbY9LGAGFKBJ41zzah/87jxrzEsGEfn6a6Fvs/q+d4V6PKzp+qDxjN56jDChEkcDYYFzEoDFJO38703G/wtse8MYWDMrnjvqaqn1OvA9fuxkZUIjWYM4oAwX0dQuDBWcz+K0HDJuEiDzacGWgM7GHGWK5NJ0oyOLgD3Goo3m0q7HS5yy5ym05VcUVhoKToaZqf/vvobgICqGyoHEUGbmqR9ml2DF7OsLuVw+C3a634dkncfCMOevIubX8jkIjHxOkaEOFt8XVHgkCBaityHAorWnOKWMt0yNLTJCj0Uhc1Bm06SiGZVMtf833klbwCNUlJVJWw/G7j5vyrLkMhzLY4t6eqP/9szF36+PpTk8T6gIzoMjp2nXHntcNt7fUB9ywTKg+laD2BDA9mLtoN1uZqVk6OBAbEcLS7Gjz5NaQc24HVwq1faE9J402nA/ml1vsjHXu+ab9eo6mwLL1gZUitR5INimBZJMSSDYJAXnZpvnlhoDsSQhoekGlxAFaNYwktBGQqM2MK4WciBk/+tD4/f5IOsTr1CSBwYuJmPGYzL0w/d0EFMtAcmBVIvdin2WkWBs2PJb8ATNuRGYmGVezAAAAAElFTkSuQmCC"/>
 </defs>
 </svg>
-`)
-    app.AddSvg('classichud-mic-low', `
+`
+  );
+  app.AddSvg(
+    "classichud-mic-low",
+    `
 <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect opacity="0.6" width="25" height="25" rx="3" fill="url(#paint0_linear_83_435)"/>
 <g clip-path="url(#clip0_83_435)">
@@ -1776,9 +2140,12 @@ app.AddSvg('muted-classic', `
 </clipPath>
 </defs>
 </svg>
-`)
+`
+  );
 
-    app.AddSvg('classichud-mic-mid', `
+  app.AddSvg(
+    "classichud-mic-mid",
+    `
 <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.6">
 <rect width="25" height="25" rx="3" fill="url(#paint0_linear_83_445)"/>
@@ -1808,9 +2175,12 @@ app.AddSvg('muted-classic', `
 </defs>
 </svg>
 
-`)
+`
+  );
 
-    app.AddSvg('classichud-mic-high', `
+  app.AddSvg(
+    "classichud-mic-high",
+    `
 <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect opacity="0.6" width="25" height="25" rx="3" fill="url(#paint0_linear_83_455)"/>
 <g clip-path="url(#clip0_83_455)">
@@ -1829,9 +2199,12 @@ app.AddSvg('muted-classic', `
 </svg>
 
 
-`)
+`
+  );
 
-    app.AddSvg('job-briefcase', `
+  app.AddSvg(
+    "job-briefcase",
+    `
 <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g filter="url(#filter0_d_54_1750)">
 <rect x="4" width="15" height="15" fill="url(#pattern0)" shape-rendering="crispEdges"/>
@@ -1854,8 +2227,6 @@ app.AddSvg('muted-classic', `
 </defs>
 </svg>
 
-`)
-
-
-
+`
+  );
 }

@@ -4,7 +4,7 @@ Config = {
         MeltCoords = vector3(1982.97, 3026.28, 47.91),
         SellCoords = vector3(-617.67,-227.51,38.06),
         Thaydo = vector3(2966.6, 2756.98, 33.21), --Thay đồ
-    Ped = vector4(2966.6, 2756.98, 43.21, 8.18), --NPC
+    Ped = vector4(2966.6, 2756.98, 43.21, 7.18), --NPC
     MiningPositions = {
         {coords = vector3(2968.77, 2773.67, 38.7), heading = 312.52},
         {coords = vector3(2964.21, 2774.17, 39.98), heading = 163.23},

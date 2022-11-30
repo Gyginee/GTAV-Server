@@ -1,6 +1,6 @@
 Config = Config or {}
 Config = {
-    Ped = vector4(2069.63, 3871.82, 30.79, 59.35), --NPC
+    Ped = vector4(462.67, -989.07, 29.69, 88.44) --NPC
 }
 Config.Licenses = {
     ["id_card"] = {

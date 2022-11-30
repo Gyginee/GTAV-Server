@@ -596,13 +596,12 @@ CreateThread(function()
                         sleep = 5
                         DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222,
                             false, false, false, true, false, false, false)
-                        if dist < 1.5 then
+                        if dist < 3.5 then
                             if IsPedInAnyVehicle(ped, false) then
                                 DrawText3D(v.x, v.y, v.z, "Nhấn [~g~E~s~] - Cất phương tiện")
                                 if IsControlJustReleased(0, 38) then
-                                    if IsPedInAnyVehicle(ped, false) then
-                                        QBCore.Functions.DeleteVehicle(GetVehiclePedIsIn(ped))
-                                    end
+                                    QBCore.Functions.DeleteVehicle(GetVehiclePedIsIn(ped))
+
                                 end
                             end
 
@@ -611,7 +610,7 @@ CreateThread(function()
                     end
                 end
             end
-           
+
         end
         Wait(sleep)
     end

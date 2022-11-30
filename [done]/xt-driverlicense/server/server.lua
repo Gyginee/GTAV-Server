@@ -23,6 +23,6 @@ RegisterNetEvent('xt-driverlicense:server:requestId', function(item)
         info.lastname = Player.PlayerData.charinfo.lastname
         info.birthdate = Player.PlayerData.charinfo.birthdate
     end
-    if not Player.Functions.AddItem(item, 1, nil, info) then return end
+    Player.Functions.AddItem(item, 1, nil, info)
     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], 'add')
 end)

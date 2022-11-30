@@ -65,7 +65,7 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
         {
         type = "client",
         event = "xt-driverlicense:client:requestDL",
-        icon = "fa-solid fa-file-certificate",
+        icon = "fa-solid fa-id-card",
         label = "Nhận bằng lái xe",
         },
     },
@@ -83,13 +83,13 @@ end)
 
 RegisterNetEvent('xt-driverlicense:client:requestID')
 AddEventHandler('xt-driverlicense:client:requestID', function()
-    TriggerServerEvent('xt-driverlicense:server:requestId',id_card)
+    TriggerServerEvent('xt-driverlicense:server:requestId','id_card')
     exports['xt-notify']:Alert("THÔNG BÁO", "Đã nhận x1 thẻ căn cước công dân", 5000, 'success')
 
 
 end)
 RegisterNetEvent('xt-driverlicense:client:requestDL')
 AddEventHandler('xt-driverlicense:client:requestDL', function()
-    TriggerServerEvent('xt-driverlicense:server:requestId',driver_license)
-    exports['xt-notify']:Alert("THÔNG BÁO", "Đã nhạn được bằng lái xe!", 5000, 'success')
+    TriggerServerEvent('xt-driverlicense:server:requestId','driver_license')
+    exports['xt-notify']:Alert("THÔNG BÁO", "Đã nhận được bằng lái xe!", 5000, 'success')
 end)
