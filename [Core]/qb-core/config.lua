@@ -37,7 +37,7 @@ QBConfig.Server.closedReason = "Bảo trì đường điện" -- Reason message 
 QBConfig.Server.uptime = 0 -- Time the server has been up.
 QBConfig.Server.whitelist = false -- Enable or disable whitelist on the server
 QBConfig.Server.pvp = true -- Enable or disable pvp on the server (Ability to shoot other players)
-QBConfig.Server.discord = "discord.gg/XN7Wb2qw8x" -- Discord invite link
+QBConfig.Server.discord = "discord.gg/7HRrhyTQGG" -- Discord invite link
 QBConfig.Server.checkDuplicateLicense = true -- check for duplicate rockstar license on join
 QBConfig.Server.PermissionList = {} -- permission list
 

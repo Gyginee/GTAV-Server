@@ -859,7 +859,7 @@ RegisterNetEvent('inventory:server:UseItemSlot', function(slot)
 					TriggerClientEvent("inventory:client:UseTool", src, itemData, true)
 				else
 					Player.Functions.RemoveItem(itemData.name, 1, slot)
-					TriggerClientEvent('okokNotify:Alert', src, "HỆ THỐNG", "Dụng cụ đã hỏng", 5000, 'error')
+					TriggerClientEvent('xt-notify:Alert', src, "HỆ THỐNG", "Dụng cụ đã hỏng", 5000, 'error')
 				end
 			else
 				TriggerClientEvent("inventory:client:UseTool", src, itemData, true)
@@ -1486,7 +1486,7 @@ RegisterServerEvent("inventory:server:GiveItem", function(target, name, amount, 
 			TriggerClientEvent('xt-notify:client:Alert', src,"THÔNG BÁO", 'Không đủ vật phẩm để gửi', 5000, 'error')
 		end
 	else
-		TriggerClientEvent('okokNotify:Alert', src, "HỆ THỐNG", "Bạn đang ở quá xa để đưa!", 5000, 'error')
+		TriggerClientEvent('xt-notify:Alert', src, "HỆ THỐNG", "Bạn đang ở quá xa để đưa!", 5000, 'error')
     end
 end)
 

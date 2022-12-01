@@ -50,7 +50,7 @@ QBCore.Commands.Add('tp', 'TP đến người chơi hoặc toạ độ (Chỉ d�
             local coords = GetEntityCoords(target)
             TriggerClientEvent('QBCore:Command:TeleportToPlayer', src, coords)
         else
-            TriggerClientEvent('QBCore:Notify', src, "Người chơi không online", 'error')
+            TriggerClientEvent('xt-notify:Alert', src, "Người chơi không online", 'error')
         end
     else
         if args[1] and args[2] and args[3] then
@@ -60,10 +60,10 @@ QBCore.Commands.Add('tp', 'TP đến người chơi hoặc toạ độ (Chỉ d�
             if (x ~= 0) and (y ~= 0) and (z ~= 0) then
                 TriggerClientEvent('QBCore:Command:TeleportToCoords', src, x, y, z)
             else
-                TriggerClientEvent('QBCore:Notify', src, "Giá trị sai", 'error')
+                TriggerClientEvent('xt-notify:Alert', src, "Giá trị sai", 'error')
             end
         else
-            TriggerClientEvent('QBCore:Notify', src, "Thiếu giá trị", 'error')
+            TriggerClientEvent('xt-notify:Alert', src, "Thiếu giá trị", 'error')
         end
     end
 end, 'admin')
@@ -89,7 +89,7 @@ QBCore.Commands.Add('addpermission', 'Cấp quyền cho người chơi (Chỉ d�
     if Player then
         QBCore.Functions.AddPermission(Player.PlayerData.source, permission)
     else
-        TriggerClientEvent('QBCore:Notify', src, "Người chơi không online", 'error')
+        TriggerClientEvent('xt-notify:Alert', src, "Người chơi không online", 'error')
     end
 end, 'god')
 
@@ -99,7 +99,7 @@ QBCore.Commands.Add('removepermission', 'Xoá quyền của người chơi (Ch�
     if Player then
         QBCore.Functions.RemovePermission(Player.PlayerData.source)
     else
-        TriggerClientEvent('QBCore:Notify', src, "Người chơi không online", 'error')
+        TriggerClientEvent('xt-notify:Alert', src, "Người chơi không online", 'error')
     end
 end, 'god')
 
@@ -124,7 +124,7 @@ QBCore.Commands.Add('givemoney', 'Cấp tiền cho người chơi (Chỉ dành c
         Player.Functions.AddMoney(tostring(args[2]), tonumber(args[3]))
     else
         TriggerClientEvent('xt-notify:client:Alert', src,"THÔNG BÁO", "Người chơi không online", 5000, 'error')
-        --[[ TriggerClientEvent('QBCore:Notify', src, "Người chơi không online", 'error') ]]
+        --[[ TriggerClientEvent('xt-notify:Alert', src, "Người chơi không online", 'error') ]]
     end
 end, 'admin')
 
@@ -134,7 +134,7 @@ QBCore.Commands.Add('setmoney', 'Chỉnh số tiền của người chơi (Chỉ
     if Player then
         Player.Functions.SetMoney(tostring(args[2]), tonumber(args[3]))
     else
-        TriggerClientEvent('QBCore:Notify', src, "Người chơi không online", 'error')
+        TriggerClientEvent('xt-notify:Alert', src, "Người chơi không online", 'error')
     end
 end, 'admin')
 
@@ -143,7 +143,7 @@ end, 'admin')
 QBCore.Commands.Add('job', 'Kiểm tra nghề nghiệp của bạn', {}, false, function(source)
     local src = source
     local PlayerJob = QBCore.Functions.GetPlayer(src).PlayerData.job
-    TriggerClientEvent('QBCore:Notify', src, string.format('[Công việc]: %s [Chức vụ]: %s [Tình trạng]: %s', PlayerJob.label, PlayerJob.grade.name, PlayerJob.onduty))
+    TriggerClientEvent('xt-notify:Alert', src, string.format('[Công việc]: %s [Chức vụ]: %s [Tình trạng]: %s', PlayerJob.label, PlayerJob.grade.name, PlayerJob.onduty))
 end, 'user')
 
 QBCore.Commands.Add('setjob', 'Chỉnh công việc của người chơi (Chỉ dành cho Admin)', { { name = 'id', help = 'ID người chơi' }, { name = 'job', help = 'Tên công việc' }, { name = 'grade', help = 'Chức vụ' } }, true, function(source, args)
@@ -152,7 +152,7 @@ QBCore.Commands.Add('setjob', 'Chỉnh công việc của người chơi (Chỉ 
     if Player then
         Player.Functions.SetJob(tostring(args[2]), tonumber(args[3]))
     else
-        TriggerClientEvent('QBCore:Notify', src, "Người chơi không online", 'error')
+        TriggerClientEvent('xt-notify:Alert', src, "Người chơi không online", 'error')
     end
 end, 'admin')
 
@@ -162,7 +162,7 @@ QBCore.Commands.Add('gang', 'Kiểm tra băng đảng', {}, false, function(sour
     local src = source
     local PlayerGang = QBCore.Functions.GetPlayer(source).PlayerData.gang
 
-    TriggerClientEvent('QBCore:Notify', src, string.format('[Băng đảng]: %s [Vai vế]: %s', PlayerGang.label, PlayerGang.grade.name))
+    TriggerClientEvent('xt-notify:Alert', src, string.format('[Băng đảng]: %s [Vai vế]: %s', PlayerGang.label, PlayerGang.grade.name))
 end, 'user')
 
 QBCore.Commands.Add('setgang', 'Chỉnh sửa băng đảng cho người chơi (Chỉ dành cho Admin)', { { name = 'id', help = 'ID người chơi' }, { name = 'gang', help = 'Tên Băng đảng' }, { name = 'grade', help = 'Vai vế' } }, true, function(source, args)
@@ -171,7 +171,7 @@ QBCore.Commands.Add('setgang', 'Chỉnh sửa băng đảng cho người chơi (
     if Player then
         Player.Functions.SetGang(tostring(args[2]), tonumber(args[3]))
     else
-        TriggerClientEvent('QBCore:Notify', src, "Người chơi không online", 'error')
+        TriggerClientEvent('xt-notify:Alert', src, "Người chơi không online", 'error')
     end
 end, 'admin')
 
@@ -184,7 +184,7 @@ QBCore.Commands.Add('clearinv', 'Clear Players Inventory (Chỉ dành cho Admin)
     if Player then
         Player.Functions.ClearInventory()
     else
-        TriggerClientEvent('QBCore:Notify', src, "Người chơi không online", 'error')
+        TriggerClientEvent('xt-notify:Alert', src, "Người chơi không online", 'error')
     end
 end, 'admin')
 

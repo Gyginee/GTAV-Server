@@ -55,7 +55,7 @@ AddEventHandler('chatMessage', function(source, n, message)
                 table.remove(args, 1)
                 if isGod or hasPerm or isPrincipal then
                     if (QBCore.Commands.List[command].argsrequired and #QBCore.Commands.List[command].arguments ~= 0 and args[#QBCore.Commands.List[command].arguments] == nil) then
-                        TriggerClientEvent('QBCore:Notify', src, "Thiếu giá trị", 'error')
+                        TriggerClientEvent('xt-notify:Alert', src, "Thiếu giá trị", 'error')
                     else
                         QBCore.Commands.List[command].callback(src, args)
                     end
@@ -155,8 +155,8 @@ RegisterNetEvent('QBCore:UpdatePlayer', function()
     if Player then
         local newHunger = Player.PlayerData.metadata['hunger'] - QBCore.Config.Player.HungerRate
         local newThirst = Player.PlayerData.metadata['thirst'] - QBCore.Config.Player.ThirstRate
-        local newPee = Player.PlayerData.metadata['pee'] - QBCore.Config.Player.PeeRate
-        local newPoo = Player.PlayerData.metadata['poo'] - QBCore.Config.Player.PooRate
+        local newPee = Player.PlayerData.metadata['pee'] + QBCore.Config.Player.PeeRate
+        local newPoo = Player.PlayerData.metadata['poo'] + QBCore.Config.Player.PooRate
         if newHunger <= 0 then
             newHunger = 0
         end
@@ -165,9 +165,13 @@ RegisterNetEvent('QBCore:UpdatePlayer', function()
         end
         if newPee <= 0 then
             newPee = 0
+        elseif newPee >=100 then
+            newPee = 100
         end
         if newPoo <= 0 then
             newPoo = 0
+        elseif newPoo >=100 then
+            newPoo = 100
         end
         Player.Functions.SetMetaData('thirst', newThirst)
         Player.Functions.SetMetaData('pee', newPee)
@@ -197,10 +201,10 @@ RegisterNetEvent('QBCore:ToggleDuty', function()
     local Player = QBCore.Functions.GetPlayer(src)
     if Player.PlayerData.job.onduty then
         Player.Functions.SetJobDuty(false)
-        TriggerClientEvent('QBCore:Notify', src, "Bạn đã <span style='color:#ff0000'>kết thúc</span> ca làm", 'error')
+        TriggerClientEvent('xt-notify:Alert', src, "Bạn đã <span style='color:#ff0000'>kết thúc</span> ca làm", 'error')
     else
         Player.Functions.SetJobDuty(true)
-        TriggerClientEvent('QBCore:Notify', src, "Bạn đã <span style='color:#30ff00'>bắt đầu</span> ca làm", 'success')
+        TriggerClientEvent('xt-notify:Alert', src, "Bạn đã <span style='color:#30ff00'>bắt đầu</span> ca làm", 'success')
     end
     TriggerClientEvent('QBCore:Client:SetDuty', src, Player.PlayerData.job.onduty)
 end)
@@ -240,7 +244,7 @@ RegisterNetEvent('QBCore:CallCommand', function(command, args)
             local isPrincipal = IsPlayerAceAllowed(src, 'command')
             if (QBCore.Commands.List[command].permission == Player.PlayerData.job.name) or isGod or hasPerm or isPrincipal then
                 if (QBCore.Commands.List[command].argsrequired and #QBCore.Commands.List[command].arguments ~= 0 and args[#QBCore.Commands.List[command].arguments] == nil) then
-                    TriggerClientEvent('QBCore:Notify', src, "Thiếu giá trị", 'error')
+                    TriggerClientEvent('xt-notify:Alert', src, "Thiếu giá trị", 'error')
                 else
                     QBCore.Commands.List[command].callback(src, args)
                 end

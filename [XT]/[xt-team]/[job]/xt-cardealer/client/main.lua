@@ -310,7 +310,7 @@ CreateThread(function()
 	SetBlipAsShortRange(blip, true)
 	SetBlipColour(blip, 74)
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentSubstringPlayerName("XT Auto")
+	AddTextComponentSubstringPlayerName("BIG-CarAuto")
 	EndTextCommandSetBlipName(blip)
 end)
 

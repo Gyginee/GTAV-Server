@@ -31,7 +31,7 @@ QBCore.Functions.CreateUseableItem("fishingloot", function(source, item)
 	if Player.Functions.GetItemBySlot(item.slot) ~= nil then
 		Player.Functions.RemoveItem("fishingloot", 1)
 		TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['fishingloot'], "remove", 1)
-		TriggerClientEvent('QBCore:Notify', src, "Hãy mở hộp", "primary")
+		TriggerClientEvent('xt-notify:Alert', src, "Hãy mở hộp", "primary")
 		SetTimeout(1000, function()
 			Player.Functions.AddItem('fishingkey', 1, nil, {["quality"] = 100}) 
 			TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['fishingkey'], "add", 1)
@@ -40,7 +40,7 @@ QBCore.Functions.CreateUseableItem("fishingloot", function(source, item)
 			TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[Config.smallLootboxReward], "add", 1)
 
 			Player.Functions.AddMoney('bank', Config.smallLootboxCash, "fishingloot")
-			TriggerClientEvent('QBCore:Notify', src, "Bạn đã tìm thấy một vài vật phẩm và kiếm được $"..Config.smallLootboxCash, "success")
+			TriggerClientEvent('xt-notify:Alert', src, "Bạn đã tìm thấy một vài vật phẩm và kiếm được $"..Config.smallLootboxCash, "success")
 		end)
     end
 end)
@@ -73,7 +73,7 @@ end)
 RegisterNetEvent("fishing:server:addTackleBox", function()
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
-	TriggerClientEvent('QBCore:Notify', src, "Dường như có hộp cá còn sót lại từ một ngư dân khác", "primary")
+	TriggerClientEvent('xt-notify:Alert', src, "Dường như có hộp cá còn sót lại từ một ngư dân khác", "primary")
 	SetTimeout(1000, function()
 		Player.Functions.AddItem('fishtacklebox', 1, nil, {["quality"] = 100}) 
 		TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['fishtacklebox'], "add", 1)
@@ -85,7 +85,7 @@ RegisterNetEvent("fishing:server:returnDeposit", function()
     local pData = QBCore.Functions.GetPlayer(src)
 	local price = math.floor(Config.BoatPrice/2)
 	pData.Functions.AddMoney('bank', price , "boat-rental")
-	TriggerClientEvent('QBCore:Notify', src, "Thuyền đã được trả và nhận lại $"..price, "success")
+	TriggerClientEvent('xt-notify:Alert', src, "Thuyền đã được trả và nhận lại $"..price, "success")
 end) 
 
 RegisterNetEvent('fishing:server:catch', function() 
@@ -103,79 +103,79 @@ RegisterNetEvent('fishing:server:catch', function()
 				TriggerClientEvent('fishing:client:spawnFish', src, 1)
 				Player.Functions.AddItem('killerwhale', 1, nil, info, {["quality"] = 100})
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['killerwhale'], "add", 1)
-				TriggerClientEvent('QBCore:Notify', src, "Bạn đã bắt được một con cá voi sát thủ!. Đây là những loài có nguy cơ tuyệt chủng và sở hữu bất hợp pháp", "primary")
+				TriggerClientEvent('xt-notify:Alert', src, "Bạn đã bắt được một con cá voi sát thủ!. Đây là những loài có nguy cơ tuyệt chủng và sở hữu bất hợp pháp", "primary")
 			elseif luck >= 99.5 and luck <= 100 then
 				Player.Functions.AddItem('fishinglootbig', 1, nil, {["quality"] = 100})
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['fishinglootbig'], "add", 1)
-				TriggerClientEvent('QBCore:Notify', src, "Bạn đã tìm thấy một rương kho báu", "success")
+				TriggerClientEvent('xt-notify:Alert', src, "Bạn đã tìm thấy một rương kho báu", "success")
 			elseif luck >= 98 and luck < 99.5 then
 				local weight = math.random(10,28)
 				local info = {species = "Bottlenose",lbs = weight, type = "Exotic"}
 				TriggerClientEvent('fishing:client:spawnFish', src, 2)
 				Player.Functions.AddItem('dolphin', 1, nil, info, {["quality"] = 100})
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['dolphin'], "add", 1)
-				TriggerClientEvent('QBCore:Notify', src, "Bạn đã bắt được một con cá heo! Đây là loài có nguy cơ tuyệt chủng và sở hữu bất hợp pháp", "primary")
+				TriggerClientEvent('xt-notify:Alert', src, "Bạn đã bắt được một con cá heo! Đây là loài có nguy cơ tuyệt chủng và sở hữu bất hợp pháp", "primary")
 			elseif luck >= 94 and luck < 98 then
 				local weight = math.random(20,30)
 				local info = {species = "Hammerhead Shark", lbs = weight, type = "Exotic"}
 				TriggerClientEvent('fishing:client:spawnFish', src, 3)
 				Player.Functions.AddItem('sharkhammer', 1, nil, info, {["quality"] = 100})
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['sharkhammer'], "add", 1)
-				TriggerClientEvent('QBCore:Notify', src, "Bạn đã bắt được một con cá mập đầu búa! Đây là những loài có nguy cơ tuyệt chủng và sở hữu bất hợp pháp", "primary")
+				TriggerClientEvent('xt-notify:Alert', src, "Bạn đã bắt được một con cá mập đầu búa! Đây là những loài có nguy cơ tuyệt chủng và sở hữu bất hợp pháp", "primary")
 			elseif luck >= 90 and luck < 94 then
 				local weight = math.random(1,6)
 				local info = {species = "Tiger Shark", lbs = weight, type = "Exotic"}
 				TriggerClientEvent('fishing:client:spawnFish', src, 4)
 				Player.Functions.AddItem('sharktiger', 1, nil, info, {["quality"] = 100})
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['sharktiger'], "add", 1)
-				TriggerClientEvent('QBCore:Notify', src, "Bạn đã bắt được một con cá mập báo! Đây là những loài có nguy cơ tuyệt chủng và sở hữu bất hợp pháp", "primary")
+				TriggerClientEvent('xt-notify:Alert', src, "Bạn đã bắt được một con cá mập báo! Đây là những loài có nguy cơ tuyệt chủng và sở hữu bất hợp pháp", "primary")
 			elseif luck >= 85 and luck < 90 then
 				local weight = math.random(4,9)
 				local info = {species = "Manta ray", lbs = weight, type = "Normal"}
 				TriggerClientEvent('fishing:client:spawnFish', src, 5)
 				Player.Functions.AddItem('stingray', 1, nil, info, {["quality"] = 100})
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['stingray'], "add", 1)
-				TriggerClientEvent('QBCore:Notify', src, "Bạn đã bắt được con cá đuối nặng "..weight.."!", "success")
+				TriggerClientEvent('xt-notify:Alert', src, "Bạn đã bắt được con cá đuối nặng "..weight.."!", "success")
 			elseif luck >= 83 and luck < 85 then
 				local weight = math.random(10,15)
 				local info = {species = "Flounder", lbs = weight, type = "Normal"}
 				TriggerClientEvent('fishing:client:spawnFish', src, 6)
 				Player.Functions.AddItem('flounder', 1, nil, info, {["quality"] = 100})
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['flounder'], "add", 1)
-				TriggerClientEvent('QBCore:Notify', src, "Bạn đã bắt được con cá bơn nặng " .. weight .. "!", "success")
+				TriggerClientEvent('xt-notify:Alert', src, "Bạn đã bắt được con cá bơn nặng " .. weight .. "!", "success")
 			elseif luck >= 75 and luck < 83 then
 				Player.Functions.AddItem('fishingboot', 1, nil, {["quality"] = 100})
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['fishingboot'], "add", 1)
-				TriggerClientEvent('QBCore:Notify', src, "Đen quá! Bạn bắt được một chiếc ủng!", "primary")
+				TriggerClientEvent('xt-notify:Alert', src, "Đen quá! Bạn bắt được một chiếc ủng!", "primary")
 			elseif luck >= 70 and luck < 75 then
 				local weight = math.random(1,6)
 				local info = {species = "Bass", lbs = weight, type = "Normal"}
 				TriggerClientEvent('fishing:client:spawnFish', src, 6)
 				Player.Functions.AddItem('bass', 1, nil, info, {["quality"] = 100})
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['bass'], "add", 1)
-				TriggerClientEvent('QBCore:Notify', src, "Bạn đã bắt được con cá vược nặng " .. weight .. "!", "success")
+				TriggerClientEvent('xt-notify:Alert', src, "Bạn đã bắt được con cá vược nặng " .. weight .. "!", "success")
 			elseif luck >= 69.5 and luck < 70 then
 				Player.Functions.AddItem('fishingloot', 1, nil, {["quality"] = 100})
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['fishingloot'], "add", 1)
-				TriggerClientEvent('QBCore:Notify', src, "Bạn đã tìm được cái hộp nhỏ!", "success")
+				TriggerClientEvent('xt-notify:Alert', src, "Bạn đã tìm được cái hộp nhỏ!", "success")
 			elseif luck >= 50 and luck < 69.5 then
 				local weight = math.random(5,7)
 				local info = {species = "Cod", lbs = weight, type = "Normal"}
 				TriggerClientEvent('fishing:client:spawnFish', src, 6)
 				Player.Functions.AddItem('codfish', 1, nil, info, {["quality"] = 100})
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['codfish'], "add", 1)
-				TriggerClientEvent('QBCore:Notify', src, "Bạn đã bắt được con cá tuyết nặng " .. weight .. "!", "success")
+				TriggerClientEvent('xt-notify:Alert', src, "Bạn đã bắt được con cá tuyết nặng " .. weight .. "!", "success")
 			elseif luck >= 35 and luck < 50 then
 				Player.Functions.AddItem('fishingtin', 1, nil, {["quality"] = 100})
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['fishingtin'], "add", 1)
-				TriggerClientEvent('QBCore:Notify', src, "Bạn bắt được một cái thiếc câu cá!", "primary")
+				TriggerClientEvent('xt-notify:Alert', src, "Bạn bắt được một cái thiếc câu cá!", "primary")
 			elseif luck >= 0 and luck < 45 then
 				local weight = math.random(1,5)
 				local info = {species = "Mackerel", lbs = weight, type = "Normal"}
 				TriggerClientEvent('fishing:client:spawnFish', src, 6)
 				Player.Functions.AddItem('mackerel', 1, nil, info, {["quality"] = 100})
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['mackerel'], "add", 1)
-				TriggerClientEvent('QBCore:Notify', src, "Bạn đã bắt được con cá thu nặng " .. weight .. "!", "success")
+				TriggerClientEvent('xt-notify:Alert', src, "Bạn đã bắt được con cá thu nặng " .. weight .. "!", "success")
             end
             Citizen.Wait(500)
         end
@@ -193,10 +193,10 @@ RegisterNetEvent('fishing:server:SellillegalFish', function(args)
 			Player.Functions.RemoveItem("dolphin", 1, k)
 			Player.Functions.AddMoney('bank', payment , "dolphin-sell")
 			TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['dolphin'], "remove", 1)
-			TriggerClientEvent('QBCore:Notify', src, "Bán cá heo được $"..payment, "success")
+			TriggerClientEvent('xt-notify:Alert', src, "Bán cá heo được $"..payment, "success")
 			TriggerClientEvent("doj:client:SellillegalFish", source)
 		else
-			TriggerClientEvent('QBCore:Notify', src, "Bạn không có con cá heo nào để bán", 'error')
+			TriggerClientEvent('xt-notify:Alert', src, "Bạn không có con cá heo nào để bán", 'error')
 		end
 	elseif args == 2 then 
 		local sharktiger = Player.Functions.GetItemByName("sharktiger")
@@ -205,10 +205,10 @@ RegisterNetEvent('fishing:server:SellillegalFish', function(args)
 			Player.Functions.RemoveItem("sharktiger", 1, k)
 			Player.Functions.AddMoney('bank', payment , "sharktiger-sell")
 			TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['sharktiger'], "remove", 1)
-			TriggerClientEvent('QBCore:Notify', src, "Cá mập báo bán được $"..payment, "success")
+			TriggerClientEvent('xt-notify:Alert', src, "Cá mập báo bán được $"..payment, "success")
 			TriggerClientEvent("doj:client:SellillegalFish", source)
 		else
-			TriggerClientEvent('QBCore:Notify', src, "Bạn không có con cá mập báo nào để bán", 'error')
+			TriggerClientEvent('xt-notify:Alert', src, "Bạn không có con cá mập báo nào để bán", 'error')
 		end
 	elseif args == 3 then 
 		local sharkhammer = Player.Functions.GetItemByName("sharkhammer")
@@ -217,10 +217,10 @@ RegisterNetEvent('fishing:server:SellillegalFish', function(args)
 			Player.Functions.RemoveItem("sharkhammer", 1, k)
 			Player.Functions.AddMoney('bank', payment , "sharkhammer-sell")
 			TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['sharkhammer'], "remove", 1)
-			TriggerClientEvent('QBCore:Notify', src, "Cá mập đầu búa bán được $"..payment, "success")
+			TriggerClientEvent('xt-notify:Alert', src, "Cá mập đầu búa bán được $"..payment, "success")
 			TriggerClientEvent("doj:client:SellillegalFish", source)
 		else
-			TriggerClientEvent('QBCore:Notify', src, "Bạn không có con cá mập đầu búa nào để bán", 'error')
+			TriggerClientEvent('xt-notify:Alert', src, "Bạn không có con cá mập đầu búa nào để bán", 'error')
 		end
 	else
 		local killerwhale = Player.Functions.GetItemByName("killerwhale")
@@ -229,10 +229,10 @@ RegisterNetEvent('fishing:server:SellillegalFish', function(args)
 			Player.Functions.RemoveItem("killerwhale", 1, k)
 			Player.Functions.AddMoney('bank', payment , "killerwhale-sell")
 			TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['killerwhale'], "remove", 1)
-			TriggerClientEvent('QBCore:Notify', src, "Cá voi sát thủ bán được $"..payment, "success")
+			TriggerClientEvent('xt-notify:Alert', src, "Cá voi sát thủ bán được $"..payment, "success")
 			TriggerClientEvent("doj:client:SellillegalFish", source)
 		else
-			TriggerClientEvent('QBCore:Notify', src, "Bạn không có con cá voi sát thủ nào để bán", "error")
+			TriggerClientEvent('xt-notify:Alert', src, "Bạn không có con cá voi sát thủ nào để bán", "error")
 		end
 	end
 end)
@@ -248,10 +248,10 @@ RegisterNetEvent('fishing:server:SellLegalFish', function(args)
 			Player.Functions.RemoveItem("mackerel", 1, k)
 			Player.Functions.AddMoney('bank', payment , "mackerel-sell")
 			TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['mackerel'], "remove", 1)
-			TriggerClientEvent('QBCore:Notify', src, "1x Cá thu bán được $"..payment, "success")
+			TriggerClientEvent('xt-notify:Alert', src, "1x Cá thu bán được $"..payment, "success")
 			TriggerClientEvent("doj:client:SellLegalFish", source)
 		else
-		    TriggerClientEvent('QBCore:Notify', src, "Bạn không có con cá thu nào để bán", "error")
+		    TriggerClientEvent('xt-notify:Alert', src, "Bạn không có con cá thu nào để bán", "error")
 		end
 	elseif args == 2 then
 		local codfish = Player.Functions.GetItemByName("codfish")
@@ -260,10 +260,10 @@ RegisterNetEvent('fishing:server:SellLegalFish', function(args)
 			Player.Functions.RemoveItem("codfish", 1, k)
 			Player.Functions.AddMoney('bank', payment , "codfish-sell")
 			TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['codfish'], "remove", 1)
-			TriggerClientEvent('QBCore:Notify', src, "1x Cá tuyết bán được $"..payment, "success")
+			TriggerClientEvent('xt-notify:Alert', src, "1x Cá tuyết bán được $"..payment, "success")
 			TriggerClientEvent("doj:client:SellLegalFish", source)
 		else
-		    TriggerClientEvent('QBCore:Notify', src, "Bạn không có con cá tuyết nào để bán", "error")
+		    TriggerClientEvent('xt-notify:Alert', src, "Bạn không có con cá tuyết nào để bán", "error")
 		end
 	elseif args == 3 then
 		local bass = Player.Functions.GetItemByName("bass") 
@@ -272,10 +272,10 @@ RegisterNetEvent('fishing:server:SellLegalFish', function(args)
 			Player.Functions.RemoveItem("bass", 1, k)
 			Player.Functions.AddMoney('bank', payment , "bass-sell")
 			TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['bass'], "remove", 1)
-			TriggerClientEvent('QBCore:Notify', src, "1x Cá vược bán được $"..payment, "success")
+			TriggerClientEvent('xt-notify:Alert', src, "1x Cá vược bán được $"..payment, "success")
 			TriggerClientEvent("doj:client:SellLegalFish", source)
 		else
-			TriggerClientEvent('QBCore:Notify', src, "Bạn không có con cá vược nào để bán", "error")
+			TriggerClientEvent('xt-notify:Alert', src, "Bạn không có con cá vược nào để bán", "error")
 		end
 	elseif args == 4 then
 		local flounder = Player.Functions.GetItemByName("flounder")
@@ -284,10 +284,10 @@ RegisterNetEvent('fishing:server:SellLegalFish', function(args)
 			Player.Functions.RemoveItem("flounder", 1, k)
 			Player.Functions.AddMoney('bank', payment , "flounder-sell")
 			TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['flounder'], "remove", 1)
-			TriggerClientEvent('QBCore:Notify', src, "1x Cá bơn bán được $"..payment, "success")
+			TriggerClientEvent('xt-notify:Alert', src, "1x Cá bơn bán được $"..payment, "success")
 			TriggerClientEvent("doj:client:SellLegalFish", source)
 		else
-		    TriggerClientEvent('QBCore:Notify', src, "Không còn cá bơn trong người để bán", "error")
+		    TriggerClientEvent('xt-notify:Alert', src, "Không còn cá bơn trong người để bán", "error")
 		end
 	else
 		local stingray = Player.Functions.GetItemByName("stingray")
@@ -296,10 +296,10 @@ RegisterNetEvent('fishing:server:SellLegalFish', function(args)
 			Player.Functions.RemoveItem("stingray", 1, k)
 			Player.Functions.AddMoney('bank', payment , "stingray-sell")
 			TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['stingray'], "remove", 1)
-			TriggerClientEvent('QBCore:Notify', src, "1x Cá đuối bán được $"..payment, "success")
+			TriggerClientEvent('xt-notify:Alert', src, "1x Cá đuối bán được $"..payment, "success")
 			TriggerClientEvent("doj:client:SellLegalFish", source)
 		else
-		    TriggerClientEvent('QBCore:Notify', src, "Không còn cá đuối trong người để bán", "error")
+		    TriggerClientEvent('xt-notify:Alert', src, "Không còn cá đuối trong người để bán", "error")
 		end
 	end
 end)
@@ -319,7 +319,7 @@ RegisterNetEvent('fishing:server:BuyFishingGear', function(args)
 			TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['fishbait'], "add", 1)
 			TriggerClientEvent("doj:client:buyFishingGear", source)
 		else
-			TriggerClientEvent('QBCore:Notify', src, "Không có đủ tiền mua.", "error")
+			TriggerClientEvent('xt-notify:Alert', src, "Không có đủ tiền mua.", "error")
 		end
 	elseif args == 2 then 
 		if bankBalance >= Config.fishingRodPrice then
@@ -328,7 +328,7 @@ RegisterNetEvent('fishing:server:BuyFishingGear', function(args)
 			TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['fishingrod'], "add", 1)
 			TriggerClientEvent("doj:client:buyFishingGear", source)
 		else
-			TriggerClientEvent('QBCore:Notify', src, "Không có đủ tiền..", "error")
+			TriggerClientEvent('xt-notify:Alert', src, "Không có đủ tiền..", "error")
 		end
 	elseif args == 3 then 
 		if bankBalance >= Config.BoatAnchorPrice then
@@ -337,14 +337,14 @@ RegisterNetEvent('fishing:server:BuyFishingGear', function(args)
 			TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['anchor'], "add", 1)
 			TriggerClientEvent("doj:client:buyFishingGear", source)
 		else
-			TriggerClientEvent('QBCore:Notify', src, "Không có đủ tiền..", "error")
+			TriggerClientEvent('xt-notify:Alert', src, "Không có đủ tiền..", "error")
 		end
 	-- else
 	-- 	if bankBalance >= Config.FishingBoxPrice then
 	-- 		if Item ~= nil then
 	-- 			if Item.amount > 0 then
 	-- 				Player.Functions.RemoveItem('fishicebox', 1)
-	-- 				TriggerClientEvent('QBCore:Notify', src, "Bạn đã mua rồi nên hộp sẽ được làm mới, đừng tham lam..", "error")
+	-- 				TriggerClientEvent('xt-notify:Alert', src, "Bạn đã mua rồi nên hộp sẽ được làm mới, đừng tham lam..", "error")
 	-- 				Player.Functions.AddMoney('cash', Config.FishingBoxPrice, "fishicebox")
 	-- 			end
 	-- 		end
@@ -357,7 +357,7 @@ RegisterNetEvent('fishing:server:BuyFishingGear', function(args)
 	-- 		TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['fishicebox'], "add", 1)
 	-- 		TriggerClientEvent("doj:client:buyFishingGear", source)
 	-- 	else
-	-- 		TriggerClientEvent('QBCore:Notify', src, "Không có đủ tiền..", "error")
+	-- 		TriggerClientEvent('xt-notify:Alert', src, "Không có đủ tiền..", "error")
 	-- 	end
 	end
 end)
@@ -371,10 +371,10 @@ QBCore.Functions.CreateCallback('fishing:server:checkMoney', function(source, cb
 	local price = Config.BoatPrice
     if bankBalance >= price then
         pData.Functions.RemoveMoney('bank', Config.BoatPrice, "boat-rental")
-		TriggerClientEvent('QBCore:Notify', src, "Thuyền đã được thuê với giá $"..price, "success")
+		TriggerClientEvent('xt-notify:Alert', src, "Thuyền đã được thuê với giá $"..price, "success")
         cb(true)
     else
-        TriggerClientEvent('QBCore:Notify', src, "Không có đủ tiền trong tài khoản..", "error")
+        TriggerClientEvent('xt-notify:Alert', src, "Không có đủ tiền trong tài khoản..", "error")
         cb(false)
     end
 end)

@@ -3,8 +3,8 @@ Config = Config or {}
 Config.Products = {
     ['Shops'] = {
       [1] = {
-        name = "tosti",
-        price = 200,
+        name = "sandwich",
+        price = 50,
         amount = 50,
         info = {},
         type = "item",
@@ -18,7 +18,7 @@ Config.Products = {
         type = "item",
         slot = 2,
     },
-    [3] = {
+--[[     [3] = {
         name = "kurkakola",
         price = 50,
         amount = 50,
@@ -43,7 +43,7 @@ Config.Products = {
         slot = 5,
     },
     [6] = {
-        name = "sandwich",
+        name = "tosti",
         price = 50,
         amount = 50,
         info = {},
@@ -97,7 +97,7 @@ Config.Products = {
         info = {},
         type = "item",
         slot = 12,				
-    },
+    }, ]]
     },
     ['Weed'] = {
        [1] = {

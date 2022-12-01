@@ -78,7 +78,7 @@ if Config.EnableAdvertisementCommand then
 					args = { playerName, message, time }
 				})
 
-				TriggerClientEvent('okokNotify:Alert', source, "ADVERTISEMENT", "Advertisement successfully made for "..Config.AdvertisementPrice..'€', 10000, 'success')
+				TriggerClientEvent('xt-notify:Alert', source, "ADVERTISEMENT", "Advertisement successfully made for "..Config.AdvertisementPrice..'€', 10000, 'success')
 
 				local time = Config.AdvertisementCooldown * 60
 				local pastTime = 0
@@ -91,10 +91,10 @@ if Config.EnableAdvertisementCommand then
 				end
 				canAdvertise = true
 			else
-				TriggerClientEvent('okokNotify:Alert', source, "ADVERTISEMENT", "You don't have enough money to make an advertisement", 10000, 'error')
+				TriggerClientEvent('xt-notify:Alert', source, "ADVERTISEMENT", "You don't have enough money to make an advertisement", 10000, 'error')
 			end
 		else
-			TriggerClientEvent('okokNotify:Alert', source, "ADVERTISEMENT", "You can't advertise so quickly", 10000, 'error')
+			TriggerClientEvent('xt-notify:Alert', source, "ADVERTISEMENT", "You can't advertise so quickly", 10000, 'error')
 		end
 	end)
 end

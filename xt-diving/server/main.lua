@@ -49,7 +49,7 @@ AddEventHandler('qb-diving:server:BuyBoat', function(boatModel, BerthId)
         else
             missingMoney = (BoatPrice - PlayerMoney.cash)
         end
-        TriggerClientEvent('okokNotify:Alert', src, "HỆ THỐNG", "Không đủ tiền, bạn thiếu $".. missingMoney .."", 5000, 'error')
+        TriggerClientEvent('xt-notify:Alert', src, "HỆ THỐNG", "Không đủ tiền, bạn thiếu $".. missingMoney .."", 5000, 'error')
         --TriggerClientEvent('QBCore:Notify', src, 'Not Enough Money, You Are Missing $' .. missingMoney .. '', 'error')
     end
 end)
@@ -171,7 +171,7 @@ AddEventHandler('qb-diving:server:SellCoral', function()
             end
         end
     else
-        TriggerClientEvent('okokNotify:Alert', src, "HỆ THỐNG", "Bạn không có san hô để bán", 5000, 'error')
+        TriggerClientEvent('xt-notify:Alert', src, "HỆ THỐNG", "Bạn không có san hô để bán", 5000, 'error')
         --TriggerClientEvent('QBCore:Notify', src, 'You don\'t have any coral to sell..', 'error')
     end
 end)

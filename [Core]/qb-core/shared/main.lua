@@ -73,7 +73,7 @@ end
 QBShared.StarterItems = {
     ['phone'] = { amount = 1, item = 'phone' },
     ['id_card'] = { amount = 1, item = 'id_card' },
-    ['driver_license'] = { amount = 1, item = 'driver_license' },
+    --[[ ['driver_license'] = { amount = 1, item = 'driver_license' }, ]]
     ['water_bottle'] = { amount = 5, item = 'water_bottle' },
     ['sandwich'] = { amount = 5, item = 'sandwich' },
     ['lockpick'] = { amount = 2, item = 'lockpick' },

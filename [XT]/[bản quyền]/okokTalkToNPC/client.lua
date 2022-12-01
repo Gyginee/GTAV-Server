@@ -268,7 +268,7 @@ end)
 RegisterNUICallback('action', function(data, cb)
 	if data.action == 'close' then
 		SetNuiFocus(false, false)
-		exports['okokNotify']:Alert("HỆ THỐNG", "Chúc bạn một ngày tốt lành", 5000, 'info')
+		exports['xt-notify']:Alert("HỆ THỐNG", "Chúc bạn một ngày tốt lành", 5000, 'info')
 		if Config.HideMinimap then
 			DisplayRadar(true)
 		end
@@ -353,32 +353,32 @@ end
 
 RegisterNetEvent("okokTalk:toilet")
 AddEventHandler("okokTalk:toilet", function()
-	exports['okokNotify']:Alert("BANK", "On your right, sir.", 5000, 'info')
+	exports['xt-notify']:Alert("BANK", "On your right, sir.", 5000, 'info')
 end)
 
 RegisterNetEvent("okokTalk:rob")
 AddEventHandler("okokTalk:rob", function()
-	exports['okokNotify']:Alert("BANK", "Please stop joking, sir.", 5000, 'warning')
+	exports['xt-notify']:Alert("BANK", "Please stop joking, sir.", 5000, 'warning')
 end)
 
 RegisterNetEvent("okokTalk:safe")
 AddEventHandler("okokTalk:safe", function()
-	exports['okokNotify']:Alert("BANK", "You don't have a safe, sir.", 5000, 'error')
+	exports['xt-notify']:Alert("BANK", "You don't have a safe, sir.", 5000, 'error')
 end)
 
 RegisterNetEvent("okokTalk:card")
 AddEventHandler("okokTalk:card", function()
-	exports['okokNotify']:Alert("BANK", "You'll have to wait for Jennifer, sir.", 5000, 'info')
+	exports['xt-notify']:Alert("BANK", "You'll have to wait for Jennifer, sir.", 5000, 'info')
 end)
 
 RegisterNetEvent("okokTalk:lost")
 AddEventHandler("okokTalk:lost", function()
-	exports['okokNotify']:Alert("BANK", "No problem, we'll send a new one to your home.", 5000, 'success')
+	exports['xt-notify']:Alert("BANK", "No problem, we'll send a new one to your home.", 5000, 'success')
 end)
 
 RegisterNetEvent("okokTalk:jennifer")
 AddEventHandler("okokTalk:jennifer", function()
-	exports['okokNotify']:Alert("BANK", "Not at the moment, she starts at 1 PM.", 5000, 'info')
+	exports['xt-notify']:Alert("BANK", "Not at the moment, she starts at 1 PM.", 5000, 'info')
 end)
 
 RegisterNetEvent("okokTalk:muado")

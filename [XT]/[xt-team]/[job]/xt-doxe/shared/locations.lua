@@ -57,12 +57,12 @@ Config = Config or {}
 Config.Locations = {
     ['Innocence'] = {
         settings = {
-            label = 'Xưởng độ X-Team',
-            welcomeLabel = "Chào mừng bạn đến với xưởng độ X-Team",
+            label = 'Xưởng độ',
+            welcomeLabel = "Chào mừng bạn đến với xưởng độ",
             enabled = true,
         },
         blip = {
-            label = 'Xưởng độ X-Team',
+            label = 'Xưởng độ',
             coords = vector3(141.94, -3032.11, 7.04),
             sprite = 72,
             scale = 0.65,
@@ -85,7 +85,7 @@ Config.Locations = {
             cosmetics = true,
         },
         drawtextui = {
-            text = "Xưởng độ X-Team"
+            text = "Xưởng độ"
         },
         restrictions = { deniedClasses = { 18 } },
         zones = {

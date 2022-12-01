@@ -337,7 +337,7 @@ function QBCore.Player.CreatePlayer(PlayerData)
         local totalWeight = QBCore.Player.GetTotalWeight(self.PlayerData.items)
         local itemInfo = QBCore.Shared.Items[item:lower()]
         if itemInfo == nil then
-            TriggerClientEvent('QBCore:Notify', self.PlayerData.source, "Vật phẩm <span style='color:#ff0000'>không</span> tồn tại", 'error')
+            TriggerClientEvent('xt-notify:Alert', self.PlayerData.source, "Vật phẩm <span style='color:#ff0000'>không</span> tồn tại", 'error')
             return
         end
         local amount = tonumber(amount)
@@ -369,7 +369,7 @@ function QBCore.Player.CreatePlayer(PlayerData)
                 end
             end
         else
-            TriggerClientEvent('QBCore:Notify', self.PlayerData.source, "Bạn <span style='color:#ff0000'>không</span> thể mang thêm vật phẩm", 'error')
+            TriggerClientEvent('xt-notify:Alert', self.PlayerData.source, "Bạn <span style='color:#ff0000'>không</span> thể mang thêm vật phẩm", 'error')
         end
         return false
     end

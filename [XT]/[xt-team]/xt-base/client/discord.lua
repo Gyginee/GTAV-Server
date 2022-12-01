@@ -11,13 +11,13 @@ CreateThread(function()
         -- (11-11-2018) New Natives:
 
         -- Here you can add hover text for the "large" icon.
-        SetDiscordRichPresenceAssetText('X SERVER')
+        SetDiscordRichPresenceAssetText('BIGCITY')
        
         -- Here you will have to put the image name for the "small" icon.
         SetDiscordRichPresenceAssetSmall('logo_name')
 
         -- Here you can add hover text for the "small" icon.
-        SetDiscordRichPresenceAssetSmallText('XTEAM')
+        SetDiscordRichPresenceAssetSmallText('Gyginee#0929')
 
         QBCore.Functions.TriggerCallback('smallresources:server:GetCurrentPlayers', function(result)
             local plus = result + 13
@@ -31,8 +31,8 @@ CreateThread(function()
             First paramater is the button index (0 or 1), second is the title and 
             last is the url (this has to start with "fivem://connect/" or "https://") 
         ]]--
-        SetDiscordRichPresenceAction(0, "XSEVER", "fivem://connect/4ep8g9")
-        SetDiscordRichPresenceAction(1, "XTEAM", "https://discord.gg/")
+        SetDiscordRichPresenceAction(0, "THAM GIA", "fivem://connect/4ep8g9")
+        SetDiscordRichPresenceAction(1, "DISCORD", "https://discord.gg/7HRrhyTQGG")
         -- It updates every minute just in case.
 	Wait(60000)
     end
