@@ -373,6 +373,22 @@ Config.VehicleSeats = {
     icon = 'chair',
     items = {}
 }
+Config.VehicleKeys = {
+    id = 'vehiclekeys',
+    title = 'Đưa chìa khoá',
+    icon = 'key',
+    type = 'client',
+    event = 'xt-vehiclekeys:client:give:key',
+    shouldClose = false,
+}
+Config.VehicleEnginer = {
+    id = 'vehicleenginer',
+    title = 'Bật động cơ',
+    icon = 'key',
+    type = 'client',
+    event = 'qb-radialmenu:client:engine',
+    shouldClose = false,
+}
 Config.JobInteractions = {
     ["ambulance"] = {
         {

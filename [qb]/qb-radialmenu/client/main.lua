@@ -82,7 +82,10 @@ local function SetupVehicleMenu()
 
     local ped = PlayerPedId()
     local Vehicle = GetVehiclePedIsIn(ped) ~= 0 and GetVehiclePedIsIn(ped) or getNearestVeh()
+    VehicleMenu.items[#VehicleMenu.items+1] = Config.VehicleKeys
     if Vehicle ~= 0 then
+
+        VehicleMenu.items[#VehicleMenu.items+1] = Config.VehicleEnginer
         VehicleMenu.items[#VehicleMenu.items+1] = Config.VehicleDoors
         if Config.EnableExtraMenu then VehicleMenu.items[#VehicleMenu.items+1] = Config.VehicleExtras end
         if IsPedInAnyVehicle(ped) then
@@ -275,6 +278,15 @@ RegisterNetEvent('qb-radialmenu:trunk:client:Door', function(plate, door, open)
             end
         end
     end
+end)
+function EngineControl()
+    local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+    if vehicle ~= nil and vehicle ~= 0 and GetPedInVehicleSeat(vehicle, 0) then
+        SetVehicleEngineOn(vehicle, (not GetIsVehicleEngineRunning(vehicle)), false, true)
+    end
+end
+RegisterNetEvent('qb-radialmenu:client:engine', function()
+    EngineControl()
 end)
 
 RegisterNetEvent('qb-radialmenu:client:ChangeSeat', function(data)
