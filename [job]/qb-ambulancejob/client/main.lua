@@ -244,8 +244,8 @@ local function ResetAll()
     })
     TriggerServerEvent("QBCore:Server:SetMetaData", "hunger", 100)
     TriggerServerEvent("QBCore:Server:SetMetaData", "thirst", 100)
-    TriggerServerEvent("QBCore:Server:SetMetaData", "pee", 100)
-    TriggerServerEvent("QBCore:Server:SetMetaData", "poo", 100)
+    TriggerServerEvent("QBCore:Server:SetMetaData", "pee", 0)
+    TriggerServerEvent("QBCore:Server:SetMetaData", "poo", 0)
 end
 
 local function loadAnimDict(dict)
