@@ -116,6 +116,8 @@ input:focus {
 	word-break: break-word;
 	box-sizing: border-box;
 	box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 1);
+	background: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);;
+
 }
 
 /* START STAFF */

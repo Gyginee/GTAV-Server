@@ -271,7 +271,8 @@ end
 local ped =PlayerPedId()
 
 RegisterNetEvent('consumables:client:Eat', function(itemName, prop)
-    AddProp(prop)
+    AddProp(prop)  
+    TriggerEvent('inventory:client:set:busy', true)
     RequestAnimationDict("mp_player_inteat@burger")
     TaskPlayAnim(ped, 'mp_player_inteat@burger', 'mp_player_int_eat_burger', 8.0, 1.0, -1, 49, 0, 0, 0, 0)
     QBCore.Functions.Progressbar("eat_something", "Ăn", 5000, false, true, {
@@ -282,6 +283,7 @@ RegisterNetEvent('consumables:client:Eat', function(itemName, prop)
     }, {}, {}, {}, function() -- Done
         TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items[itemName], "remove")
         TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        TriggerEvent('inventory:client:set:busy', false)
         RemoveProp()
         TriggerServerEvent("QBCore:Server:SetMetaData", "hunger", QBCore.Functions.GetPlayerData().metadata["hunger"] + ConsumeablesEat[itemName])
         TriggerServerEvent("QBCore:Server:SetMetaData", "poo", QBCore.Functions.GetPlayerData().metadata["poo"] + ConsumeablesPoo[itemName])
@@ -294,6 +296,7 @@ end)
 
 RegisterNetEvent('consumables:client:Drink', function(itemName, prop)
     AddProp(prop)
+    TriggerEvent('inventory:client:set:busy', true)
     RequestAnimationDict("amb@world_human_drinking@coffee@male@idle_a")
     TaskPlayAnim(ped, 'amb@world_human_drinking@coffee@male@idle_a', "idle_c", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
     QBCore.Functions.Progressbar("drink_something", "Uống", 5000, false, true, {
@@ -304,6 +307,7 @@ RegisterNetEvent('consumables:client:Drink', function(itemName, prop)
     }, {}, {}, {}, function() -- Done
         TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items[itemName], "remove")
         TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        TriggerEvent('inventory:client:set:busy', false)
         RemoveProp()
         TriggerServerEvent("QBCore:Server:SetMetaData", "thirst", QBCore.Functions.GetPlayerData().metadata["thirst"] + ConsumeablesDrink[itemName])
         TriggerServerEvent("QBCore:Server:SetMetaData", "pee", QBCore.Functions.GetPlayerData().metadata["pee"] + ConsumeablesPee[itemName])
