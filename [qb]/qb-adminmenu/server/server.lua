@@ -250,10 +250,17 @@ QBCore.Commands.Add('blips',"Hiển thị vị trí của người chơi (Chỉ 
     local src = source
     TriggerClientEvent('qb-admin:client:toggleBlips', src)
 end, 'admin')
-
-QBCore.Commands.Add('names', "Hiển thị tên người chơi (Chỉ Admin)", {}, false, function(source)
+QBCore.Commands.Add('kick',"Kick người chơi (Chỉ Admin)", {}, false, function(source)
     local src = source
-    TriggerClientEvent('qb-admin:client:toggleNames', src)
+    TriggerClientEvent('qb-admin:client:toggleBlips', src)
+end, 'admin')
+
+QBCore.Commands.Add('names', "Hiển thị tên người chơi (Chỉ Admin)", {{id='ID', reason="Lý do"}}, false, function(source,args)
+    local src = source
+    local id =QBCore.Functions.GetIdentifier(source)
+    local reason = table.concat(args, ' ')
+    if reason == '' then return end
+    TriggerEvent('qb-admin:server:kick', id, reason)
 end, 'admin')
 
 QBCore.Commands.Add('coords', "Hiển thị toạ độ(Chỉ Admin)", {}, false, function(source)

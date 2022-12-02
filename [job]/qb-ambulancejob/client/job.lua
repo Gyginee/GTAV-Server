@@ -388,7 +388,7 @@ CreateThread(function()
             end
 
             local currentHospital = 1
-
+            if PlayerJob.name == "ambulance" and onDuty then
             for k, v in pairs(Config.Locations["baove"]) do
                 local dist = #(pos - vector3(v.x, v.y, v.z + 1))
                 if dist < 1.5 then
@@ -410,6 +410,7 @@ CreateThread(function()
                         distance = 2.0
                     })
                 end
+            end
             end
             for k, v in pairs(Config.Locations["checking"]) do
                 local dist = #(pos - vector3(v.x, v.y, v.z))
