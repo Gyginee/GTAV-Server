@@ -1143,7 +1143,9 @@ local checkTalkStatus = false
 Citizen.CreateThread(function()
     Citizen.Wait(100)
     while true do
-        if NetworkIsPlayerTalking(PlayerId()) then
+        local playerId = PlayerId()
+        local talking= NetworkIsPlayerTalking(playerId)
+        if talking then
             if not checkTalkStatus then
                 checkTalkStatus = true
                 SendNUIMessage({ type="set_status",       statustype = "talking", value = true})
