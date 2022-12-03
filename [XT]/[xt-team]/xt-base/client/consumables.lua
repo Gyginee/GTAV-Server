@@ -291,6 +291,8 @@ RegisterNetEvent('consumables:client:Eat', function(itemName, prop)
         if ConsumeablesNo[itemName] ~= nil then
             No(ConsumeablesNo[itemName])
         end
+    end, function()
+        TriggerEvent('inventory:client:set:busy', false)
     end)
 end)
 
@@ -313,7 +315,10 @@ RegisterNetEvent('consumables:client:Drink', function(itemName, prop)
         TriggerServerEvent("QBCore:Server:SetMetaData", "pee", QBCore.Functions.GetPlayerData().metadata["pee"] + ConsumeablesPee[itemName])
         if ConsumeablesDrink[itemName] ~= nil then
             Khat(ConsumeablesDrink[itemName])
-        end
+        end --cancle
+            
+        end, function()
+            TriggerEvent('inventory:client:set:busy', false)
     end)
 end)
 
@@ -321,12 +326,14 @@ RegisterNetEvent('consumables:client:DrinkAlcohol', function(itemName, prop)
     AddProp(prop)
     RequestAnimationDict("amb@world_human_drinking@coffee@male@idle_a")
     TaskPlayAnim(ped, 'amb@world_human_drinking@coffee@male@idle_a', "idle_c", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+    TriggerEvent('inventory:client:set:busy', true)
     QBCore.Functions.Progressbar("snort_coke", "Uống đỒ có cồn", math.random(3000, 6000), false, true, {
         disableMovement = false,
         disableCarMovement = false,
         disableMouse = false,
         disableCombat = true,
     }, {}, {}, {}, function() -- Done
+        TriggerEvent('inventory:client:set:busy', false)
         TriggerEvent('animations:client:EmoteCommandStart', {"c"})
         TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items[itemName], "remove")
         TriggerServerEvent("QBCore:Server:RemoveItem", itemName, 1)
@@ -341,6 +348,7 @@ RegisterNetEvent('consumables:client:DrinkAlcohol', function(itemName, prop)
         end
 
     end, function() -- Cancel
+        TriggerEvent('inventory:client:set:busy', false)
         TriggerEvent('animations:client:EmoteCommandStart', {"c"})
         exports['xt-notify']:Alert("THÔNG BÁO", "Đã hủy", 5000, 'error')
     end)
