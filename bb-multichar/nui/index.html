@@ -26,8 +26,8 @@
                 </div>
 
                 <div id="data">
-                    <div id="header" class="row red-text">Delete "<span>Shaul Kabokim</span>"</div>
-                    <div id="description" class="row">By doing so - everything will be deleted, the money, vehicles etc...<br>If you're sure you want to delete your character, please write the character name.</div>
+                    <div id="header" class="row red-text">Xoá "<span>Gyn Jonathan</span>"</div>
+                    <div id="description" class="row">Bằng việc xoá nhân vật, bạn xác nhận xoá tất cả mọi thứ liên quan như tiền bạc, xe cộ,...<br>Để xác nhận xoá nhân vật, vui lòng ghi lại tên nhân vật !.</div>
                     <div id="nameinput" class="row">
                         <div class="input-field col s12">
                             <input id="deleteplayer_input" type="text" />
@@ -38,70 +38,70 @@
         </div>
         <div class="container">
             <div class="container__info row">
-                <div id="playername" class="row">Shaul Kabokim</div>
+                <div id="playername" class="row">Gyn Jonathan</div>
                 <div id="playerdata" class="row">
                     <div class="col s3">
                         <i class="fas fa-fingerprint infoIcon"></i>&ensp;<span id="c-cid">69</span><br>
-                        <i class="fas fa-venus-mars infoIcon"></i>&ensp;<span id="c-gender">Male</span><br>
+                        <i class="fas fa-venus-mars infoIcon"></i>&ensp;<span id="c-gender">Nam</span><br>
                         <i class="fas fa-calendar-alt infoIcon"></i>&ensp;<span id="c-dob">20-01-1991</span><br>
                         
                     </div>
                     <div class="col s3">
                         <i class="far fa-money-bill-alt infoIcon"></i>&ensp;<span id="c-cash">$54,734</span><br>
                         <i class="fas fa-money-check infoIcon"></i>&ensp;<span id="c-bank">$54,734</span><br>
-                        <i class="fas fa-briefcase infoIcon"></i>&ensp;<span id="c-job">Unemployed</span><br>
+                        <i class="fas fa-briefcase infoIcon"></i>&ensp;<span id="c-job">THẤT NGHIỆP</span><br>
                     </div>
                 </div>
                 <div id="buttons" class="row">
                     <div class="col s12">
-                        <a class="waves-effect btn btn-large" id='spawnplayer_button' data-color="success">SPAWN</a>
-                        <a class="waves-effect btn btn-large" id='deleteplayer_button' data-color="failed">DELETE</a>
+                        <a class="waves-effect btn btn-large" id='spawnplayer_button' data-color="success">BẮT ĐẦU</a>
+                        <!-- <a class="waves-effect btn btn-large" id='deleteplayer_button' data-color="failed">Xoá</a> -->
                     </div>
                 </div>
             </div>
     
             <div class="container__create row">
-                <div id="playername" class="row">Create Character</div>
+                <div id="playername" class="row">Tạo Nhân Vật</div>
                 <div id="playerdata" class="row">
                     <div class="row">
                         <div class="input-field col s3 input-length">
                             <input id="p_firstname" type="text" class="validate" required data-length="12">
-                            <label for="p_firstname">First Name</label>
+                            <label for="p_firstname">Họ</label>
                         </div>
                         <div class="input-field col s3 input-length">
                             <input id="p_lastname" type="text" class="validate" required data-length="12">
-                            <label for="p_lastname">Last Name</label>
+                            <label for="p_lastname">Tên</label>
                         </div>
                     </div>
                     
                     <div class="row">
                         <div class="input-field col s2">
                             <select>
-                              <option value="1" selected>Male</option>
-                              <option value="2">Female</option>
+                              <option value="1" selected>Nam</option>
+                              <option value="2">Nữ</option>
                             </select>
-                            <label>Gender</label>
+                            <label>Giới tính</label>
                         </div>
                         <div class="input-field col s2">
                             <input id='p_dob'type="text" class="datepicker" required>
-                            <label for="p_dob">Date of birth</label>
+                            <label for="p_dob">Ngày sinh</label>
                         </div>
                         <div class="input-field col s2 input-length">
                             <input id="p_nationality" type="text" class="validate" required data-length="12">
-                            <label for="p_nationality">Nationality</label>
+                            <label for="p_nationality">Quốc tịch</label>
                         </div>
                     </div>
     
                     <div class="row">
                         <div class="input-field col s6">
                             <textarea id="p_backstory" class="materialize-textarea overflow"></textarea>
-                            <label for="p_backstory">Backstory</label>
+                            <label for="p_backstory">Cốt truyện nhân vật</label>
                         </div>
                     </div>
                 </div>
                 <div id="buttons" class="row">
                     <div class="col s12">
-                        <a class="waves-effect btn btn-large" id='createchar_button' data-color="success">CREATE</a>
+                        <a class="waves-effect btn btn-large" id='createchar_button' data-color="success">TẠO</a>
                     </div>
                 </div>
             </div>
