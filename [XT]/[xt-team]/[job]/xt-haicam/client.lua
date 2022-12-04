@@ -172,7 +172,8 @@ CreateThread(function()
             end
             if type(closeTo) == 'table' then
                 while GetDistanceBetweenCoords(pos, closeTo.coords, true) <= 5 do
-                    sleep = 200
+                    Wait(3)
+                    sleep = 300
                     if ispick == false then
                         DrawMarker(25, closeTo.coords.x, closeTo.coords.y, closeTo.coords.z-0.90, 0, 0, 0, 0, 0, 0, 0.90, 0.90, 0.90, 255, 255, 255, 200, 0, 0, 0, 0)
                         QBCore.Functions.DrawText3D(closeTo.coords.x, closeTo.coords.y, closeTo.coords.z + 0.5,'[~g~E~w~] - Thu hoạch cam')
@@ -221,13 +222,13 @@ end)
 CreateThread(function()
     local sleep
     while true do
-        sleep = 1000
+        sleep = 5
         if dohc then
             local ped = PlayerPedId()
             local pos = GetEntityCoords(ped)
             local dist = #(vector3(pos.x, pos.y, pos.z) - vector3(packingcoords.x, packingcoords.y, packingcoords.z))
             if dist <= 10 then
-                sleep = 200
+                sleep = 3
                 if not ispacking then
                     DrawMarker(25, packingcoords.x, packingcoords.y, packingcoords.z-0.90, 0, 0, 0, 0, 0, 0, 0.90, 0.90, 0.90, 255, 255, 255, 200, 0, 0, 0, 0)
                     DrawText3D(packingcoords.x, packingcoords.y, packingcoords.z + 0.5, '[~g~E~s~] - Đóng thùng')
