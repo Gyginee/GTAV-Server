@@ -1092,20 +1092,20 @@
                             class="textHudMicrophone" style="margin-left: .4rem;">
 
                             <span style="position: relative;bottom:.2rem;" v-html="GetSvg('mic-muted')"
-                                v-if="isMuted && (!editModeActive && !editAllModeActive)">
+                                v-if="!statusData.talking">
 
                             </span>
+                           <!--  <span
+                                v-if="statusData.talking"
+                                v-html="GetSvg('textHudMicrophone')"></span> -->
                             <span
-                                v-if="!isMuted && !statusData.talking || ((editModeActive || editAllModeActive) && !statusData.talking)"
-                                v-html="GetSvg('textHudMicrophone')"></span>
-                            <span
-                                v-if="!isMuted &&statusData.mic_level == '1' && statusData.talking || ((editModeActive || editAllModeActive) && statusData.talking && statusData.mic_level == '1')"
+                                v-if="statusData.mic_level == '1' && statusData.talking "
                                 v-html="GetSvg('textHudMicrophonelow')"></span>
                             <span
-                                v-if="!isMuted &&statusData.mic_level == '2' && statusData.talking || ((editModeActive || editAllModeActive) && statusData.talking && statusData.mic_level == '2')"
+                                v-if="statusData.mic_level == '2' && statusData.talking "
                                 v-html="GetSvg('textHudMicrophonemid')"></span>
                             <span
-                                v-if="!isMuted && statusData.mic_level == '3' && statusData.talking || ((editModeActive || editAllModeActive) && statusData.talking && statusData.mic_level == '3')"
+                                v-if=" statusData.mic_level == '3' && statusData.talking "
                                 v-html="GetSvg('textHudMicrophonehigh')"></span>
                         </div>
 

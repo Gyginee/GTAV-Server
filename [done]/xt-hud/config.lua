@@ -100,7 +100,7 @@ Config.Text2Style = {
 -------------------------------------------- Keys --------------------------------------------
 Config.DefaultCruiseControlKey = "K" -- Default control key for cruise. Players can change the key according to their desire 
 Config.DefaultSeatbeltControlKey = "B" -- Default control key for seatbelt. Players can change the key according to their desire 
-Config.VehicleEngineToggleKey = "M" -- Default control key for toggle engine. Players can change the key according to their desire 
+Config.VehicleEngineToggleKey = "H" -- Default control key for toggle engine. Players can change the key according to their desire 
 Config.NitroKey = "SHIFT" -- Default control key for use nitro. Players can change the key according to their desire 
 
 -------------------------------------------- Nitro --------------------------------------------
