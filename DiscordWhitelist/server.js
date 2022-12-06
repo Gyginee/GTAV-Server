@@ -6,16 +6,16 @@
 /// Config Area ///
 
 var enableWhitelist = true; // Enable the Whitelist/Allowlist
-var guildId = "846808316033368085"; // Guild ID for a Discord Server, see https://faxes.zone/i/zjKnd.png
+var guildId = "1049584554920378420"; // Guild ID for a Discord Server, see https://faxes.zone/i/zjKnd.png
 var botToken = "ODgyMjY3NTA3MDQ4NzE4MzU4.GwCRKK.MfJcmIXkQw8j-dze8JRhXsBWCXKl4N4oGguMyI"; // This must be a Discord bot token, create a bot @ https://discord.com/developers/applications
 
 var whitelistRoles = [ // Roles by ID that are whitelisted.
-    "1035457124957958164",
-    "887071686271328326", //--admin
-    "1046376685760675870" //NguoiTUKi
+    "1049597350261313557",
+    "1049585749021949974", //--admin
+ 
 ];
 var blacklistRoles = [ // Roles by Id that are blacklisted.
-    "1047015921090310264"
+    
 ];
 
 var notWhitelistedMessage = "Bạn không trong whitelist của server.";
