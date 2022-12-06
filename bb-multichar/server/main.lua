@@ -75,13 +75,13 @@ function L1_1(A0_2, A1_2)
           if nil ~= L10_4 then
             L10_4 = L8_4.gender
             if 0 == L10_4 then
-              L10_4 = "Male"
+              L10_4 = "Nam"
               if L10_4 then
                 goto lbl_38
               end
             end
           end
-          L10_4 = "Female"
+          L10_4 = "Nữ"
           ::lbl_38::
           L7_4.gender = L10_4
           L10_4 = L9_4.cash

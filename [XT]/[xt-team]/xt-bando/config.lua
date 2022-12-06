@@ -3,12 +3,12 @@ Config = {
   Ped = vector3(-261.55, -970.86, 31.22), --Thay đồ
 }
 Config.SellItems = {
-   [1] = {name = "copper", banmin = 28, banmax = 30, mua = 32},
-  [2] = {name = "iron", banmin = 29, banmax = 31, mua = 47},
-  [3] = {name = "gold", banmin = 70, banmax = 90, mua = 105},
+  [1] = {name = "copper", banmin = 10, banmax = 12, mua = 14},
+  [2] = {name = "iron", banmin = 11, banmax = 13, mua = 15},
+  [3] = {name = "gold", banmin = 50, banmax = 70, mua = 95},
   [4] = {name = "fish3", banmin = 7, banmax = 9, mua = 10},
-  [5] = {name = "diamond", banmin = 500, banmax = 600, mua = 700},
-  [6] = {name = "packaged_plank", banmin = 40, banmax = 50, mua = 60},
+  [5] = {name = "diamond", banmin = 200, banmax = 300, mua = 400},
+  [6] = {name = "packaged_plank", banmin = 25, banmax = 30, mua = 40},
   [7] = {name = "fish2", banmin = 30, banmax = 32, mua = 34},
   [8] = {name = "fish1", banmin = 35, banmax = 40, mua = 47},
   [9] = {name = "shoe", banmin = 2, banmax = 3, mua = 4},

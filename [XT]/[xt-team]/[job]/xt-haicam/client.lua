@@ -171,7 +171,7 @@ CreateThread(function()
                 end
             end
             if type(closeTo) == 'table' then
-                while GetDistanceBetweenCoords(pos, closeTo.coords, true) <= 5 do
+                while GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), closeTo.coords, true) <= 5 do
                     Wait(3)
                     sleep = 300
                     if ispick == false then

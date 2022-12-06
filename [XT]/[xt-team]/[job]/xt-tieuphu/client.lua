@@ -189,13 +189,13 @@ CreateThread(function()
         local pos = GetEntityCoords(ped)
         if thaydo then
             for k, v in pairs(Config.PickingPositions) do
-                if GetDistanceBetweenCoords(pos, v.coords, true) <= 5 then
+                if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), v.coords, true) <= 5 then
                     closeTo = v
                     break
                 end
             end
             if type(closeTo) == 'table' then
-                while GetDistanceBetweenCoords(pos, closeTo.coords, true) <= 5  do
+                while GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), closeTo.coords, true) <= 5  do
                     Wait(3)
                     if picking == false then
                         DrawMarker(27, closeTo.coords.x, closeTo.coords.y, closeTo.coords.z-0.97, 0, 0, 0, 0, 0, 0, 0.90, 0.90, 0.90, 255, 255, 255, 200, 0, 0, 0, 0)

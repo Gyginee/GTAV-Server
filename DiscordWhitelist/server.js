@@ -11,8 +11,8 @@ var botToken = "ODgyMjY3NTA3MDQ4NzE4MzU4.GwCRKK.MfJcmIXkQw8j-dze8JRhXsBWCXKl4N4o
 
 var whitelistRoles = [ // Roles by ID that are whitelisted.
     "1035457124957958164",
-    "887071686271328326",
-    "1046376685760675870"
+    "887071686271328326", //--admin
+    "1046376685760675870" //NguoiTUKi
 ];
 var blacklistRoles = [ // Roles by Id that are blacklisted.
     "1047015921090310264"

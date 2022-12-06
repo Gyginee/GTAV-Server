@@ -27,10 +27,10 @@ Config.SleepTime = 5000
 Config.Clothes = {
   male = {
       ['tshirt_1'] = 15,  ['tshirt_2'] = 0,
-      ['torso_1'] = 69,   ['torso_2'] = 2,
+      ['torso_1'] = 97,   ['torso_2'] = 1,
       ['arms'] = 15,
-      ['pants_1'] = 103,   ['pants_2'] = 0,
-      ['shoes_1'] = 96,   ['shoes_2'] = 0,
+      ['pants_1'] = 97,   ['pants_2'] = 6,
+      ['shoes_1'] = 12,   ['shoes_2'] = 6,
       ['hat_1'] = 3,   ['hat_2'] = 2,
   },
   female = {
