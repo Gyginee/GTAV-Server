@@ -26,14 +26,14 @@ Config.Clothes = {
         ['tshirt_1'] = 15,  ['tshirt_2'] = 0,
         ['torso_1'] = 0,   ['torso_2'] = 4,
         ['arms'] = 0,
-        ['pants_1'] = 137,   ['pants_2'] = 1,
-        ['shoes_1'] = 44,   ['shoes_2'] = 0,
+        ['pants_1'] = 130,   ['pants_2'] = 1,
+        ['shoes_1'] = 24,   ['shoes_2'] = 0,
     },
     female = {
         ['tshirt_1'] = 14,  ['tshirt_2'] = 0,
         ['torso_1'] = 73,   ['torso_2'] = 2,
         ['arms'] = 14,
         ['pants_1'] = 136,   ['pants_2'] = 1,
-        ['shoes_1'] = 44,   ['shoes_2'] = 0,
+        ['shoes_1'] = 24,   ['shoes_2'] = 0,
     }
   }

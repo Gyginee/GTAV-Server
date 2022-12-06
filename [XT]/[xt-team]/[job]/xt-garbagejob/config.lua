@@ -7,11 +7,11 @@ Config.Locations = {
 Config.Tiencoc = 2500
 Config.Clothes = {
   male = {
-      ['tshirt_1'] = 65,  ['tshirt_2'] = 1,
-      ['torso_1'] = 227,   ['torso_2'] = 1,
+    ['tshirt_1'] = 59,  ['tshirt_2'] = 0,
+    ['torso_1'] = 1,   ['torso_2'] = 0,
       ['arms'] = 0,
-      ['pants_1'] = 7,   ['pants_2'] = 7,
-      ['shoes_1'] = 74,   ['shoes_2'] = 3,
+      ['pants_1'] = 36,   ['pants_2'] = 0,
+      ['shoes_1'] = 27,   ['shoes_2'] = 0,
   },
   female = {
       ['tshirt_1'] = 36,  ['tshirt_2'] = 0,
