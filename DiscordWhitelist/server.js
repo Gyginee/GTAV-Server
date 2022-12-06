@@ -15,7 +15,7 @@ var whitelistRoles = [ // Roles by ID that are whitelisted.
  
 ];
 var blacklistRoles = [ // Roles by Id that are blacklisted.
-    
+    '1049610364003823636',
 ];
 
 var notWhitelistedMessage = "Bạn không trong whitelist của server.";
